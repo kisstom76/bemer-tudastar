@@ -93,7 +93,7 @@ export default function LandingPage() {
           <a href="https://bemergroup.com" target="_blank" rel="noopener">
             bemergroup.com
           </a>{" "}
-          oldalra.
+          oldalra. · <Link href="/adatvedelem">Adatvédelmi tájékoztató</Link>
         </span>
       </footer>
     </div>

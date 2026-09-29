@@ -30,6 +30,9 @@ export default async function BelepesPage(props: PageProps<"/belepes">) {
           Még nincs hozzáférésed? Írj nekünk:{" "}
           <a href={`mailto:${SAJAT.email}`}>{SAJAT.email}</a>
         </p>
+        <p style={{ fontSize: "0.75rem" }}>
+          Belépéssel elfogadod az <Link href="/adatvedelem">adatvédelmi tájékoztatót</Link>.
+        </p>
       </div>
     </div>
   );
