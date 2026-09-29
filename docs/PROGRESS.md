@@ -152,12 +152,21 @@
 - ✅ `CLAUDE.md` frissítve: jóváhagyás rögzítve, domain véglegesítve, új "4. Technikai alapszabályok" szakasz.
 - 🟡 Figyelendő: a publikus teaser szövege nem tesz gyógyhatás- és jövedelem-állítást, de élesítés/megosztás előtt érdemes az Irányelvek 10. fejezetével (reklám, védjegyhasználat) összevetni.
 
+**Élesítve (2026-09-29): az oldal működik a `https://tudastar.bterapia.hu` címen, Google-belépéssel – Tamás élesben kipróbálta és működik.**
+- ✅ GitHub: `kisstom76/bemer-tudastar` (privát), Vercel-lel összekötve – minden `main`-re pusholt commit magától élesedik. (`vercel.json` rögzíti a Next.js keretrendszert, enélkül a deploy elhasal.)
+- ✅ Supabase: projekt `dbvybzkcmovgcbdoqepj` (Frankfurt), `001_alapsema.sql` lefutott, Google provider engedélyezve, URL Configuration beállítva. Env-változók (URL + publishable key) a Vercelben mindhárom környezetben és a `.env.local`-ban.
+- ✅ Google Cloud (kisstom@gmail.com fiók): külön projekt `bemer-tudastar`, OAuth-kliens `tudastar`, app "In production" (csak email+profile scope, ezért nincs Google-ellenőrzés; belépéskor "nem ellenőrzött alkalmazás" figyelmeztetés jelenhet meg – normális).
+- ✅ Cloudflare (bterapia.office@gmail.com fiók): `A tudastar → 76.76.21.21`, DNS only. A Vercel névszerver-csere-felajánlását elutasítottuk (a főoldal leállna). A Vercelben a "Nameservers ✘" jelzés ettől normális.
+- ✅ `/adatvedelem` oldal (a Google OAuth közzétételéhez kellett) – ⚠️ a szöveget Claude írta, jogász nem nézte át; Tamás átolvassa.
+
 **Nyitva maradt / következő lépés:**
-- ⏳ Tamásra vár: GitHub üres repo `kisstom76/bemer-tudastar` (privát)
-- ⏳ Tamásra vár: Supabase új projekt + `001_alapsema.sql` futtatása + Project URL és Publishable key átadása
-- ⏳ Tamásra vár: Google Cloud – külön projekt, OAuth-kliens, közzététel ("Publish app"), Client ID/secret beírása közvetlenül a Supabase-be
-- ⏳ Tamásra vár: Cloudflare A-rekord
-- ⏳ Utána én: push, Vercel env-változók + git-összekötés, éles deploy, végigtesztelés
+- ✅ Tamás kipróbálta és rendben találta (2026-09-29): `/admin` (partner felvétele, aktivitásnapló), nem engedélyezett fiók → `/nincs-hozzaferes`, telefonos megjelenés
+- ⏳ Tartalmi hiányok: Kompendium/esetismertető linkek (Drive-mappa architektúra jóváhagyása még nyitott), Dr. Horváth Ilona elérhetősége, fotó a bemutatkozáshoz, "Kiemelt tippek", "Technikai ismeretek" tényleges tartalma
+- ⏳ Az Irányelvek 10. fejezetével összevetni a publikus teaser szövegét megosztás előtt
+- ⏳ Jövő heti partner meeting előtt: privát csiszolás Tamással, utána partnerek felvétele az admin oldalon
+- ⏳ Vault-szinkron script (promóciók, elérhetőségek → `src/content/*.ts`) – még nincs tervezve
+- ⏳ Git: ez a naplófrissítés még nincs commitolva/pusholva (az ellenőrző átmenetileg nem válaszolt) – következő alkalommal pótolni
+- ▶️ Folytatás: Tamás a fenti hátralévő tételeket feladatként megtartja, a munkát innen (ebben a projektben) folytatjuk
 
 ---
 
