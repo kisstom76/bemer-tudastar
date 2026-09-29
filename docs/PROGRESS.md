@@ -138,10 +138,26 @@
 - Minta: a `bemer-crm` `src/proxy.ts`, `src/lib/supabase/{client,server,service}.ts`, `src/app/auth/{login,callback}` – ezt ültetjük át, de a beégetett e-mail-lista helyett `allowed_emails` táblával.
 - Tervezett útvonalak: `/` publikus teaser/landing · `/belepes` publikus Google-login · `/auth/callback` · `/nincs-hozzaferes` · `/tudastar/*` védett tartalom · `/admin` allowlist-kezelés + aktivitásnapló. Védelem: proxy (session + allowlist) + `robots.ts` disallow + `noindex` meta + `X-Robots-Tag` fejléc.
 - ⚠️ A vázlat HTML-forrása a scratchpadből eltűnt (tmp takarítás) – a tartalom az Artifactból visszaolvasható: https://claude.ai/artifact/EwU6hQazbzrH3qNvDeMqUW
-- ⏸️ **Megállítva Tamás kérésére (meeting)** – a következő lépés: globals.css/layout Human Line-ra (Barlow), Supabase-kliensek, proxy, oldalak, SQL-séma.
+- ⏸️ Megállítva Tamás kérésére (meeting), majd folytatva ugyanaznap.
+
+**Elkészült (2026-09-23, folytatás):**
+- ✅ Teljes első verzió kódja, commit `3b79c6d` (helyben, még nincs GitHub-remote):
+  - `/` publikus teaser: "Mi vár bent?" zárolt kategóriakártyák (csak leírás, tartalom nem), "Érdekel, belenéznék" e-mail-CTA, telefonszám, lábléc: "független BEMER partnerek, nem a BEMER Int. AG hivatalos oldala".
+  - `/belepes` Google-login · `/nincs-hozzaferes` (nem engedélyezett fiók: e-mail-cím kiírva, kapcsolat, fiókváltás) · `/auth/callback` (belépést naplóz) · `/auth/kijelentkezes`.
+  - `/tudastar` – a jóváhagyott vázlat teljes tartalma (bemutatkozás, áttekintő, promóciók, gyors elérhetőségek ❓-súgókkal, 7 kategória), oldalsáv-navigáció, mobilon legördülő. **Új: a lejárt promóciók maguktól eltűnnek**, a ~4 hónapon túliak gombbal nyithatók.
+  - `/admin` – fiók felvétele/eltávolítása (partner/admin), fiókonként utolsó aktivitás + 30 napos belépés/megtekintés-szám, utolsó 50 esemény; emlékeztető a Drive-megosztásra. Magát az admin nem tudja törölni.
+  - `supabase/migrations/001_alapsema.sql` – `allowed_emails`, `activity_log`, RLS (anon semmit nem lát; partner csak a saját sorát; admin mindent), kezdő adminok: kisstom@gmail.com, bterapia.office@gmail.com.
+- ✅ Helyben ellenőrizve: build zöld; `/tudastar` és `/admin` bejelentkezés nélkül 307 → `/belepes`, `X-Robots-Tag: noindex…` fejléccel; `robots.txt` tiltja a védett útvonalakat; teaser + login mobilon/világos módban rendben.
+- ✅ Vercel-projekt `bemer-tudastar` létrehozva és linkelve (`.vercel/`, git-ignorált); domain `tudastar.bterapia.hu` hozzáadva. Vercel által kért DNS: **`A tudastar → 76.76.21.21`** (Cloudflare-ben, szürke felhő / DNS only). ⚠️ A Vercel a névszerver-cserét is felajánlja – azt **tilos**, mert leállna a `bterapia.hu` főoldal.
+- ✅ `CLAUDE.md` frissítve: jóváhagyás rögzítve, domain véglegesítve, új "4. Technikai alapszabályok" szakasz.
+- 🟡 Figyelendő: a publikus teaser szövege nem tesz gyógyhatás- és jövedelem-állítást, de élesítés/megosztás előtt érdemes az Irányelvek 10. fejezetével (reklám, védjegyhasználat) összevetni.
 
 **Nyitva maradt / következő lépés:**
-- ⏳ Tamás elvégzi a 3 elkerülhetetlen kézi lépést (GitHub üres repo, Supabase új projekt, Cloudflare CNAME) – a pontos lépéslistát a folytatáskor adom
+- ⏳ Tamásra vár: GitHub üres repo `kisstom76/bemer-tudastar` (privát)
+- ⏳ Tamásra vár: Supabase új projekt + `001_alapsema.sql` futtatása + Project URL és Publishable key átadása
+- ⏳ Tamásra vár: Google Cloud – külön projekt, OAuth-kliens, közzététel ("Publish app"), Client ID/secret beírása közvetlenül a Supabase-be
+- ⏳ Tamásra vár: Cloudflare A-rekord
+- ⏳ Utána én: push, Vercel env-változók + git-összekötés, éles deploy, végigtesztelés
 
 ---
 
