@@ -19,6 +19,7 @@ Ez a fájl csak a **tartós, ritkán változó** szabályokat tartja (mi ez a pr
 | Mit keresel | Hol van |
 |---|---|
 | Munkamenet-történet, döntések, nyitott pontok | [`docs/PROGRESS.md`](docs/PROGRESS.md) |
+| Rendszerterv: Vault → tudástár szinkron, Drive, AI-keresés, fázisok sorrendje | [`docs/RENDSZERTERV.md`](docs/RENDSZERTERV.md) |
 | A gyűjtött tartalom vázlata (Kompendium, irányelvek, dátumok/promóciók, kiemelt tippek stb.) | [`docs/TARTALOM_VAZLAT.md`](docs/TARTALOM_VAZLAT.md) |
 | Design/arculat (színek, betűtípus, terminológia) | [`docs/DESIGN_ARCULAT.md`](docs/DESIGN_ARCULAT.md) |
 

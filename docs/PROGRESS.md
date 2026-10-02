@@ -98,7 +98,7 @@
 7. Aktív Supabase-projektek pontos száma / a receptek-app fiók-helyzete (fent).
 8. Induljon-e most ténylegesen a technikai fázis.
 
-**Drive-architektúra javaslat a dokumentum-hozzáféréshez (2026-09-17, jóváhagyásra vár):**
+**Drive-architektúra javaslat a dokumentum-hozzáféréshez (2026-09-17; ✅ jóváhagyva 2026-10-02, a hatályos változat: [`RENDSZERTERV.md`](RENDSZERTERV.md) 2. C és 5. pont):**
 - **Egy darab új, megosztható Drive-mappa** (pl. "BEMER Tudástár – Megosztott anyagok"), amibe a ténylegesen weboldalra kerülő dokumentumok kerülnek.
 - **Ne másolat, hanem áthelyezés** — a fájl átkerül ebbe a mappába, nem duplikálódik. Ez teljesen kiiktatja a szinkron-problémát: ha egy szerződés változik, mindenki ugyanazt az egy, friss fájlt látja, nincs mit "ellenőrizni".
 - Ahol a fájlnak a jelenlegi helyén is maradnia kell (más munkafolyamat miatt), ott **Drive-parancsikon** ("shortcut") a megoldás másolat helyett — natívan mindig az aktuális fájlra mutat, nincs hozzá script. (Figyelem: a parancsikon önmagában nem ad jogosultságot — az eredeti fájlnak/mappának is meg kell osztva lennie ugyanazzal a névsorral.)
@@ -165,8 +165,18 @@
 - ⏳ Az Irányelvek 10. fejezetével összevetni a publikus teaser szövegét megosztás előtt
 - ⏳ Jövő heti partner meeting előtt: privát csiszolás Tamással, utána partnerek felvétele az admin oldalon
 - ⏳ Vault-szinkron script (promóciók, elérhetőségek → `src/content/*.ts`) – még nincs tervezve
+  - **Tamás kérése (2026-10-02): az események/képzések is ide tartoznak.** Amikor a vaultban frissülnek a BEMER események (időpontok, képzések, rendezvények – jelenleg: vault `02 Areas/BEMER/05_Promociok/00_Promociok_Attekinto.md` és `2026-08-13_Oszi_BEMER_Programnaptar.md`), a tudástár „Mi fut most" része is mindig frissüljön. A vault a forrás, a weboldal csak tükrözi. A feladat ebben a projektben él, nem a vault feladatlistáján.
 - ⏳ Git: ez a naplófrissítés még nincs commitolva/pusholva (az ellenőrző átmenetileg nem válaszolt) – következő alkalommal pótolni
 - ▶️ Folytatás: Tamás a fenti hátralévő tételeket feladatként megtartja, a munkát innen (ebben a projektben) folytatjuk
+
+**📌 Memorizált tervek (2026-09-30: heti `tudastarba`-címkés rutin; 2026-10-01: FŐ TERV – Vault-tudásanyag + AI-keresés)** → beolvadtak a rendszertervbe: [`RENDSZERTERV.md`](RENDSZERTERV.md) (2. B folyam, 3. AI-keresés, 4. sorrend). A részletek egy helyen, ott élnek.
+
+**Rendszerterv + régi Drive-mappa átnézése (2026-10-02):**
+- Tamás kérdésére: az iCloud kívülről nem érhető el weboldal számára → a gép tolja ki a tartalmat (helyi szinkron); az MD-tudásanyaghoz nem kell Drive-tükör. Kérte még: partnermeeting-témák folyamatos bevitele, dátumok/események automatikus frissítése a Vaultból, olcsóbb AI-motor. Mind a [`RENDSZERTERV.md`](RENDSZERTERV.md)-ben, Tamás jóváhagyta a sorrendet ("megyünk sorba, javaslatod szerint").
+- Régi partner-megosztású Drive-mappa (`14OgRiYfpsqBai3lkLxnlZDob_iWw6VG0`) átnézve; ítéletek: `RENDSZERTERV.md` 5.1; használható szöveges tartalom (újonc-lépések, BBO-tippek, StartUp, TEÁOR/VTSZ, videók, Vinczéné-kérdés) → `TARTALOM_VAZLAT.md` 2., 4., 7., 8. pont.
+- ▶️ **Következő: Fázis 1 – Drive-rendrakás, új sessionben** (`RENDSZERTERV.md` 5.2).
+- ❓ Tamásnak: Light Pack EVO (régi Beauty Pack) leírás és LIVATY-vázlat megvan-e; webinárium/marketing prezi használatban van-e még; Vinczéné Borbély Zsuzsa bekerüljön-e; + a `RENDSZERTERV.md` 4. pont négy döntése.
+**Állapot-összefoglaló (2026-10-01):** az oldal él (`tudastar.bterapia.hu`), Google-belépés + admin-allowlist + aktivitásnapló működik és ki van próbálva. Memorizált, még el nem indult tervek: (a) heti `tudastarba`-címkés Vault→tudástár rutin; (b) Vault-tudásanyag bekötése + AI-keresés (fent). Hátralévő tartalmi tételek: Kompendium/esetismertető linkek (Drive-mappa döntés), Dr. Horváth Ilona elérhetősége, fotó, Kiemelt tippek, Technikai ismeretek, adatvédelmi szöveg átolvasása, teaser-szöveg egyeztetése az Irányelvek 10. fejezetével.
 
 ---
 
