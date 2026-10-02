@@ -64,7 +64,7 @@ Tudástár (GitHub → Vercel, Supabase)   ── a partnerek itt olvasnak és k
 
 ### 5.1 A régi megosztott mappa átnézése (2026-10-02)
 
-Mappa: **"régi partner-megosztás"** `14OgRiYfpsqBai3lkLxnlZDob_iWw6VG0` (tulajdonos kisstom@gmail.com, partnerekkel megosztva). ⚠️ A Claude Drive-kapcsolata **nem** a kisstom@gmail.com fiókkal fut (a fájloknál `me: false`) – emiatt pár fájl "nem található" lehet jogosultság miatt is, nem csak törlés miatt. Fázis 1 elején tisztázni, melyik fiók ez.
+Mappa: **"régi partner-megosztás"** `14OgRiYfpsqBai3lkLxnlZDob_iWw6VG0` (tulajdonos kisstom@gmail.com, partnerekkel megosztva). ⚠️ A Claude Drive-kapcsolata **nem** a kisstom@gmail.com fiókkal fut (a fájloknál `me: false`) – emiatt pár fájl "nem található" lehet jogosultság miatt is, nem csak törlés miatt. Tamás döntése (2026-10-02): erről később beszélünk – addig a Drive-műveleteket Tamás végzi kézzel, lépésről lépésre leírva, vagy ahol a kapcsolat eléri a fájlt.
 
 | Elem | Ítélet | Megjegyzés |
 |---|---|---|
@@ -73,10 +73,10 @@ Mappa: **"régi partner-megosztás"** `14OgRiYfpsqBai3lkLxnlZDob_iWw6VG0` (tulaj
 | Orvosi esetismertető – a doksiban lévő link (`12ukPRpg…`) | ❌ **halott link** | A jelenlegi fájl: `2020_orvosi_esetismertetések_zárolt.pdf` `1JksZNunHPYSUhHg0DKf_FFimKT5gWYW4` a "Orvosi esetismertetők - tanulmányok / 01_Gyujtemenyes_kiadvanyok" mappában. Felhasználás: csak Magyarországon, belső anyagként (magyar központ kikötése) – ezt a tudástárban is jelezni. |
 | 01_Gyujtemenyes_kiadvanyok: 2013 kongresszusi füzet, 2017 esetismertetések, 2015 absztrakt | 🗄️ archív | Történeti; a 2020-as a fő. Linkelhető "korábbi kiadások" alatt. |
 | 03_Esetismertetesek_es_beszamolok (2012–2020 egyedi tanulmányok: bőrgyógyászat, fogászat, Rihova-levél, Brno, sport) | 🗄️ archív, később | A fő tervhez (cikkek) lehet forrás; most nem linkeljük. |
-| Beauty Pack leírás (Google Doc `14DcnVIO…`) | ❓ nem érhető el | 2026-tól **Light Pack EVO** néven. Tamás nézze meg, megvan-e; ha igen, frissített névvel kerüljön be. |
-| LIVATY termékbemutató vázlat (`10NmkOMd…`) + YouTube-felvétel | ❓ doksi nem érhető el | A LIVATY Partner Portal már szerepel a tudástár linkjei között; a 2025-ös launch-vázlat valószínűleg elavult. |
-| Webinárium `HU_webinar_2024_08_Evo.pptx` (1,7 GB!) | ⚠️ valószínűleg elavult | 2024-es; Tamás döntse el, használja-e még. Ha igen, PDF-be mentve, kisebb méretben. |
-| Marketing prezi `BEMER Marketing 2024 ver 14 HU.pptx` (88 MB, 2025-02) | ⚠️ ellenőrizendő | Van-e újabb a BBO-ban? Ha nincs, maradhat. |
+| Beauty Pack leírás (Google Doc `14DcnVIO…`) | ⏳ később | Most nincs meg; 2026-tól **Light Pack EVO** néven kerül be, ha előkerül (Tamás, 2026-10-02). |
+| LIVATY termékbemutató vázlat (`10NmkOMd…`) + YouTube-felvétel | ⏳ később | Most nincs meg (Tamás, 2026-10-02). A LIVATY Partner Portal már szerepel a tudástár linkjei között. |
+| Webinárium `HU_webinar_2024_08_Evo.pptx` (1,7 GB) | ✅ **marad** | Info-előadáson használt prezentáció; letölthetőnek kell maradnia, akinek kell (Tamás, 2026-10-02). |
+| Marketing prezi `BEMER Marketing 2024 ver 14 HU.pptx` (88 MB, 2025-02) | ✅ **marad** | Info-előadáson használt prezentáció; letölthetőnek kell maradnia (Tamás, 2026-10-02). |
 | Bérleti szerződés minta EVO / Pro (BEMER központ, 2025-09) | ✅ **használjuk** | "Minta, saját felelősségre" figyelmeztetéssel. |
 | Bérleti szerződés – Üres – kezessel.doc (2023, saját) | ⚠️ Tamás dönt | A központi minták mellett valószínűleg felesleges. |
 | EVO-FORM ügyféltájékoztató PDF (2024) | ✅ **használjuk** | Hivatalos nyomtatvány. |
@@ -90,7 +90,7 @@ Mappa: **"régi partner-megosztás"** `14OgRiYfpsqBai3lkLxnlZDob_iWw6VG0` (tulaj
 
 ### 5.2 Lépések (új sessionben)
 
-1. Melyik Google-fiókkal fut a Claude Drive-kapcsolata; a tulajdonos kisstom@gmail.com.
+1. (A Claude Drive-kapcsolat fiókja: később tisztázzuk – lásd 5.1.)
 2. A régi mappa **megosztási listájának** átnézése az admin-allowlisttel szemben (régi, kilépett partnerek kiszedése – Tamás jóváhagyásával).
 3. Célstruktúra jóváhagyása. Javaslat: **a régi megosztott mappát használjuk tovább alapként** (a partnerek már hozzáférnek), átnevezve, almappákkal: Terápia és szakmai · Ügyfél-tájékoztatás és prezentációk · Nyomtatványok és szerződések · Pénzügy és adminisztráció · Archív.
 4. Fájlok **áthelyezése** (nem másolás); ahol a régi helyén is kell, parancsikon; duplikátumok és üres mappák törlése csak jóváhagyással.

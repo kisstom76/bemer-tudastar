@@ -173,9 +173,10 @@
 
 **Rendszerterv + régi Drive-mappa átnézése (2026-10-02):**
 - Tamás kérdésére: az iCloud kívülről nem érhető el weboldal számára → a gép tolja ki a tartalmat (helyi szinkron); az MD-tudásanyaghoz nem kell Drive-tükör. Kérte még: partnermeeting-témák folyamatos bevitele, dátumok/események automatikus frissítése a Vaultból, olcsóbb AI-motor. Mind a [`RENDSZERTERV.md`](RENDSZERTERV.md)-ben, Tamás jóváhagyta a sorrendet ("megyünk sorba, javaslatod szerint").
-- Régi partner-megosztású Drive-mappa (`14OgRiYfpsqBai3lkLxnlZDob_iWw6VG0`) átnézve; ítéletek: `RENDSZERTERV.md` 5.1; használható szöveges tartalom (újonc-lépések, BBO-tippek, StartUp, TEÁOR/VTSZ, videók, Vinczéné-kérdés) → `TARTALOM_VAZLAT.md` 2., 4., 7., 8. pont.
+- Régi partner-megosztású Drive-mappa (`14OgRiYfpsqBai3lkLxnlZDob_iWw6VG0`) átnézve; ítéletek: `RENDSZERTERV.md` 5.1; használható szöveges tartalom (újonc-lépések, BBO-tippek, StartUp, TEÁOR/VTSZ, videók) → `TARTALOM_VAZLAT.md` 2., 4., 7., 8. pont.
 - ▶️ **Következő: Fázis 1 – Drive-rendrakás, új sessionben** (`RENDSZERTERV.md` 5.2).
-- ❓ Tamásnak: Light Pack EVO (régi Beauty Pack) leírás és LIVATY-vázlat megvan-e; webinárium/marketing prezi használatban van-e még; Vinczéné Borbély Zsuzsa bekerüljön-e; + a `RENDSZERTERV.md` 4. pont négy döntése.
+- ✅ Tamás döntései (2026-10-02): Light Pack EVO- és LIVATY-leírás később, ha előkerül; a webinárium és a marketing prezi **marad** (info-előadáson használják, letölthető kell legyen); Vinczéné Borbély Zsuzsa elérhetősége már nem releváns; a Claude Drive-kapcsolat fiókjáról később beszélünk.
+- ❓ Még nyitott: a `RENDSZERTERV.md` 4. pont négy döntése.
 **Állapot-összefoglaló (2026-10-01):** az oldal él (`tudastar.bterapia.hu`), Google-belépés + admin-allowlist + aktivitásnapló működik és ki van próbálva. Memorizált, még el nem indult tervek: (a) heti `tudastarba`-címkés Vault→tudástár rutin; (b) Vault-tudásanyag bekötése + AI-keresés (fent). Hátralévő tartalmi tételek: Kompendium/esetismertető linkek (Drive-mappa döntés), Dr. Horváth Ilona elérhetősége, fotó, Kiemelt tippek, Technikai ismeretek, adatvédelmi szöveg átolvasása, teaser-szöveg egyeztetése az Irányelvek 10. fejezetével.
 
 ---

@@ -45,8 +45,6 @@
 
 *(a fenti a végleges "Fontos elérhetőségek" tartalom váza – ebből épül a weboldal szekciója)*
 
-❓ **A régi Drive-doksiban (2025-09) még szerepelt:** Vinczéné Borbély Zsuzsa (TM+, teamvezető) – vinczene.zs@gmail.com, +36 30 663 2651, a vonalban Tamásék és az OD között. Tamás döntse el, bekerüljön-e (aktuális-e még, és hozzájárul-e).
-
 ## 5. Landing page-ek és marketinganyagok
 
 🎯 **MEGVAN, kész referencia-jegyzet a Vault-ban:** `02 Areas/BEMER/07_Uzleti_Tudastar/03_Partner_Landing_Oldalak/00_BEMER_Landing_Oldalak.md` – állandó (Dog App, LIVATY Partner Portal, Dog Line Partner, BEMER Média-könyvtár, Rank Advancement) és időszakos (aktuális promóciók landing oldalai) linkgyűjtemény, karbantartva.
