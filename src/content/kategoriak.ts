@@ -62,6 +62,13 @@ export const kategoriak: Kategoria[] = [
     allapot: "missing",
   },
   {
+    id: "letoltesek",
+    cim: "Letölthető anyagok",
+    ikon: "⬇️",
+    teaser: "Szakmai anyagok, nyomtatványok, készülékleírások egy helyen. Hamarosan brossúrák, képek és videók is.",
+    allapot: "warn",
+  },
+  {
     id: "elerhetosegek",
     cim: "Fontos elérhetőségek",
     ikon: "☎️",

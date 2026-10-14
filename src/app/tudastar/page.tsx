@@ -2,6 +2,7 @@ import { kategoriak, allapotSzoveg, type Allapot } from "@/content/kategoriak";
 import { promociok, KOZELI_NAPOK } from "@/content/promociok";
 import { elerhetosegek, SAJAT } from "@/content/elerhetosegek";
 import { linkek } from "@/content/linkek";
+import { anyagCsoportok, MEGOSZTOTT_MAPPA, KOMPENDIUM_URL, ESETISMERTETES_2020_URL } from "@/content/anyagok";
 import { esemenyek } from "@/content/esemenyek";
 import { PromocioTabla } from "@/components/PromocioTabla";
 import { EsemenyTabla } from "@/components/EsemenyTabla";
@@ -223,15 +224,18 @@ export default function TudastarPage() {
             szinten, és ez tartalmazza a készülék-generációk hatástartam-grafikonját is.
           </p>
           <div className="m-actions">
-            <span className="btn-download disabled">Megnyitás</span>
-            <span className="link-missing">A link hamarosan elérhető.</span>
+            <a className="btn-download" href={KOMPENDIUM_URL} target="_blank" rel="noopener noreferrer">
+              Megnyitás
+            </a>
           </div>
         </div>
 
         <div className="material-card">
           <div>
             <div className="m-title">🩺 Orvosi esetismertetők</div>
-            <div className="m-meta">Előadás-leiratok · WOB / Évnyitó / KickOff</div>
+            <div className="m-meta">
+              PDF · 2020-as gyűjteményes kiadvány <span className="badge-source">🩵 BEMER-kiadvány</span>
+            </div>
           </div>
           <p>
             Kórképekhez köthető szakmai anyagok. Kiváló tanulásra, de <b>referenciaként</b> munka közben is
@@ -239,8 +243,10 @@ export default function TudastarPage() {
             kell alátámasztás a döntéshez.
           </p>
           <div className="m-actions">
-            <span className="btn-download disabled">Megnyitás</span>
-            <span className="link-missing">A linkek összegyűjtése folyamatban.</span>
+            <a className="btn-download" href={ESETISMERTETES_2020_URL} target="_blank" rel="noopener noreferrer">
+              Megnyitás (2020)
+            </a>
+            <span className="link-missing">További esetismertetők (2013, 2017) hamarosan.</span>
           </div>
         </div>
       </section>
@@ -421,11 +427,60 @@ export default function TudastarPage() {
         </div>
       </section>
 
-      {/* 07 Elérhetőségek */}
+      {/* 07 Letölthető anyagok */}
+      <section id="letoltesek" className="block">
+        <div className="sec-head">
+          <h2>
+            <span className="num">07</span>Letölthető anyagok
+          </h2>
+          <Allapotjel allapot={allapotOf("letoltesek")} />
+        </div>
+        <p className="sec-lead">
+          Minden anyag a csapat megosztott Drive-mappájában van —{" "}
+          <a href={MEGOSZTOTT_MAPPA} target="_blank" rel="noopener noreferrer">
+            a teljes mappa itt nyílik
+          </a>
+          . Ha egy link nem nyílik meg, szólj, és hozzáadunk a megosztáshoz.
+        </p>
+        {anyagCsoportok.map((cs) => (
+          <div key={cs.id} className="material-card">
+            <div>
+              <div className="m-title">
+                {cs.ikon} {cs.cim}
+              </div>
+              <div className="m-meta">{cs.leiras}</div>
+            </div>
+            <ul className="tight">
+              {cs.tetelek.map((t) => (
+                <li key={t.nev}>
+                  {t.url ? (
+                    <a href={t.url} target="_blank" rel="noopener noreferrer">
+                      {t.nev}
+                    </a>
+                  ) : (
+                    t.nev
+                  )}
+                  {t.megjegyzes && <span className="cell-sub"> — {t.megjegyzes}</span>}
+                </li>
+              ))}
+            </ul>
+            <div className="m-actions">
+              <a className="btn-download" href={cs.mappaUrl} target="_blank" rel="noopener noreferrer">
+                Mappa megnyitása
+              </a>
+            </div>
+          </div>
+        ))}
+        <div className="empty-state">
+          Hamarosan: brossúrák és szórólapok (dátummal), kiállítási plakátok, termékképek, videók, gépkönyvek.
+        </div>
+      </section>
+
+      {/* 08 Elérhetőségek */}
       <section id="elerhetosegek" className="block">
         <div className="sec-head">
           <h2>
-            <span className="num">07</span>Fontos elérhetőségek
+            <span className="num">08</span>Fontos elérhetőségek
           </h2>
           <Allapotjel allapot={allapotOf("elerhetosegek")} />
         </div>
