@@ -4,6 +4,7 @@ import { elerhetosegek, SAJAT } from "@/content/elerhetosegek";
 import { linkek } from "@/content/linkek";
 import { anyagCsoportok, MEGOSZTOTT_MAPPA, KOMPENDIUM_URL, ESETISMERTETES_2020_URL } from "@/content/anyagok";
 import { esemenyek } from "@/content/esemenyek";
+import { felvetelSorozatok } from "@/content/felvetelek";
 import { PromocioTabla } from "@/components/PromocioTabla";
 import { EsemenyTabla } from "@/components/EsemenyTabla";
 import { Help } from "@/components/Help";
@@ -177,6 +178,50 @@ export default function TudastarPage() {
           </h2>
         </div>
         <EsemenyTabla kozeli={kozeliEsemenyek} tavoli={tavoliEsemenyek} />
+      </section>
+
+      <section id="felvetelek" className="block" aria-labelledby="felvetelek-cim">
+        <div className="sec-head">
+          <h2 id="felvetelek-cim" className="small">
+            Előadás-felvételek – visszanézhető képzések
+          </h2>
+        </div>
+        {felvetelSorozatok.map((s) => (
+          <div key={s.id}>
+            <p className="sec-lead">
+              <b>{s.cim}.</b> {s.leiras}
+            </p>
+            <div className="card table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Mikor</th>
+                    <th>Előadó</th>
+                    <th>Téma</th>
+                    <th>Felvétel</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {s.felvetelek.map((f) => (
+                    <tr key={f.url}>
+                      <td className="mono">{f.datum}</td>
+                      <td>{f.eloado}</td>
+                      <td>{f.cim}</td>
+                      <td>
+                        <a href={f.url} target="_blank" rel="noopener noreferrer">
+                          Megnézem →
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+        <div className="dash-foot">
+          <p>A további előadások felvételei megjelenésük után kerülnek ide.</p>
+        </div>
       </section>
 
       <section className="block" aria-labelledby="kategoriak-cim">
