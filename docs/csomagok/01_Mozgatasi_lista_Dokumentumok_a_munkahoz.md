@@ -2,7 +2,7 @@
 
 **Készült:** 2026-10-14 · **Alap:** a Drive mai állapota (helyi Drive-mappa) + Tamás döntései ([`DRIVE_DONTESEK_ELSO_KOR.md`](../DRIVE_DONTESEK_ELSO_KOR.md)).
 **Állapot:** ✅ **végrehajtva 2026-10-14** (Tamás jóváhagyásával; a `08`-ban a „Bérleti szerződéshez anyagok” mappa visszanevezve „Régi készülékekhez leírások”-ra, új mappa: `10_Sajat_keszitesu_anyagok`). Vault: `Partneri_Alapszabalyok.md` 3. pont, `TEAOR_szamok_BEMER_tortenet.md`, `Regi_Drive_anyagok_referencia_2026-10.md`, Archívum-index, audit log. Tudástár: Kompendium + esetismertető link, új „Letölthető anyagok” rész.
-**Maradt:** ⚠️ C1 (`Irányelvek + Kihívások feltételei` Doc) **nem mozdult** – a `bterapia.office` fiók tulajdona, a Claude-kapcsolatnak nincs joga áthelyezni → Tamás (bterapia.office-ként) teszi archívba · a 10 üres almappa + maga a `#Dokumentumok a munkához` törlése (jóváhagyásra vár) · parancsikonok (Tamás).
+**Lezárva (2026-10-14):** a C1 Irányelvek-doksit Tamás archiválta; a kiürült `#Dokumentumok a munkához` mappa a Drive kukájába került (30 napig visszaállítható). Kompendium-parancsikon kész; ⏳ az esetismertető 2020 parancsikonja (`01_Gyujtemenyes_kiadvanyok`) még hiányzik.
 Minden lépés Drive-on belüli áthelyezés/átnevezés (az azonosító és a link marad). Archívum: `04_Archive/02_Areas/BEMER/` + egy sor a vault Archívum-indexébe. Törlés nincs benne, csak a kiürült mappáké, jóváhagyással.
 
 Rövidítések: `08` = `02_Areas/BEMER/08_Partnereknek_Megosztott` · `01SZ` = `02_Areas/BEMER/01_Szakmai_Tudastar`
