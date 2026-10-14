@@ -2,7 +2,9 @@ import { kategoriak, allapotSzoveg, type Allapot } from "@/content/kategoriak";
 import { promociok, KOZELI_NAPOK } from "@/content/promociok";
 import { elerhetosegek, SAJAT } from "@/content/elerhetosegek";
 import { linkek } from "@/content/linkek";
+import { esemenyek } from "@/content/esemenyek";
 import { PromocioTabla } from "@/components/PromocioTabla";
+import { EsemenyTabla } from "@/components/EsemenyTabla";
 import { Help } from "@/components/Help";
 
 function maBudapesten(): string {
@@ -34,6 +36,11 @@ export default function TudastarPage() {
   const aktualis = promociok.filter((p) => p.hatarido >= ma).sort((a, b) => a.hatarido.localeCompare(b.hatarido));
   const kozeli = aktualis.filter((p) => p.hatarido <= hatar);
   const tavoli = aktualis.filter((p) => p.hatarido > hatar);
+  const jovoEsemenyek = esemenyek
+    .filter((e) => (e.veg ?? e.kezdet) >= ma)
+    .sort((a, b) => a.kezdet.localeCompare(b.kezdet));
+  const kozeliEsemenyek = jovoEsemenyek.filter((e) => e.kezdet <= hatar);
+  const tavoliEsemenyek = jovoEsemenyek.filter((e) => e.kezdet > hatar);
 
   return (
     <>
@@ -102,7 +109,7 @@ export default function TudastarPage() {
         <section id="promociok" className="block" aria-labelledby="mi-fut-cim">
           <div className="sec-head">
             <h2 id="mi-fut-cim" className="small">
-              Most futó promóciók & közelgő események
+              Most futó promóciók & kihívások
             </h2>
           </div>
           <PromocioTabla kozeli={kozeli} tavoli={tavoli} />
@@ -161,6 +168,15 @@ export default function TudastarPage() {
           </div>
         </section>
       </div>
+
+      <section id="esemenyek" className="block" aria-labelledby="esemenyek-cim">
+        <div className="sec-head">
+          <h2 id="esemenyek-cim" className="small">
+            Közelgő események – infóestek, képzések, rendezvények
+          </h2>
+        </div>
+        <EsemenyTabla kozeli={kozeliEsemenyek} tavoli={tavoliEsemenyek} />
+      </section>
 
       <section className="block" aria-labelledby="kategoriak-cim">
         <div className="sec-head">

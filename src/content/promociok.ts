@@ -1,26 +1,33 @@
-// Forrás: Vault · 02 Areas/BEMER/05_Promociok/00_Promociok_Attekinto.md (2026-09-16-i állapot).
+// Forrás: Vault · 02 Areas/BEMER/05_Promociok/00_Promociok_Attekinto.md, 🟢 tábla (2026-10-14-i állapot).
+// Csak időszakra szóló promóció, kihívás, akció. Konkrét időpontú esemény → esemenyek.ts.
 // A lejárt tételek (hatarido < ma) automatikusan eltűnnek az oldalról.
 
 export type Promocio = {
   hatarido: string; // YYYY-MM-DD
   cim: string;
+  kinek: string;
   lenyeg: string;
-  megjegyzes?: string;
 };
 
 export const promociok: Promocio[] = [
-  { hatarido: "2026-09-23", cim: "Őszi programnaptár", lenyeg: "6 program: START-Up képzés, Infoest, tréningek, Eger" },
-  { hatarido: "2026-09-28", cim: "90 Day BP+ Challenge", lenyeg: "max. 1.500 € / kvalifikált BP+ partner + ajándék" },
-  { hatarido: "2026-09-30", cim: "B.Box Upgrade Evo", lenyeg: "Classic/Pro → Classic Set Evo, kedvezményes váltás" },
-  { hatarido: "2026-10-05", cim: "30 Day Run", lenyeg: "Lendület-kihívás + 50% Sign-Up kedvezmény új BP-nél" },
-  { hatarido: "2026-10-09", cim: "Csapattalálkozó – Eger", lenyeg: "3 napos csapatépítő, Hunguest Hotel Flóra" },
   {
-    hatarido: "2027-02-19",
-    cim: "European Management Meeting",
-    lenyeg: "Budapest Marriott, Manager-szintű partnereknek",
-    megjegyzes: "csak GL szinttől felfelé",
+    hatarido: "2026-10-30",
+    cim: "30 Day Run – októberi folytatás",
+    kinek: "minden partner",
+    lenyeg: "11 reggeli, 8:00-s, 30 perces Zoom-előadás (10. 06. – 10. 30.), 4 előadó. Nincs jelentkezés, felvétel készül.",
   },
-  { hatarido: "2027-02-28", cim: "Founder's Challenge", lenyeg: "30.000 PSVP + 8 új BP → 5 napos exkluzív utazás" },
+  {
+    hatarido: "2026-11-02",
+    cim: "B.Box Upgrade – Classic Set Evo",
+    kinek: "minden partner és ügyfél",
+    lenyeg: "Működőképes Classic/Pro-Line B.Box → kedvezményes váltás Classic Set Evo-ra. Utólag nem lehet csatlakozni.",
+  },
+  {
+    hatarido: "2027-02-28",
+    cim: "Founder's Challenge",
+    kinek: "minden partner (automatikus részvétel)",
+    lenyeg: "30.000 PSVP + 8 új BP → 5 napos exkluzív utazás.",
+  },
 ];
 
 export const KOZELI_NAPOK = 120;

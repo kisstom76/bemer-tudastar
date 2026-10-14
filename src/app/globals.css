@@ -251,6 +251,7 @@ section.block { margin-bottom: 2.75rem; scroll-margin-top: 1.25rem; }
 @media (min-width: 760px) { .dash-grid { grid-template-columns: 1.5fr 1fr; } }
 .dash-grid > section { margin-bottom: 0; }
 .dash-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+.cell-sub { color: var(--text-faint); font-size: 0.8rem; margin-top: 0.2rem; }
 .dash-foot p { color: var(--text-faint); font-size: 0.8rem; }
 
 .contact-list { display: flex; flex-direction: column; gap: 0.9rem; }
@@ -351,3 +352,10 @@ footer.closing { border-top: 1px solid var(--border); margin-top: 3rem; padding-
 .form-msg { font-size: 0.85rem; margin-top: 0.6rem; }
 .form-msg.error { color: var(--missing); }
 .form-msg.ok { color: var(--ok); }
+
+/* Tudástár lezárása (admin) */
+.lock-card { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.lock-card p { color: var(--text-muted); font-size: 0.88rem; }
+.lock-card.is-locked { border-color: var(--accent); }
+.lock-banner { border: 1px solid var(--accent); border-radius: 10px; padding: 0.6rem 0.9rem; margin-bottom: 1.2rem; font-size: 0.88rem; background: var(--surface); }
+.lock-banner a { color: var(--accent); }

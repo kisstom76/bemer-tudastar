@@ -39,3 +39,16 @@ export async function removeEmail(formData: FormData) {
   await supabase.from("allowed_emails").delete().eq("email", email);
   revalidatePath("/admin");
 }
+
+export async function setLezaras(formData: FormData) {
+  const admin = await requireAdmin();
+  const locked = formData.get("locked") === "1";
+
+  const supabase = await createClient();
+  await supabase
+    .from("site_settings")
+    .update({ locked, locked_at: new Date().toISOString(), locked_by: admin.email })
+    .eq("id", 1);
+  revalidatePath("/admin");
+  revalidatePath("/tudastar");
+}

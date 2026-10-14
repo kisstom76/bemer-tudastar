@@ -51,6 +51,15 @@ export async function proxy(request: NextRequest) {
   if (!row) return redirectTo("/nincs-hozzaferes");
   if (pathname.startsWith("/admin") && row.role !== "admin") return redirectTo("/tudastar");
 
+  if (row.role !== "admin") {
+    const { data: lezaras } = await supabase
+      .from("site_settings")
+      .select("locked")
+      .eq("id", 1)
+      .maybeSingle<{ locked: boolean }>();
+    if (lezaras?.locked) return redirectTo("/lezarva");
+  }
+
   response.headers.set("X-Robots-Tag", NOINDEX);
   response.headers.set("Cache-Control", "private, no-store");
   return response;

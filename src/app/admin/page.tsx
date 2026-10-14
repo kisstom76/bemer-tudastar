@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { requireAdmin } from "@/lib/access";
+import { requireAdmin, getLezaras } from "@/lib/access";
 import { createClient } from "@/lib/supabase/server";
 import { AddEmailForm } from "./AddEmailForm";
-import { removeEmail } from "./actions";
+import { removeEmail, setLezaras } from "./actions";
 
 export const metadata: Metadata = {
   title: "Admin",
@@ -30,6 +30,7 @@ export default async function AdminPage() {
   const admin = await requireAdmin();
   const supabase = await createClient();
 
+  const lezaras = await getLezaras();
   const [{ data: allowed }, { data: log }] = await Promise.all([
     supabase.from("allowed_emails").select("email, name, role, created_at").order("created_at", { ascending: true }),
     supabase.from("activity_log").select("email, event, path, created_at").order("created_at", { ascending: false }).limit(1000),
@@ -63,6 +64,27 @@ export default async function AdminPage() {
           ← Vissza a tudástárba
         </Link>
       </div>
+
+      <section className="block">
+        <div className={`card lock-card${lezaras.locked ? " is-locked" : ""}`}>
+          <div>
+            <h2 className="small" style={{ margin: 0 }}>
+              {lezaras.locked ? "🔒 A tudástár le van zárva" : "🔓 A tudástár nyitva van"}
+            </h2>
+            <p style={{ margin: "0.3rem 0 0" }}>
+              {lezaras.locked
+                ? `A partnerek most nem látják a tartalmat, csak egy „átmenetileg zárva” oldalt. Admin látja és szerkesztheti. Lezárta: ${lezaras.locked_by ?? "—"}, ${ido(lezaras.locked_at ?? undefined)}.`
+                : "Minden engedélyezett partner látja a tartalmat. Lezáráskor csak az adminok látják, a partnerek hozzáférése megmarad."}
+            </p>
+          </div>
+          <form action={setLezaras}>
+            <input type="hidden" name="locked" value={lezaras.locked ? "0" : "1"} />
+            <button type="submit" className={lezaras.locked ? "btn" : "btn secondary"}>
+              {lezaras.locked ? "Tudástár megnyitása" : "Tudástár lezárása"}
+            </button>
+          </form>
+        </div>
+      </section>
 
       <section className="block">
         <div className="sec-head">
