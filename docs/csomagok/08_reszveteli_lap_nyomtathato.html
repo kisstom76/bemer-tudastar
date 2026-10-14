@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="hu"><head><meta charset="utf-8"><title>Részvételi lap – BEMER információs előadás</title>
+<style>
+@page{size:A4;margin:8mm}
+body{font:11px/1.35 Arial,sans-serif;color:#222;margin:0}
+.lap{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:0;height:281mm}
+.c{border:1px dashed #888;padding:6mm 6mm 4mm;box-sizing:border-box;page-break-inside:avoid}
+h1{font-size:14px;margin:0 0 1mm;color:#EB5A23}
+.s{font-size:10px;margin:0 0 3mm;color:#555}
+.f{margin:2.5mm 0 0;border-bottom:1px solid #444;min-height:5mm;font-size:10px;color:#555}
+.j{font-size:8px;line-height:1.25;margin-top:3mm;color:#333}
+.cb{margin-top:2mm;font-size:9px}
+</style></head><body><div class="lap">
+<!--CARDS-->
+</div>
+<script>
+const t=`<div class="c"><h1>Részvételi lap</h1><p class="s">BEMER információs előadás · Dátum: ____________________</p>
+<div class="f">Név:</div><div class="f">E-mail:</div><div class="f">Mobil:</div><div class="f">Ki hívott meg:</div>
+<p class="cb">☐ <b>Hozzájárulok</b>, hogy az adataimat az adatkezelő az előadás utáni kapcsolatfelvétel és a tájékoztató anyagok elküldése céljából kezelje.</p>
+<div class="f">Dátum, aláírás:</div>
+<p class="j"><b>Adatkezelő:</b> ______________________________ · ______________________ <br>Jogalap: hozzájárulás (GDPR 6. cikk (1) a). Őrzés: az előadástól számított [12] hónapig vagy a visszavonásig. Kérheted a tájékoztatást, helyesbítést, <b>törlést</b>, a hozzájárulás visszavonását: ______________________ . Panasz: NAIH, www.naih.hu. Hozzájárulás nélkül is részt vehetsz az előadáson. Egészségi adatot a lapra ne írj.</p></div>`;
+document.querySelector('.lap').innerHTML=t.repeat(4);
+</script></body></html>

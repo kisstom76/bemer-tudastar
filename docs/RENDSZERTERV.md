@@ -30,8 +30,10 @@ Tudástár (GitHub → Vercel, Supabase)   ── a partnerek itt olvasnak és k
 **B) folyamat – egy rendszer a `tudastarba` címkére és a partnermeetingekre:**
 1. Forrás: `tudastarba` címkés jegyzet **vagy** a partnermeeting-témák gyűlő listája a Vaultban.
 2. Heti AI-rutin (helyi) megírja a cikket → Vault "jóváhagyásra vár" mappa, kategóriával és forrásszinttel (🟢…🔴).
-3. Tamás átolvassa, jóváhagyja (frontmatter-jelölő).
+3. Tamás jóváhagyja – **az admin felületen, abban a formában, ahogy a partnerek látni fogják** (előnézet + „mehet" gomb; Tamás kérése, 2026-10-09). Amíg ez az admin-nézet nincs meg, a jóváhagyás frontmatter-jelölővel történik.
 4. A szinkron publikálja; **a címke csak ezután kerül le**.
+- **A címke jelentése:** ami megkapja, az partnerek elé szánt; ami nem, az Tamás magánjegyzete marad. A jelölés szabálya a Vaultban: `08 System/Utasitasok/BEMER.md` → „Tudástárba-jelölés".
+- **Automatizálás (később):** ha a cikkek egy ideig rendre úgy jönnek ki, ahogy Tamás szeretné, a jóváhagyó lépés elhagyható – erről Tamás dönt, addig minden cikk jóváhagyással megy.
 - Semmi nem kerül partner elé jóváhagyás nélkül; a `main`-re push azonnal élesít.
 - Jogi/hirdetési irányelv-tartalom csak BEMER-forrásból (`CLAUDE.md` 3. pont); bizonytalan esetben a rutin nem emel be, hanem jelez.
 - Modell: tervezés + első felügyelt futás Opus, heti futás utána Sonnet (ha 2–3 felügyelt futás tiszta volt).
@@ -52,7 +54,7 @@ Tudástár (GitHub → Vercel, Supabase)   ── a partnerek itt olvasnak és k
 | 1 | **Drive-rendrakás** (lásd 5. pont) + linkek a tudástárban | ▶️ következő |
 | 2 | Cikk-oldalak a tudástárban (kategóriánként, belépés mögött, forrásszinttel) | ⏳ |
 | 3 | Szinkron v1: A) automatikus adatok + jóváhagyott cikkek, naponta | ⏳ |
-| 4 | Jóváhagyási folyamat (B): heti rutin, `tudastarba` címke + partnermeeting-lista; első tanulópálya a meglévő címkés jegyzet | ⏳ |
+| 4 | Jóváhagyási folyamat (B): heti rutin, `tudastarba` címke + partnermeeting-lista; első tanulópálya a meglévő címkés jegyzet (Vault `04_Meetingek/Kelet-europai_Kozpont/2026-09-28_Heti_Vezetoi_Reggeli_Meeting.md` – láz esetén mit lehet mondani, 36:29–42:50) + admin-előnézetes jóváhagyás | ⏳ |
 | 5 | AI-keresés (árellenőrzés után) | ⏳ |
 | 6 | (később) Admin oldal kezeli a Drive-megosztást is | ⏳ |
 
@@ -92,8 +94,8 @@ Mappa: **"régi partner-megosztás"** `14OgRiYfpsqBai3lkLxnlZDob_iWw6VG0` (tulaj
 
 1. (A Claude Drive-kapcsolat fiókja: később tisztázzuk – lásd 5.1.)
 2. A régi mappa **megosztási listájának** átnézése az admin-allowlisttel szemben (régi, kilépett partnerek kiszedése – Tamás jóváhagyásával).
-3. Célstruktúra jóváhagyása. Javaslat: **a régi megosztott mappát használjuk tovább alapként** (a partnerek már hozzáférnek), átnevezve, almappákkal: Terápia és szakmai · Ügyfél-tájékoztatás és prezentációk · Nyomtatványok és szerződések · Pénzügy és adminisztráció · Archív.
-4. Fájlok **áthelyezése** (nem másolás); ahol a régi helyén is kell, parancsikon; duplikátumok és üres mappák törlése csak jóváhagyással.
+3. ✅ **Megtörtént (2026-10-02):** a régi megosztott mappa (`14OgRiYfpsqBai3lkLxnlZDob_iWw6VG0`, ugyanaz a mappa, ugyanaz a link) átkerült a Drive PARA-struktúrájába: `02_Areas/BEMER/08_Partnereknek_Megosztott`. Tamás döntése: a régi főmappa (`_REGI fomappa`) fokozatosan kiürül, minden, amivel foglalkozunk, az új helyre kerül. A belső almappák még nincsenek kialakítva – javaslat: Terápia és szakmai · Ügyfél-tájékoztatás és prezentációk · Nyomtatványok és szerződések · Pénzügy és adminisztráció · Archív (a régi almappák kiválogatása után véglegesítjük).
+4. Fájlok **áthelyezése** (nem másolás) a megosztott mappába. A saját területen (pl. `02_Areas/BEMER/01_Szakmai_Tudastar`), ahol Tamás keresni fogja, **parancsikon** mutat a fizikai helyre – a megosztott mappába parancsikon nem kerül. Amit nem osztunk a partnerekkel, az a saját területen marad. A Claude Drive-kapcsolata parancsikont nem tud létrehozni (Tamás kézzel, vagy Chrome-bővítménnyel). Duplikátumok és üres mappák törlése csak jóváhagyással.
 5. "Tartalom - Ezt olvasd el!" → átköltözési mutató.
 6. Linkek a tudástárba (`src/content/` – Kompendium, esetismertető, szerződésminták, nyomtatványok, videók), forrásszint és felhasználási korlát jelölésével.
 7. Minden megosztás-módosítás és törlés előtt Tamás kifejezett jóváhagyása.
