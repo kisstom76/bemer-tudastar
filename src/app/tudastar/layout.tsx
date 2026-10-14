@@ -61,6 +61,13 @@ export default async function TudastarLayout({ children }: LayoutProps<"/tudasta
           </Link>
           <MobileToc items={toc} />
         </div>
+        <div className="dev-banner" role="note">
+          <span className="dev-dot" aria-hidden="true" />
+          <span>
+            <b>A tudástár épül.</b> A mostani forma még nem végleges — folyamatosan bővül és alakul. Ha valamit
+            hiányolsz vagy hibát látsz, írj nekünk.
+          </span>
+        </div>
         {lezarva && (
           <div className="lock-banner">
             🔒 <b>Lezárva</b> — ezt most csak adminok látják, a partnerek nem. A megnyitás gomb az oldalsávban

@@ -7,6 +7,7 @@ import { esemenyek } from "@/content/esemenyek";
 import { felvetelSorozatok } from "@/content/felvetelek";
 import { PromocioTabla } from "@/components/PromocioTabla";
 import { EsemenyTabla } from "@/components/EsemenyTabla";
+import { MostAktualis } from "@/components/MostAktualis";
 import { Help } from "@/components/Help";
 
 function maBudapesten(): string {
@@ -46,6 +47,8 @@ export default function TudastarPage() {
 
   return (
     <>
+      <MostAktualis ma={ma} promociok={promociok} esemenyek={esemenyek} sorozatok={felvetelSorozatok} />
+
       {/* Bemutatkozás */}
       <div className="intro" id="intro">
         <div className="intro-photo">
