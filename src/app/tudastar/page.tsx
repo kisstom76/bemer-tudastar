@@ -189,7 +189,8 @@ export default function TudastarPage() {
         {felvetelSorozatok.map((s) => (
           <div key={s.id}>
             <p className="sec-lead">
-              <b>{s.cim}.</b> {s.leiras}
+              {s.aktualisEddig && s.aktualisEddig >= ma && <span className="badge-new">Aktuális</span>} <b>{s.cim}.</b>{" "}
+              {s.leiras}
             </p>
             <div className="card table-wrap">
               <table>

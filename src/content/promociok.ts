@@ -7,6 +7,7 @@ export type Promocio = {
   cim: string;
   kinek: string;
   lenyeg: string;
+  anyag?: { szoveg: string; href: string }; // kapcsolódó anyag a tudástárban vagy a Drive-on
 };
 
 export const promociok: Promocio[] = [
@@ -15,6 +16,7 @@ export const promociok: Promocio[] = [
     cim: "30 Day Run – októberi folytatás",
     kinek: "minden partner",
     lenyeg: "11 reggeli, 8:00-s, 30 perces Zoom-előadás (10. 06. – 10. 30.), 4 előadó. Nincs jelentkezés, felvétel készül.",
+    anyag: { szoveg: "▶ A felvételek visszanézése", href: "#felvetelek" },
   },
   {
     hatarido: "2026-11-02",

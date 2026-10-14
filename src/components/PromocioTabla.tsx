@@ -32,7 +32,14 @@ export function PromocioTabla({ kozeli, tavoli }: { kozeli: Promocio[]; tavoli: 
                   {p.cim}
                   <div className="cell-sub">{p.kinek}</div>
                 </td>
-                <td>{p.lenyeg}</td>
+                <td>
+                  {p.lenyeg}
+                  {p.anyag && (
+                    <div className="cell-sub">
+                      <a href={p.anyag.href}>{p.anyag.szoveg}</a>
+                    </div>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

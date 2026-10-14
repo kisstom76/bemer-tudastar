@@ -2,13 +2,14 @@
 // Új felvétel = új sor; a sorozat végén is itt maradnak visszanézésre.
 
 export type Felvetel = { datum: string; eloado: string; cim: string; url: string };
-export type FelvetelSorozat = { id: string; cim: string; leiras: string; felvetelek: Felvetel[] };
+export type FelvetelSorozat = { id: string; cim: string; leiras: string; aktualisEddig?: string; felvetelek: Felvetel[] };
 
 export const felvetelSorozatok: FelvetelSorozat[] = [
   {
     id: "30-day-run-2026-10",
     cim: "30 Day Run – októberi előadássorozat (2026)",
     leiras: "Reggeli, 30 perces Zoom-előadások külső trénerektől: munkaszervezés, kapcsolatépítés, értékesítési beszélgetés.",
+    aktualisEddig: "2026-11-15", // a sorozat vége (10-30) + két hét a visszanézésre
     felvetelek: [
       {
         datum: "2026-10-06",
