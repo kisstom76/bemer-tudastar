@@ -10,7 +10,7 @@ Közös bevezető minden csomaghoz (másold elé):
 | 1 | Drive-rendrakás 1. szelet végrehajtása (`#Dokumentumok a munkához`) | Sonnet | közepes | Tamás jóváhagyja a mozgatási listát (ő legyen elérhető) |
 | 2 | ✅ KÉSZ (10-14, mozgatás is) – Beck Zoli-mappák + BEMER Evo + #Prospektusok összevetése | Sonnet | közepes | – |
 | 3 | ✅ KÉSZ (10-14, vaultba írva; 3 kérdés nyitva a jelentés E) részében) – EE team vezetők + Evo médiaanyagok tartalmi átnézése → vault | Opus + ügynök | nagy | 2. kész |
-| 4 | 🟡 JELENTÉS KÉSZ (10-13), részben végrehajtva; 16 ❓ döntés Tamásra vár – Brossúrák/médiaanyagok rendszerezési terve (Drive, 08, vault-tartalomjegyzék) | Opus | nagy | 2. kész |
+| 4 | 🟡 JELENTÉS KÉSZ, D1–D9 eldöntve (10-14); a végrehajtási lista (jelentés 8. pont) még nem futott – Brossúrák/médiaanyagok rendszerezési terve (Drive, 08, vault-tartalomjegyzék) | Opus | nagy | 2. kész |
 | 5 | ✅ KÉSZ (10-14) – Német tanulmányok (Fraktur, ZAEN) szakfordítás + összefoglaló | Opus | közepes | – |
 | 6 | ✅ KÉSZ (10-13): már korábban feldolgozva, a régi példány duplikátum – Malomsoki-tanulmány feldolgozása (fotózott PDF) | Sonnet | közepes | – |
 | 7 | 🟡 JELENTÉS KÉSZ (10-13), 5 ❓ nyitva – UK kutatások újrafuttatása, 2026-10 frissítés | Opus + deep-research | nagy | – |
