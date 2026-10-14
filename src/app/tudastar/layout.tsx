@@ -4,6 +4,7 @@ import { requireAccess, getLezaras } from "@/lib/access";
 import { kategoriak } from "@/content/kategoriak";
 import { SidebarToc, MobileToc, type TocItem } from "@/components/TocNav";
 import { PageViewLogger } from "@/components/PageViewLogger";
+import { setLezaras } from "@/app/admin/actions";
 
 export const metadata: Metadata = {
   title: "Tudástár",
@@ -18,7 +19,17 @@ const toc: TocItem[] = [
 
 export default async function TudastarLayout({ children }: LayoutProps<"/tudastar">) {
   const access = await requireAccess();
-  const lezarva = access.role === "admin" && (await getLezaras()).locked;
+  const admin = access.role === "admin";
+  const lezarva = admin && (await getLezaras()).locked;
+
+  const lakatGomb = admin && (
+    <form action={setLezaras}>
+      <input type="hidden" name="locked" value={lezarva ? "0" : "1"} />
+      <button type="submit" className={lezarva ? "btn small" : "btn secondary small"}>
+        {lezarva ? "🔒 Lezárva – megnyitás" : "🔓 Tudástár lezárása"}
+      </button>
+    </form>
+  );
 
   return (
     <div className="shell">
@@ -33,6 +44,7 @@ export default async function TudastarLayout({ children }: LayoutProps<"/tudasta
         <div className="sidebar-foot">
           <span>Belépve: {access.email}</span>
           {access.role === "admin" && <Link href="/admin">⚙ Admin: hozzáférések</Link>}
+          {lakatGomb}
           <form action="/auth/kijelentkezes" method="post">
             <button type="submit" className="btn secondary small">
               Kijelentkezés
@@ -51,14 +63,15 @@ export default async function TudastarLayout({ children }: LayoutProps<"/tudasta
         </div>
         {lezarva && (
           <div className="lock-banner">
-            🔒 <b>Lezárva</b> — ezt most csak adminok látják, a partnerek nem.{" "}
-            <Link href="/admin">Megnyitás az admin oldalon →</Link>
+            🔒 <b>Lezárva</b> — ezt most csak adminok látják, a partnerek nem. A megnyitás gomb az oldalsávban
+            (telefonon az oldal alján) és az admin oldalon van.
           </div>
         )}
         {children}
         <div className="mobile-only" style={{ marginTop: "2rem", display: "flex", gap: "0.6rem", flexWrap: "wrap", alignItems: "center", fontSize: "0.8rem", color: "var(--text-faint)" }}>
           <span>Belépve: {access.email}</span>
           {access.role === "admin" && <Link href="/admin" className="pill-link">⚙ Admin</Link>}
+          {lakatGomb}
           <form action="/auth/kijelentkezes" method="post">
             <button type="submit" className="pill-link">
               Kijelentkezés
