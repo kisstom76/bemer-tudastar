@@ -41,6 +41,12 @@ export const felvetelSorozatok: FelvetelSorozat[] = [
         cim: "Kérdezésből megértés",
         url: "https://us06web.zoom.us/rec/share/hM0xq8OsFy5vj67oXAWTpD_FbBWVpD7NZxcM28kYEm_DiqTcroHNl-qC4uolNiY.uzVyKzG-5qKRz4Qy",
       },
+      {
+        datum: "2026-10-16",
+        eloado: "Nyíri Zoltán",
+        cim: "A meggyőzés művészete",
+        url: "https://us06web.zoom.us/rec/share/oVK4TJ3TgBz3Ua_QldUqRId8SBG7hi7XwQaTJre9sThceHXpmOKBCI75MGxLJtTV.AXv5K-t9-wNdn1i7",
+      },
     ],
   },
 ];
