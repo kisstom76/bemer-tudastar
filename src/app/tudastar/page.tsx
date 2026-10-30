@@ -37,8 +37,6 @@ export default function TudastarPage() {
   const ma = maBudapesten();
   const hatar = napokkalKesobb(ma, KOZELI_NAPOK);
   const aktualis = promociok.filter((p) => p.hatarido >= ma).sort((a, b) => a.hatarido.localeCompare(b.hatarido));
-  const kozeli = aktualis.filter((p) => p.hatarido <= hatar);
-  const tavoli = aktualis.filter((p) => p.hatarido > hatar);
   const jovoEsemenyek = esemenyek
     .filter((e) => (e.veg ?? e.kezdet) >= ma)
     .sort((a, b) => a.kezdet.localeCompare(b.kezdet));
@@ -117,7 +115,7 @@ export default function TudastarPage() {
               Most futó promóciók & kihívások
             </h2>
           </div>
-          <PromocioTabla kozeli={kozeli} tavoli={tavoli} />
+          <PromocioTabla promociok={aktualis} />
         </section>
 
         <section className="block" aria-labelledby="gyors-cim">

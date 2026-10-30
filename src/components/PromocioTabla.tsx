@@ -1,11 +1,7 @@
-"use client";
-
-import { useState } from "react";
 import type { Promocio } from "@/content/promociok";
 
-export function PromocioTabla({ kozeli, tavoli }: { kozeli: Promocio[]; tavoli: Promocio[] }) {
-  const [mind, setMind] = useState(false);
-
+// Mindig minden futó promóció látszik – kevés van belőlük (Tamás döntése, 2026-10-30).
+export function PromocioTabla({ promociok }: { promociok: Promocio[] }) {
   return (
     <>
       <div className="card table-wrap">
@@ -18,14 +14,14 @@ export function PromocioTabla({ kozeli, tavoli }: { kozeli: Promocio[]; tavoli: 
             </tr>
           </thead>
           <tbody>
-            {kozeli.length === 0 && !mind && (
+            {promociok.length === 0 && (
               <tr>
                 <td colSpan={3} style={{ color: "var(--text-faint)" }}>
-                  Most nincs a közeljövőben lejáró promóció.
+                  Most nincs futó promóció.
                 </td>
               </tr>
             )}
-            {[...kozeli, ...(mind ? tavoli : [])].map((p) => (
+            {promociok.map((p) => (
               <tr key={p.hatarido + p.cim}>
                 <td className="mono">{p.hatarido}</td>
                 <td>
@@ -46,12 +42,7 @@ export function PromocioTabla({ kozeli, tavoli }: { kozeli: Promocio[]; tavoli: 
         </table>
       </div>
       <div className="dash-foot">
-        <p>Alapból a következő ~4 hónapban lejárókat mutatja; a lejártak maguktól eltűnnek.</p>
-        {tavoli.length > 0 && (
-          <button type="button" className="pill-link" onClick={() => setMind((v) => !v)}>
-            {mind ? "Csak a közelgők" : `Minden promóció megjelenítése (+${tavoli.length})`}
-          </button>
-        )}
+        <p>Minden futó promóció látszik; a lejártak maguktól eltűnnek.</p>
       </div>
     </>
   );

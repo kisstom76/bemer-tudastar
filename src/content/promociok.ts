@@ -32,4 +32,4 @@ export const promociok: Promocio[] = [
   },
 ];
 
-export const KOZELI_NAPOK = 120;
+export const KOZELI_NAPOK = 120; // az eseménytábla alapnézete (a promóciók mind látszanak)
