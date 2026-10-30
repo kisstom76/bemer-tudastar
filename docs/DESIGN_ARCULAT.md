@@ -12,11 +12,13 @@
 | BEMER-Orange | `#EB5A23` | 235/90/35 |
 | Light Orange | `#EF7D30` | 240/126/48 |
 
-**Semleges, minden line-hoz közös:**
+**Semleges, minden line-hoz közös (BEMER-hivatalos):**
 | Szín | HEX | RGB |
 |---|---|---|
 | BEMER-Anthracite (szöveg) | `#4B4A50` | 75/74/80 |
 | BEMER-Beige (alap/háttér) | `#ECE3DC` | 236/227/220 |
+
+⚠️ **Eltérés az élesített `tudastar.bterapia.hu` kódtól (`src/app/globals.css`), Tamás jóváhagyásával (2026-10-30, lásd Döntések archívuma 30/28):** az élesben futó verzió a törzsszöveghez egy sötétebb, saját antracitot használ (`#322F35`, nem a hivatalos `#4B4A50`-et), és az alap-háttér fehér/`#FBF7F3`, a hivatalos bézs (`#ECE3DC`) csak másodlagos felületeken (kártya-háttér, hover) jelenik meg, nem mindenhol. **Ez a kódban lévő, kipróbált változat a hiteles** – ha új felület készül, ezt kövesd, nem a fenti táblázat nyers hex-értékeit.
 
 **Másodlagos (kiegészítő, mértékkel használva):**
 | HEX | RGB |
