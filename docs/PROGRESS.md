@@ -1,5 +1,7 @@
 # PROGRESS – BEMER Tudástár
 
+> **Hol tartunk (2026-11-02):** Az oldal 2026-09-29 óta él (tudastar.bterapia.hu, Google-belépéssel); ma elkészült az ügyfeleknek megosztott Drive-mappa. Következő lépés: az anyagok összelinkelése az eseményekkel és promóciókkal, utána a régi Drive-főmappa rendezése és a vault-cikkek + keresés.
+
 > Állapotnapló. A tartós szabályok a [`CLAUDE.md`](../CLAUDE.md)-ben vannak, ide a történet és a nyitott pontok kerülnek.
 
 ---
@@ -231,3 +233,4 @@
 **Következő lépés:** Tamás bevárja ezt a munkamenetet, és külön folytatja innen – valószínűleg a tartalomgyűjtéssel (vault/Drive/BBO átnézése, meglévő anyagok inventáriuma).
 - ✅ **4. csomag, parancsikonok kész (2026-10-14):** a 27 parancsikont (brossúrák, médiamappák, gépkönyvek, Pro-anyagok, Dog-arculat) Apps Script hozta létre a saját helyeken (egyszeri szkript, Tamás adta az engedélyt; „Névtelen projekt” a script.google.com-on, törölhető, az engedély a Google-fiók „Biztonság” oldalán visszavonható). Módszer a jövőre: parancsikont a Drive-konnektor nem tud, Apps Script `Folder.createShortcut(targetId)` igen.
 - ✅ **4. csomag, fotók (2026-10-14):** a `Springplatz` lovasfotó a `Horse-Set/Kepek`-be; a saját Pro-fotók mappája (17 db) archívba (`04_Archive/02_Areas/BEMER`), vault Archívum-indexben; a `Tomiról` fotók (9 db, tulajdonos annakiss813 – nem mozgatható) lemásolva a `Sajat_fotok_es_rendezvenyek/2020-08_Tamasrol (régi saját fotók, mentve 2026-10-14)` mappába, bájt-méret egyezik.
+- ⏳ **4. csomag, nyitott maradék (2026-11-02):** (1) K13 – a régi `BEMER DOG/Első prezi` 7 PNG-je még nem került a `06_Prezentaciok/Hivatalos_Kozponti/Dog_Line` mellé; (2) a 08-as `Tartalom – Ezt olvasd el!` Doc: „átköltöztünk a tudástárba” mondat + archiválás (a feleség módosított benne, egyeztetni).
