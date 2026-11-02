@@ -24,8 +24,10 @@
 **C) BEMER Dog partnerprezentáció** – a tudástár része: vault `01 Projects/BEMER_Tudastar/Dog_Partnerprezentacio.md` + 🟡 tétel a tudástár `Feladatok.md`-jében; élő link: https://claude.ai/artifact/Cw9K13RbQuVJfM5D3cqwSD
 1. Átnézés telefonon (3. kör: 5. és 10. dia fotója, 6. dia nagyobb betű) – Tomi
 2. Megosztás: az oldal Share menüje → „bárki a linkkel” – Tomi
-3. Személyes link a tudástárban (`SajatBemutato` kártya a Letölthető anyagoknál, admin telefonszám-oszlop, `003_telefon.sql`): kód kész, build rendben – a `003_telefon.sql` lefutott (Tomi, 11-02); commit + push (élesítés) Tomi jóváhagyására vár; utána a partnerek száma az admin oldalon (vagy ők maguk)
+3. Személyes link a tudástárban (`SajatBemutato` kártya a Letölthető anyagoknál, admin telefonszám-oszlop, `003_telefon.sql`): kód kész, build rendben – a `003_telefon.sql` lefutott (Tomi, 11-02); commit + push megtörtént (83061cf, 11-02); utána a partnerek száma az admin oldalon (vagy ők maguk)
 4. Döntés: lapon belül lejátszható videó vagy marad a YouTube-link – Tomi (Nyitott döntések 2/4)
+5. Előadói jegyzet (vault `01 Projects/BEMER_Tudastar/Dog_Partnerprezentacio_Eloadoi_jegyzet.md`, 11-02): Tomi átnézi; ha jó, a tudástárban a bemutató-kártya alá kerül (lenyitható, csak partnereknek) – én
+6. Élesítés ellenőrzése: a 83061cf push után belépve megnézni a saját link-kártyát – Tomi / én
 
 ---
 
