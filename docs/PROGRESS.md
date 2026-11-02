@@ -1,8 +1,31 @@
 # PROGRESS – BEMER Tudástár
 
-> **Hol tartunk (2026-11-02):** Az oldal 2026-09-29 óta él (tudastar.bterapia.hu, Google-belépéssel); ma elkészült az ügyfeleknek megosztott Drive-mappa. Következő lépés: az anyagok összelinkelése az eseményekkel és promóciókkal, utána a régi Drive-főmappa rendezése és a vault-cikkek + keresés.
+> **Hol tartunk (2026-11-02):** Az oldal él (tudastar.bterapia.hu). Ma elkészült az ügyfeleknek megosztott Drive-mappa és a BEMER Dog partnerprezentáció 2. verziója, amely a tudástárból a megnyitó partner saját elérhetőségével indul (a 003-as SQL lefutott, az élesítés Tomi jóváhagyására vár). Következő tudástár-lépés: az anyagok összelinkelése az eseményekkel és promóciókkal.
 
 > Állapotnapló. A tartós szabályok a [`CLAUDE.md`](../CLAUDE.md)-ben vannak, ide a történet és a nyitott pontok kerülnek.
+
+## Nyitott szálak (frissítve: 2026-11-02)
+
+> Ez a projekt teljes nyitott listája – állapot-kérdésre ezt kell felsorolni (`CLAUDE.md`, „Állapot-kérdés”). A napi táblán a vault-projektek `Feladatok.md`-je látszik.
+
+**A) Tudástár építése** – vault `01 Projects/BEMER_Tudastar/Feladatok.md` (🔴, egy összefoglaló tétel)
+1. Anyagok összelinkelése eseményekkel/promóciókkal (pl. kiállításnál plakát + bejelentő lap) – én
+2. ✅ Kész (2026-11-02): a régi „Tartalom – Ezt olvasd el!” Doc átirányító szöveg lett a tudástárra (azonos ID, a linkek élnek); a régi tartalom teljes másolata archívban (`04_Archive/02_Areas/BEMER`, ID `1l0xX7_oEOAMNR-5UbIL37nVQ5BnVl9gHjaf_cXuuVdA`), a vault Archívum-indexben és az audit logban naplózva
+3. A régi Drive-főmappa maradéka (`#Archiv`, `Régi - Archiv`, `Prezentációk` – melyik webinár a partnereké) – én mozgatási listát készítek, Tomi jóváhagyja
+4. Tudás-fázis: cikkek a `tudastarba`-címkés vault-jegyzetekből + egyszerű keresés – én
+5. ✅ Kész (2026-11-02): a 4×5 képcsomag, az `anyagok.ts`, a vault-jegyzetek és a 27 parancsikon (Apps Script) elkészült. Kisebb maradék: a Dog „Első prezi” 7 PNG-je a prezentációs mappa mellé (régi `BEMER DOG/Első prezi`) – én, a Dog-prezentáció session után
+6. ✅ Kész: a médiakönyvtár-jegyzet felvéve a vault `Nyilvantartasok.md` regiszterébe (Tomi jóváhagyta)
+
+**B) Régi tartalmi hiányok (2026-10-01-i lista – át kell nézni, aktuális-e még)**
+- Dr. Horváth Ilona elérhetősége, fotó a bemutatkozáshoz – Tomi
+- „Kiemelt tippek” és „Technikai ismeretek” tartalma; az adatvédelmi szöveg átolvasása; a publikus nyitólap szövegének összevetése az Irányelvek 10. fejezetével – én, Tomival
+- Heti Vault→tudástár szinkron rutin (promóciók, elérhetőségek) – terv, még nem indult
+
+**C) BEMER Dog partnerprezentáció** – a tudástár része: vault `01 Projects/BEMER_Tudastar/Dog_Partnerprezentacio.md` + 🟡 tétel a tudástár `Feladatok.md`-jében; élő link: https://claude.ai/artifact/Cw9K13RbQuVJfM5D3cqwSD
+1. Átnézés telefonon (3. kör: 5. és 10. dia fotója, 6. dia nagyobb betű) – Tomi
+2. Megosztás: az oldal Share menüje → „bárki a linkkel” – Tomi
+3. Személyes link a tudástárban (`SajatBemutato` kártya a Letölthető anyagoknál, admin telefonszám-oszlop, `003_telefon.sql`): kód kész, build rendben – a `003_telefon.sql` lefutott (Tomi, 11-02); commit + push (élesítés) Tomi jóváhagyására vár; utána a partnerek száma az admin oldalon (vagy ők maguk)
+4. Döntés: lapon belül lejátszható videó vagy marad a YouTube-link – Tomi (Nyitott döntések 2/4)
 
 ---
 

@@ -3,14 +3,14 @@ import Link from "next/link";
 import { requireAdmin, getLezaras } from "@/lib/access";
 import { createClient } from "@/lib/supabase/server";
 import { AddEmailForm } from "./AddEmailForm";
-import { removeEmail, setLezaras } from "./actions";
+import { removeEmail, setLezaras, setPhone } from "./actions";
 
 export const metadata: Metadata = {
   title: "Admin",
   robots: { index: false, follow: false, nocache: true },
 };
 
-type AllowedRow = { email: string; name: string | null; role: string; created_at: string };
+type AllowedRow = { email: string; name: string | null; role: string; created_at: string; phone?: string | null };
 type LogRow = { email: string; event: string; path: string; created_at: string };
 
 const fmt = new Intl.DateTimeFormat("hu-HU", {
@@ -31,10 +31,15 @@ export default async function AdminPage() {
   const supabase = await createClient();
 
   const lezaras = await getLezaras();
-  const [{ data: allowed }, { data: log }] = await Promise.all([
-    supabase.from("allowed_emails").select("email, name, role, created_at").order("created_at", { ascending: true }),
+  const [elso, { data: log }] = await Promise.all([
+    supabase.from("allowed_emails").select("email, name, role, created_at, phone").order("created_at", { ascending: true }),
     supabase.from("activity_log").select("email, event, path, created_at").order("created_at", { ascending: false }).limit(1000),
   ]);
+  // Ha a 003-as migráció még nem futott (nincs phone oszlop), telefonszám nélkül listázunk.
+  const allowed = elso.error
+    ? (await supabase.from("allowed_emails").select("email, name, role, created_at").order("created_at", { ascending: true })).data
+    : elso.data;
+  const vanTelefon = !elso.error;
 
   const rows = (allowed ?? []) as AllowedRow[];
   const events = (log ?? []) as LogRow[];
@@ -105,6 +110,7 @@ export default async function AdminPage() {
               <tr>
                 <th>Fiók</th>
                 <th>Szerep</th>
+                {vanTelefon && <th>Telefon (bemutatóhoz)</th>}
                 <th>Utoljára aktív</th>
                 <th>Belépés (30 nap)</th>
                 <th>Oldalmegtekintés (30 nap)</th>
@@ -121,6 +127,15 @@ export default async function AdminPage() {
                       <div style={{ color: "var(--text-muted)" }}>{r.email}</div>
                     </td>
                     <td>{r.role === "admin" ? "Admin" : "Partner"}</td>
+                    {vanTelefon && (
+                      <td>
+                        <form action={setPhone} className="inline-phone">
+                          <input type="hidden" name="email" value={r.email} />
+                          <input className="field" type="tel" name="phone" defaultValue={r.phone ?? ""} placeholder="+36 …" aria-label={`${r.email} telefonszáma`} />
+                          <button type="submit" className="pill-link">Mentés</button>
+                        </form>
+                      </td>
+                    )}
                     <td className="mono">{ido(s?.utolso)}</td>
                     <td className="mono">{s?.belepes30 ?? 0}</td>
                     <td className="mono">{s?.oldal30 ?? 0}</td>

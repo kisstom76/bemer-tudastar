@@ -53,3 +53,15 @@ Ez a fájl csak a **tartós, ritkán változó** szabályokat tartja (mi ez a pr
 ---
 
 Ha új sessionben nyitod meg ezt a mappát: **ez a fájl az elsődleges belépési pont**, utána a `docs/PROGRESS.md`. Ne az Operatív-mappa vagy a szülő `BEMER Projects/CLAUDE.md` szabályait kövesd innentől, csak ha át kell látni a másik két alprojektet is.
+
+---
+
+## Állapot-kérdés ebben a mappában (Tamás, 2026-11-02)
+
+Ha Tamás itt megkérdezi, „hogy állunk” / „hol tartunk”: a projekt **minden nyitott feladatát és alfeladatát** felsorolod, csoportosítva, mindegyiknél hogy kié (Tamás / én) és mi a következő lépés – nem csak a fő lépést. Forrás: a `docs/PROGRESS.md` **„Nyitott szálak”** szakasza (ez az egyetlen részletes lista, munka végén frissítendő), és az ott hivatkozott vault-projektek `Feladatok.md`-je. Ide tartozó önálló munka (pl. egy partnerprezentáció) saját vault-projekt lesz (`01 Projects/<név>/`, a napi tábla onnan látja), és felkerül a „Nyitott szálak” közé.
+
+## Napi tábla – „Hol tartunk” sor (Tamás döntése, 2026-11-02)
+
+Tamás napi táblája (Operativ `scripts/napi_tabla.py`) a projekt kártyáján a `docs/PROGRESS.md` elején álló sort mutatja:
+`> **Hol tartunk (ÉÉÉÉ-HH-NN):** <1–2 mondat: hol állt meg a munka, mi a következő lépés>`
+**Minden munkamenet végén frissítsd** (a dátum a mai nap). Ha minden kész és nincs nyitott teendő, `✅`-val kezdődjön („✅ Kész – …”). Laikus nyelven, Tamásnak szól. Szabály: vault `08 System/Utasitasok/Struktura.md` 2.

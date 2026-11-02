@@ -52,3 +52,16 @@ export async function setLezaras(formData: FormData) {
   revalidatePath("/admin");
   revalidatePath("/tudastar");
 }
+
+const PHONE_RE = /^[+0-9 ()/-]{6,30}$/;
+
+export async function setPhone(formData: FormData) {
+  await requireAdmin();
+  const email = String(formData.get("email") ?? "").toLowerCase();
+  const phone = String(formData.get("phone") ?? "").trim();
+  if (!email || (phone && !PHONE_RE.test(phone))) return;
+
+  const supabase = await createClient();
+  await supabase.from("allowed_emails").update({ phone: phone || null }).eq("email", email);
+  revalidatePath("/admin");
+}

@@ -349,6 +349,8 @@ footer.closing { border-top: 1px solid var(--border); margin-top: 3rem; padding-
 .admin-form { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: flex-end; }
 .admin-form label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.75rem; color: var(--text-faint); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
 .admin-form .field { min-width: 180px; font-size: 0.9rem; }
+.inline-phone { display: flex; gap: 0.4rem; align-items: center; }
+.inline-phone .field { width: 9.5rem; font-size: 0.85rem; padding: 0.3rem 0.5rem; }
 .form-msg { font-size: 0.85rem; margin-top: 0.6rem; }
 .form-msg.error { color: var(--missing); }
 .form-msg.ok { color: var(--ok); }

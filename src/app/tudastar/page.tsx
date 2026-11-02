@@ -9,6 +9,7 @@ import { PromocioTabla } from "@/components/PromocioTabla";
 import { EsemenyTabla } from "@/components/EsemenyTabla";
 import { MostAktualis } from "@/components/MostAktualis";
 import { Help } from "@/components/Help";
+import { SajatBemutato } from "@/components/SajatBemutato";
 
 function maBudapesten(): string {
   return new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Budapest" }).format(new Date());
@@ -489,6 +490,7 @@ export default function TudastarPage() {
           </a>
           . Ha egy link nem nyílik meg, szólj, és hozzáadunk a megosztáshoz.
         </p>
+        <SajatBemutato />
         {anyagCsoportok.map((cs) => (
           <div key={cs.id} className="material-card">
             <div>
