@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { DOG_BEMUTATO_URL, szemelyesLink } from "@/content/bemutatok";
 import { ContactForm } from "./ContactForm";
 import { CopyLink } from "./CopyLink";
+import { dogEloadoiJegyzet } from "@/content/dogJegyzet";
 
 // A belépett partner saját bemutató-linkje: az utolsó dián az ő neve és telefonszáma jelenik meg.
 export async function SajatBemutato() {
@@ -55,6 +56,22 @@ export async function SajatBemutato() {
           <ContactForm nev={nev} telefon={telefon} />
         </>
       )}
+      <details className="eloadoi-jegyzet">
+        <summary>🎤 Előadói jegyzet – mit mondj az egyes diáknál (csak neked, az ügyfél nem látja)</summary>
+        {dogEloadoiJegyzet.map((sz) => (
+          <div key={sz.cim} className="ej-szakasz">
+            <div className="ej-cim">{sz.cim}</div>
+            <ul className="tight">
+              {sz.pontok.map((p, i) => (
+                <li key={i}>
+                  {p.cimke && <b>{p.cimke} </b>}
+                  {p.szoveg}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </details>
     </div>
   );
 }

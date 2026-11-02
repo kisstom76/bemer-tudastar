@@ -386,3 +386,10 @@ footer.closing { border-top: 1px solid var(--border); margin-top: 3rem; padding-
 .ma-more { display: inline-block; margin-top: 0.7rem; font-size: 0.8rem; color: var(--text-muted); }
 .ma-more:hover, .ma-link:hover { text-decoration: underline; }
 .ma-empty { font-size: 0.85rem; color: var(--text-faint); margin: 0; }
+
+/* Előadói jegyzet a bemutató-kártyán */
+.eloadoi-jegyzet { margin-top: 0.4rem; }
+.eloadoi-jegyzet summary { cursor: pointer; font-weight: 600; color: var(--accent, #EB5A23); }
+.eloadoi-jegyzet .ej-szakasz { margin-top: 0.9rem; }
+.eloadoi-jegyzet .ej-cim { font-weight: 600; margin-bottom: 0.25rem; }
+.eloadoi-jegyzet li { margin-bottom: 0.3rem; line-height: 1.45; }

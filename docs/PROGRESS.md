@@ -26,7 +26,7 @@
 2. Megosztás: az oldal Share menüje → „bárki a linkkel” – Tomi
 3. Személyes link a tudástárban (`SajatBemutato` kártya a Letölthető anyagoknál, admin telefonszám-oszlop, `003_telefon.sql`): kód kész, build rendben – a `003_telefon.sql` lefutott (Tomi, 11-02); commit + push megtörtént (83061cf, 11-02); utána a partnerek száma az admin oldalon (vagy ők maguk)
 4. Döntés: lapon belül lejátszható videó vagy marad a YouTube-link – Tomi (Nyitott döntések 2/4)
-5. Előadói jegyzet (vault `01 Projects/BEMER_Tudastar/Dog_Partnerprezentacio_Eloadoi_jegyzet.md`, 11-02): Tomi átnézi; ha jó, a tudástárban a bemutató-kártya alá kerül (lenyitható, csak partnereknek) – én
+5. ✅ Előadói jegyzet (vault `01 Projects/BEMER_Tudastar/Dog_Partnerprezentacio_Eloadoi_jegyzet.md`, Tomi jóváhagyta 11-02): a tudástárban a bemutató-kártya alatt lenyitható (`src/content/dogJegyzet.ts` – a vault-jegyzetből generálva, változáskor onnan frissítendő)
 6. Élesítés ellenőrzése: a 83061cf push után belépve megnézni a saját link-kártyát – Tomi / én
 
 ---
