@@ -508,6 +508,14 @@ export default function TudastarPage() {
                     t.nev
                   )}
                   {t.megjegyzes && <span className="cell-sub"> — {t.megjegyzes}</span>}
+                  {t.ugyfelUrl && (
+                    <span className="cell-sub">
+                      {" · "}
+                      <a href={t.ugyfelUrl} target="_blank" rel="noopener noreferrer">
+                        🔗 ügyfélnek küldhető link
+                      </a>
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

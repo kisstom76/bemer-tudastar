@@ -9,7 +9,11 @@ export const MEGOSZTOTT_MAPPA = mappa("14OgRiYfpsqBai3lkLxnlZDob_iWw6VG0");
 export const KOMPENDIUM_URL = fajl("15fdBe1R02LPfqELzP5uJR5DuP0sc7OGk");
 export const ESETISMERTETES_2020_URL = fajl("1JksZNunHPYSUhHg0DKf_FFimKT5gWYW4");
 
-export type AnyagTetel = { nev: string; url?: string; megjegyzes?: string };
+// Ügyfélnek küldhető példány: Drive `02_Areas/BEMER/09_Ugyfeleknek_Megosztott` – külön másolat,
+// fájlonként „bárki a linkkel – megtekintő” (a mappa maga nem nyilvános). Új ügyfél-anyag: másolat ide + ugyfelUrl.
+export const UGYFEL_MAPPA = mappa("1kmFVJmo3Bz3jUdYfYqc9lSdwTjIvTsFD");
+
+export type AnyagTetel = { nev: string; url?: string; ugyfelUrl?: string; megjegyzes?: string };
 export type AnyagCsoport = { id: string; cim: string; ikon: string; mappaUrl: string; leiras: string; tetelek: AnyagTetel[] };
 
 export const anyagCsoportok: AnyagCsoport[] = [
@@ -20,8 +24,8 @@ export const anyagCsoportok: AnyagCsoport[] = [
     mappaUrl: mappa("17qsBcdyBHedmGr-ozpnH2nebzUnamRyE"),
     leiras: "A terápia élettani háttere és orvosi esetismertetések.",
     tetelek: [
-      { nev: "BEMER Kompendium (HU)", url: KOMPENDIUM_URL },
-      { nev: "Orvosi esetismertetések 2020", url: ESETISMERTETES_2020_URL },
+      { nev: "BEMER Kompendium (HU)", url: KOMPENDIUM_URL, ugyfelUrl: fajl("16w6feA4v50ZFirJzEdiUtuqbR0gWGDVA") },
+      { nev: "Orvosi esetismertetések 2020", url: ESETISMERTETES_2020_URL, ugyfelUrl: fajl("1i0r7haGpgNXcGDZqNx7o5tit6aPh9z2W") },
     ],
   },
   {
@@ -32,7 +36,7 @@ export const anyagCsoportok: AnyagCsoport[] = [
     leiras: "Evo készülékek: mi van a dobozban, hol mi található – ügyfélnek is kiküldhető.",
     tetelek: [
       { nev: "Termékoktatás – BEMER Premium-Set Evo (2023-06)", url: fajl("1pJhd4MAYICQeVpQGmQ0UYuSnALNEcE_q") },
-      { nev: "Evo használati útmutató, kelet-európai (HU) – 2022-11, v06", url: fajl("1mKiZinGRVlhgPDK_nJ1_DPQUklGuT4Vh") },
+      { nev: "Evo használati útmutató, kelet-európai (HU) – 2022-11, v06", url: fajl("1mKiZinGRVlhgPDK_nJ1_DPQUklGuT4Vh"), ugyfelUrl: fajl("1pRMkYb0xv-fqKjhGc13i3nStfEM6l56R") },
       { nev: "Horse-Set kézikönyv – 2020-10, Rev 20.1", url: fajl("11DM6yTVwxouCmAOhKLCaPOlUz4HQrkJ3") },
       { nev: "Dog felhasználói kézikönyv – 2026-09, Rev 26.6", url: fajl("1vcqlGmu2hh7YGTMtIw-FJT2Ayg9silr3") },
       { nev: "LIVATY Lume használati útmutató – 2025-11", url: fajl("1H3gE07cAbLqLmwVCbhax4pFlLScC6gL7") },
@@ -45,13 +49,13 @@ export const anyagCsoportok: AnyagCsoport[] = [
     mappaUrl: mappa("1Ta5smgyeSoO64Tyuo7QbkgPEQn5WO5BM"),
     leiras: "Nyomtatható, magyar nyelvű anyagok kiadási dátummal – a legfrissebbet a BEMER Médiatárban és a BBO-ban is nézd meg.",
     tetelek: [
-      { nev: "Humán Evo hajtogatós szórólap, nyomdai – 2025-01, Rev 24.1 (legújabb)", url: fajl("1135DiCrBkuvKPuK2wWWbJmGCxhBbNvBl") },
-      { nev: "Humán Evo nagy prospektus – 2023-01, Rev 23.1", url: fajl("148vl5KE9UtcCitK5HjVzAs5iaUSwJJDu") },
-      { nev: "Hajtogatós: teljesítőképes – 2023-01", url: fajl("1494-wTHLqDyGebYXOeKAxi1oWpz5z2h6") },
-      { nev: "Hajtogatós: fájdalommentes – 2023-01", url: fajl("146CWr-DfAI5pe3llDFm-yPdvgQtVDd85") },
-      { nev: "Hajtogatós: sportos – 2023-01", url: fajl("1495AND3qZTaweKLRJ6ZHPt4KRngiJzYZ") },
-      { nev: "Hajtogatós: tudatos – 2023-01", url: fajl("14AbaHWTvo9uYk_4b3QmKRICvi_Ec1nGT") },
-      { nev: "Beauty Pack prospektus – 2023-01", url: fajl("146GKXV0PtJiBfJN8YaeZsUxFZSf14Y9b"), megjegyzes: "azóta Light Pack EVO néven" },
+      { nev: "Humán Evo hajtogatós szórólap, nyomdai – 2025-01, Rev 24.1 (legújabb)", url: fajl("1135DiCrBkuvKPuK2wWWbJmGCxhBbNvBl"), ugyfelUrl: fajl("1XfiARMSKTGrXDGJHY0ANa8MdFzvZ6GrO") },
+      { nev: "Humán Evo nagy prospektus – 2023-01, Rev 23.1", url: fajl("148vl5KE9UtcCitK5HjVzAs5iaUSwJJDu"), ugyfelUrl: fajl("122YtgHP7He42GvwpZpPbOsfWHu3GaoKS") },
+      { nev: "Hajtogatós: teljesítőképes – 2023-01", url: fajl("1494-wTHLqDyGebYXOeKAxi1oWpz5z2h6"), ugyfelUrl: fajl("1mpULRbFpU6FUft2LCVROD4OkdxIdTd_w") },
+      { nev: "Hajtogatós: fájdalommentes – 2023-01", url: fajl("146CWr-DfAI5pe3llDFm-yPdvgQtVDd85"), ugyfelUrl: fajl("1axIBA8YKBVTsrg87oyuwBKOuZ0X0EbPm") },
+      { nev: "Hajtogatós: sportos – 2023-01", url: fajl("1495AND3qZTaweKLRJ6ZHPt4KRngiJzYZ"), ugyfelUrl: fajl("1C_8olD7jNeTW5ITo7u3_zf582sAsLMLJ") },
+      { nev: "Hajtogatós: tudatos – 2023-01", url: fajl("14AbaHWTvo9uYk_4b3QmKRICvi_Ec1nGT"), ugyfelUrl: fajl("1MQSUC6Z-RmcpiclI5QjS3lTPeO8LpNuV") },
+      { nev: "Beauty Pack prospektus – 2023-01", url: fajl("146GKXV0PtJiBfJN8YaeZsUxFZSf14Y9b"), ugyfelUrl: fajl("1lc8GXxOhneWw341QxFzDZM5C7IGk6hNb"), megjegyzes: "azóta Light Pack EVO néven" },
       { nev: "Üzleti Evo prospektus – 2023-01, Rev 23.1", url: fajl("149kGpvKJp39ksW8utuohVBNj-XfUXGod") },
       { nev: "A1 kiállítási plakátok (Humán 19 db, Lovas 4 db) – 2023-04", url: mappa("1jadS01DavJ5euzFavZkkWfzbe8khMCdP"), megjegyzes: "magyarországi rendezvény előtt be kell jelenteni a BEMER-nek" },
     ],
@@ -106,7 +110,7 @@ export const anyagCsoportok: AnyagCsoport[] = [
     mappaUrl: mappa("1OsAymxKTE8H4qTF0KDEY7OqjMvLhw1eR"),
     leiras: "Pro- és Classic-tulajdonos ügyfeleknek: a régi készülékek engedélyei.",
     tetelek: [
-      { nev: "Pro / Classic használati útmutató, többnyelvű – 2021-01, Rev 21.1", url: fajl("1bh3PTPUf3liasoKnh9GCeQxCnI2UUut7") },
+      { nev: "Pro / Classic használati útmutató, többnyelvű – 2021-01, Rev 21.1", url: fajl("1bh3PTPUf3liasoKnh9GCeQxCnI2UUut7"), ugyfelUrl: fajl("1aBAHvQnyPrD2YC6XEd_eTIbBECJnDVVx") },
       { nev: "Technikai paraméterek – Pro (2012-10)", url: fajl("0B_lLZKOpL1Z6b2RveDdIbG9HelU") },
       { nev: "Technikai paraméterek – Classic (2013-03)", url: fajl("0B_lLZKOpL1Z6MHZJNlhMN1ptNVk") },
       { nev: "BEMER 3000 és Signal plus – készülékleírás", url: fajl("1bBC4tM-1DGirFcmZIfIXdoIRHe5Zso1U"), megjegyzes: "szkennelt" },
