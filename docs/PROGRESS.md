@@ -1,6 +1,6 @@
 # PROGRESS – BEMER Tudástár
 
-> **Hol tartunk (2026-11-02):** Az oldal él (tudastar.bterapia.hu). Ma elkészült az ügyfeleknek megosztott Drive-mappa és a BEMER Dog partnerprezentáció 2. verziója, amely a tudástárból a megnyitó partner saját elérhetőségével indul (a 003-as SQL lefutott, az élesítés Tomi jóváhagyására vár). Következő tudástár-lépés: az anyagok összelinkelése az eseményekkel és promóciókkal.
+> **Hol tartunk (2026-11-03):** Az oldal él (tudastar.bterapia.hu). 11-02-án felkerült a BEMER Dog bemutató (saját link + előadói jegyzet), az ügyfélnek küldhető linkek, és a tudástár tetején a „🆕 Friss anyagok” lista (a 8 legutóbbi újdonság, kattintásra odaugrik). Következő tudástár-lépés: az anyagok összelinkelése az eseményekkel és promóciókkal.
 
 > Állapotnapló. A tartós szabályok a [`CLAUDE.md`](../CLAUDE.md)-ben vannak, ide a történet és a nyitott pontok kerülnek.
 
@@ -15,6 +15,7 @@
 4. Tudás-fázis: cikkek a `tudastarba`-címkés vault-jegyzetekből + egyszerű keresés – én
 5. ✅ Kész (2026-11-02): a 4×5 képcsomag, az `anyagok.ts`, a vault-jegyzetek és a 27 parancsikon (Apps Script) elkészült. Kisebb maradék: a Dog „Első prezi” 7 PNG-je a prezentációs mappa mellé (régi `BEMER DOG/Első prezi`) – én, a Dog-prezentáció session után
 6. ✅ Kész: a médiakönyvtár-jegyzet felvéve a vault `Nyilvantartasok.md` regiszterébe (Tomi jóváhagyta)
+7. ✅ Kész (2026-11-02): „🆕 Friss anyagok” lista a „Most aktuális” doboz alatt (`src/components/FrissAnyagok.tsx`) – magától válogat az `anyagok.ts` / `felvetelek.ts` tételeinek `hozzaadva` mezőjéből, plusz a `src/content/ujdonsagok.ts` különálló újdonságaiból; a 8 legfrissebb látszik. **Szabály: új anyagnál/felvételnél mindig töltsd ki a `hozzaadva: "ÉÉÉÉ-HH-NN"` mezőt**, új kártyánál/funkciónál egy sor az `ujdonsagok.ts`-be. Apró maradék: a Letölthető anyagok alján elavult „Hamarosan: brossúrák…” sáv – én
 
 **B) Régi tartalmi hiányok (2026-10-01-i lista – át kell nézni, aktuális-e még)**
 - Dr. Horváth Ilona elérhetősége, fotó a bemutatkozáshoz – Tomi

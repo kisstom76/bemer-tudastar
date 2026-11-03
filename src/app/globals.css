@@ -393,3 +393,15 @@ footer.closing { border-top: 1px solid var(--border); margin-top: 3rem; padding-
 .eloadoi-jegyzet .ej-szakasz { margin-top: 0.9rem; }
 .eloadoi-jegyzet .ej-cim { font-weight: 600; margin-bottom: 0.25rem; }
 .eloadoi-jegyzet li { margin-bottom: 0.3rem; line-height: 1.45; }
+
+/* 🆕 Friss anyagok – a Most aktuális doboz alatt (FrissAnyagok.tsx) */
+.friss-anyagok { border: 1px solid var(--border); border-radius: 14px; background: var(--surface); padding: 0.9rem 1.1rem 1rem; margin: -1rem 0 2rem; }
+.friss-anyagok h2 { margin: 0 0 0.6rem; font-size: 1.05rem; }
+.friss-anyagok ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem 1.4rem; }
+@media (min-width: 760px) { .friss-anyagok ul { grid-template-columns: repeat(2, 1fr); } }
+.friss-anyagok li { display: flex; gap: 0.5rem; align-items: baseline; font-size: 0.88rem; line-height: 1.35; }
+.fa-date { flex: none; font-size: 0.78rem; color: var(--text-faint); font-variant-numeric: tabular-nums; min-width: 3.4rem; }
+.fa-ikon { flex: none; }
+.friss-anyagok a { color: var(--text); }
+.friss-anyagok a:hover { color: var(--accent); text-decoration: underline; }
+#sajat-bemutato, [id^="anyag-"] { scroll-margin-top: 1.25rem; }

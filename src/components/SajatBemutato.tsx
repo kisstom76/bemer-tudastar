@@ -23,7 +23,7 @@ export async function SajatBemutato() {
   const link = kesz ? szemelyesLink(DOG_BEMUTATO_URL, nev, telefon) : DOG_BEMUTATO_URL;
 
   return (
-    <div className="material-card">
+    <div className="material-card" id="sajat-bemutato">
       <div>
         <div className="m-title">🐶 BEMER Dog Line bemutató – a te elérhetőségeddel</div>
         <div className="m-meta">

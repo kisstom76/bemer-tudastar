@@ -10,6 +10,8 @@ import { EsemenyTabla } from "@/components/EsemenyTabla";
 import { MostAktualis } from "@/components/MostAktualis";
 import { Help } from "@/components/Help";
 import { SajatBemutato } from "@/components/SajatBemutato";
+import { FrissAnyagok } from "@/components/FrissAnyagok";
+import { kulonUjdonsagok } from "@/content/ujdonsagok";
 
 function maBudapesten(): string {
   return new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Budapest" }).format(new Date());
@@ -47,6 +49,7 @@ export default function TudastarPage() {
   return (
     <>
       <MostAktualis ma={ma} promociok={promociok} esemenyek={esemenyek} sorozatok={felvetelSorozatok} />
+      <FrissAnyagok anyagCsoportok={anyagCsoportok} sorozatok={felvetelSorozatok} kulon={kulonUjdonsagok} />
 
       {/* Bemutatkozás */}
       <div className="intro" id="intro">
@@ -492,7 +495,7 @@ export default function TudastarPage() {
         </p>
         <SajatBemutato />
         {anyagCsoportok.map((cs) => (
-          <div key={cs.id} className="material-card">
+          <div key={cs.id} id={`anyag-${cs.id}`} className="material-card">
             <div>
               <div className="m-title">
                 {cs.ikon} {cs.cim}
