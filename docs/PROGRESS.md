@@ -4,7 +4,7 @@
 
 > Állapotnapló. A tartós szabályok a [`CLAUDE.md`](../CLAUDE.md)-ben vannak, ide a történet és a nyitott pontok kerülnek.
 
-## Nyitott szálak (frissítve: 2026-11-02)
+## Nyitott szálak (frissítve: 2026-11-05)
 
 > Ez a projekt teljes nyitott listája – állapot-kérdésre ezt kell felsorolni (`CLAUDE.md`, „Állapot-kérdés”). A napi táblán a vault-projektek `Feladatok.md`-je látszik.
 
@@ -24,9 +24,11 @@
 - „Kiemelt tippek” és „Technikai ismeretek” tartalma; az adatvédelmi szöveg átolvasása; a publikus nyitólap szövegének összevetése az Irányelvek 10. fejezetével – én, Tomival
 - Heti Vault→tudástár szinkron rutin (promóciók, elérhetőségek) – terv, még nem indult
 
-**C) BEMER Dog partnerprezentáció** – a tudástár része: vault `01 Projects/BEMER_Tudastar/Dog_Partnerprezentacio.md` + 🟡 tétel a tudástár `Feladatok.md`-jében; élő link: https://claude.ai/artifact/Cw9K13RbQuVJfM5D3cqwSD
-1. Átnézés telefonon (3. kör: 5. és 10. dia fotója, 6. dia nagyobb betű) – Tomi
-2. Megosztás: az oldal Share menüje → „bárki a linkkel” – Tomi
+**C) BEMER Dog partnerprezentáció** – a tudástár része: vault `01 Projects/BEMER_Tudastar/Dog_Partnerprezentacio.md` + 🟡 tétel a tudástár `Feladatok.md`-jében; élő link (2026-11-05 óta saját tárhely, `public/bemutato/dog/`, rövid cím `/dog`, noindex): https://tudastar.bterapia.hu/dog
+1. Átnézés széles monitoron és telefonon (4. kör, 11-05: középre igazított asztali nézet, mobilon fotó felül) – Tomi
+2. ✅ Megosztás már nem kell: a saját címen bárkinek megnyílik, Claude-fiók nélkül (11-05). Molnár Pétert tájékoztatni – Tomi
+2a. Döntés: ár a 8. diára (Nyitott döntések 05/6; eddig BEMER-szabály miatt ár nélkül) – Tomi
+2b. Tomi jóváhagyása után: a két nézet (asztali + mobil) szabálya a prezentációkészítő skillbe – én
 3. Személyes link a tudástárban (`SajatBemutato` kártya a Letölthető anyagoknál, admin telefonszám-oszlop, `003_telefon.sql`): kód kész, build rendben – a `003_telefon.sql` lefutott (Tomi, 11-02); commit + push megtörtént (83061cf, 11-02); utána a partnerek száma az admin oldalon (vagy ők maguk)
 4. Döntés: lapon belül lejátszható videó vagy marad a YouTube-link – Tomi (Nyitott döntések 2/4)
 5. ✅ Előadói jegyzet (vault `01 Projects/BEMER_Tudastar/Dog_Partnerprezentacio_Eloadoi_jegyzet.md`, Tomi jóváhagyta 11-02): a tudástárban a bemutató-kártya alatt lenyitható (`src/content/dogJegyzet.ts` – a vault-jegyzetből generálva, változáskor onnan frissítendő)
