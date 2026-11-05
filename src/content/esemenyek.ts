@@ -1,4 +1,4 @@
-// Forrás: Vault · 02 Areas/BEMER/05_Promociok/BEMER_Esemenynaptar.md, „Jövőbeli események” (2026-10-14-i állapot).
+// Forrás: Vault · 02 Areas/BEMER/05_Promociok/BEMER_Esemenynaptar.md, „Jövőbeli események” (2026-11-05-i állapot).
 // Csak azok a sorok, ahol a „Tudástárba” oszlop üres; a `❌ saját` sorok nem kerülnek ide.
 // A regisztrációs szöveg partnereknek szól: belső megjegyzés nem kerül át.
 // Az esemény a záró napja (veg, ennek híján kezdet) után automatikusan eltűnik.
@@ -17,27 +17,12 @@ export type Esemeny = {
 
 export const esemenyek: Esemeny[] = [
   {
-    kezdet: "2026-10-15",
-    tipus: "infóest",
-    cim: "Információs est – Vérkeringésünk kulcsszerepe az egészség megőrzésében, 18:00–19:45",
-    helyszin: "online (Zoom webinar)",
-    jelentkezes: "Ingyenes, előzetes regisztrációval.",
-    link: "https://us06web.zoom.us/webinar/register/WN_HKorCFiMRd63CxLb2T2iZQ",
-  },
-  {
-    kezdet: "2026-10-16",
-    veg: "2026-10-17",
-    tipus: "képzés",
-    cim: "Group Leader (csoportvezetői) képzés + bevezetés a csapatépítésbe (BP+ és GL) – Nagy Béla",
-    helyszin: "1152 Budapest, Szentmihályi út 137.",
-    jelentkezes: "60 000 Ft/fő; regisztráció: szamlazas@bemer.hu",
-  },
-  {
     kezdet: "2026-11-18",
     tipus: "infóest",
-    cim: "Információs est, 18:00",
-    helyszin: "online",
-    jelentkezes: "A regisztrációs link később jön.",
+    cim: "Online BEMER előadás – vérkeringés, fizikai érterápia (az üzleti lehetőség is szóba kerül), 18:00–19:45",
+    helyszin: "online (Zoom webinar)",
+    jelentkezes: "Ingyenes, előzetes regisztrációval.",
+    link: "https://us06web.zoom.us/webinar/register/WN_dA8BkjD6QLukSH_SoyDWAQ",
   },
   {
     kezdet: "2026-11-20",
@@ -60,18 +45,26 @@ export const esemenyek: Esemeny[] = [
   {
     kezdet: "2026-11-27",
     tipus: "képzés",
-    cim: "ORT-képzés (orvostechnikai eszköz tanácsadó) – személyesen",
-    helyszin: "BEMER iroda (a pontos cím később)",
+    cim: "BEMER Orvostechnikai Eszköz Tanácsadó (OET) képzés és vizsga – személyesen",
+    helyszin: "BEMER Központ, Budapest",
     jelentkezes:
-      "Feltételek: csoportvezetői szint, áfakörös vállalkozás, NOR-regisztráció, EVO terápiás tanfolyam ≥60%, felsőfokú műszaki/orvosi végzettség, záróvizsga ≥90%.",
-    szobeli: true,
+      "Jelentkezési lappal a support@bemer.hu címen. Feltételek: GL (csoportvezetői) forgalmazói szint, áfakörös vállalkozás, felsőfokú orvosi/műszaki (vagy egyenértékű) végzettség, EVO terápiás tanfolyam ≥80%, érvényes NOR-regisztráció, személyes részvétel és záróvizsga ≥90%.",
   },
   {
-    kezdet: "2026-12-12",
+    kezdet: "2026-12-04",
+    tipus: "képzés",
+    cim: "AI oktatás – a mesterséges intelligencia gyakorlati alkalmazása, Fehérvári Péter (Gábor Dénes Egyetem, AI Tanszék), 9:30–17:00 (érkezés 9:00-tól)",
+    helyszin: "BEMER Központ, 1152 Budapest, Szentmihályi út 137., I. em.",
+    jelentkezes:
+      "Díjmentes; laptop vagy tablet kell. Jelentkezés: válasz a support@bemer.hu-ra. Parkolás ingyen a Pólus Center felszíni parkolójában.",
+  },
+  {
+    kezdet: "2026-12-05",
     tipus: "rendezvény",
-    cim: "BEMER Karácsony",
-    helyszin: "részletek később",
-    jelentkezes: "Az év egyik legkülönlegesebb közös BEMER-eseménye – érdemes szabaddá tenni a napot.",
+    cim: "BEMER Karácsony (szombat)",
+    helyszin: "Budavári Palota, Főőrség – Királyi Lovarda díszterme (parkolóház, lifttel)",
+    jelentkezes:
+      "Meghívót a kiemelt partnerek kapnak (a legfelső szint házastárssal). Aki nem kap meghívót, vagy hozná a házastársát: támogatott jegy 45 000 Ft/fő (a valós költség 110 000 Ft fölött); regisztráció a hírlevélben.",
   },
   {
     kezdet: "2027-01-16",
@@ -79,6 +72,14 @@ export const esemenyek: Esemeny[] = [
     cim: "Vezetői találkozó (szombat)",
     helyszin: "Budapest, Radisson Hotel",
     jelentkezes: "Jegy/regisztráció később.",
+    szobeli: true,
+  },
+  {
+    kezdet: "2027-01-23",
+    tipus: "rendezvény",
+    cim: "World of BEMER évnyitó – a Beck OD saját, kisebb World of BEMER-e a magyar teamnek (kb. 100–200 fő)",
+    helyszin: "később",
+    jelentkezes: "Előadókat várnak. Helyszín, jegy később.",
     szobeli: true,
   },
   {
@@ -104,7 +105,7 @@ export const esemenyek: Esemeny[] = [
     tipus: "rendezvény",
     cim: "World of BEMER – kelet-európai nagyrendezvény",
     helyszin: "Novotel kongresszusi központ",
-    jelentkezes: "Jegy/regisztráció később.",
+    jelentkezes: "Bárki meghívható; a jegy szokás szerint kb. 25–30 ezer Ft/fő. Jegy/regisztráció később.",
     szobeli: true,
   },
 ];
