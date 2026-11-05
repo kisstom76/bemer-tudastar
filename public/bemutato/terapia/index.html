@@ -20,7 +20,9 @@
      - TELEFON (alap): fent a fotó/ábra, alatta a szöveg; hüvelykujjal lapozható.
      - SZÁMÍTÓGÉP (≥900 px széles és ≥560 px magas): középre igazított „színpad” (legfeljebb 1680 px),
        a betűméret a képernyőhöz nő. Fotós diák: kép balra, szöveg jobbra; szöveges diák: középen.
-     - „Kutatások” lap: külön, lenyitható réteg (dialog) – a 6. és 7. diáról nyílik, nem része a lapozásnak. */
+     - Mélyítő lapok: külön, lenyitható rétegek (dialog), nem részei a lapozásnak –
+       „Kutatások” a 6. és 7. diáról (data-kut), „Engedélyek” a 2. diáról (data-lap="eng"),
+       „Esetek” a Kutatások lapról (data-lap="eset"). */
   :root{
     --bg:#ECE3DC; --paper:#FFFFFF; --ink:#4B4A50; --ink-soft:#6F6D73; --muted:#8E898C;
     --line:#D8CFCB; --accent:#EB5A23; --accent-ink:#C2441A; --dark:#3F3E43; --cell:#C9472B;
@@ -192,6 +194,7 @@
   @media (max-width:360px){.stats{grid-template-columns:1fr}}
   /* Telefon: a 7. (hat kártya) és a 10. (három út) dia férjen el görgetés nélkül */
   @media (max-width:899px){
+    .s-rov .src{display:none} /* a 2. dia forrássora telefonon az Engedélyek lapon látszik */
     .s-mi .body{gap:10px}
     .s-mi .body + .body{padding-top:2px}
     .s-mi .inst{gap:6px}
@@ -317,7 +320,7 @@
     </div></section>
 
     <!-- 2. A BEMER röviden -->
-    <section class="slide" aria-label="2. dia"><div class="stage">
+    <section class="slide s-rov" aria-label="2. dia"><div class="stage">
       <div class="photo"><img src="/bemutato/terapia/h02.jpg" alt="BEMER Evo vezérlőegység" style="object-position:50% 50%"></div>
       <div class="body">
         <p class="eyebrow">A BEMER röviden</p>
@@ -329,6 +332,7 @@
         </ul>
         <p class="note">A partnered elmondja, <b>neki mit jelent a BEMER</b> – kérdezd meg!</p>
         <p class="src">EU MDR-tanúsítvány: mdc (0483) · IIa osztály · érvényes 2027. 10. 28-ig</p>
+        <button class="linkbtn" type="button" data-lap="eng">Engedélyek részletesen →</button>
       </div>
     </div></section>
 
@@ -519,6 +523,7 @@
         <button class="closebtn" type="button" id="kut-close">Vissza ✕</button>
       </div>
       <p class="lede">Az alábbi vizsgálatok szakfolyóiratban jelentek meg. Mindegyiknél leírjuk a korlátait is – és azt is, ahol a BEMER nem volt jobb a látszatkezelésnél.</p>
+      <button class="linkbtn" type="button" data-lap="eset">Magyar orvosok tapasztalatai →</button>
       <p class="kut-sec">A mikrokeringés mérése</p>
       <div class="study"><h3>Klopp, Niemer, Schmidt 2013</h3><p class="meta">J Complement Integr Med · Mikrocirkulációs Intézet, Berlin</p><p>Randomizált, kettős vak, placebo-kontrollált vizsgálat 12 férfivel. A mikrokeringés négy mutatója mérhetően javult (pl. +27% áramló hajszálér, +28% oxigénkihasználás), és a hatás a kezelés abbahagyása után egy nappal is kimutatható volt. A placebónál nem volt változás.</p><p class="caveat">Korlát: kis létszám, 3 napos szakaszok; a vezető szerző a BEMER-jel fejlesztője. · <a href="https://doi.org/10.1515/jcim-2013-0028" target="_blank" rel="noopener">a közlemény</a></p></div>
       <p class="kut-sec">Kórházban</p>
@@ -531,6 +536,48 @@
       <p class="kut-sec">Ahol nem volt különbség</p>
       <div class="study neg"><h3>Karcı és mtsai 2026 – összefoglaló elemzés</h3><p class="meta">Bioelectromagnetics · mozgásszervi fájdalom</p><p>Hét randomizált vizsgálat összesítése: a fájdalom csökkentésében a BEMER nem múlta felül a látszatkezelést.</p><p class="caveat">Amit fontos tudni: a BEMER nem fájdalomcsillapítónak készült, hanem a mikrokeringés támogatására – a fájdalom és a mikrokeringés mérése nem ugyanaz. · <a href="https://doi.org/10.1002/bem.70057" target="_blank" rel="noopener">a közlemény</a></p></div>
       <div class="study neg"><h3>Multanen és mtsai 2018 – Jyväskylä</h3><p class="meta">Bioelectromagnetics · fibromialgia</p><p>Jó minőségű finn vizsgálat 108 nővel: 12 hét matracos kezelés után a fájdalomban nem volt különbség a látszatkezeléshez képest.</p><p class="caveat">A mikrokeringés műszeres mérésében más vizsgálatok kimutatható változást találtak. · <a href="https://doi.org/10.1002/bem.22127" target="_blank" rel="noopener">a közlemény</a></p></div>
+    </div>
+  </div>
+</dialog>
+
+<!-- Engedélyek lap: a 2. diáról nyílik -->
+<dialog class="kut" id="eng" aria-labelledby="eng-title">
+  <div class="kut-in">
+    <div class="kut-wrap">
+      <div class="kut-head">
+        <h2 id="eng-title">Engedélyek <b>részletesen</b></h2>
+        <button class="closebtn" type="button" data-close>Vissza ✕</button>
+      </div>
+      <p class="lede">A BEMER Evo orvostechnikai eszköz – ezt hivatalos dokumentumok igazolják. Itt láthatod, ki mit ellenőrzött, és mire szól az engedély.</p>
+      <p class="kut-sec">Európai Unió</p>
+      <div class="study"><h3>EU MDR-tanúsítvány</h3><p class="meta">EU orvostechnikai rendelet (MDR, 2017/745) · független bejelentett szervezet</p><p>A gyártó minőségirányítási rendszerét a német <b>mdc medical device certification GmbH</b> (Stuttgart, bejelentett szervezet: 0483) tanúsította az EU orvostechnikai rendelete szerint. A tanúsítvány a BEMER Evo vezérlőegységre és az applikátorokra (B.Body, B.Bed, B.Spot, B.Pad, B.Sit, B.Light) szól.</p><p class="caveat">Érvényes: 2023. 02. 15. – 2027. 10. 28. · nyilvántartási szám: D1304700012</p></div>
+      <div class="study"><h3>IIa kockázati osztály</h3><p class="meta">A gyártó EU megfelelőségi nyilatkozata · BEMER Int. AG, Triesen (Liechtenstein)</p><p>A gyártó nyilatkozata szerint a BEMER Evo vezérlőegység és applikátorai <b>IIa osztályú orvostechnikai eszközök</b>. Ebben az osztályban a megfelelőséget nem csak a gyártó, hanem egy független bejelentett szervezet is ellenőrzi.</p><p class="caveat">Kiállítva: 2023. 02. 15. · érvényes 2027. 10. 28-ig</p></div>
+      <p class="kut-sec">Egyesült Államok</p>
+      <div class="study"><h3>FDA 510(k) – K231368</h3><p class="meta">U.S. Food and Drug Administration · döntés: 2023. 06. 09.</p><p>Az amerikai gyógyszer- és élelmiszer-felügyelet (FDA) 510(k) eljárásában a <b>BEMER Therapy System Evo</b> forgalmazható az Egyesült Államokban. A kérelmező a BEMER Int. AG.</p><p class="caveat">Amit fontos tudni: az USA-ban elfogadott felhasználási kör szűk – a helyi vérkeringés átmeneti fokozása egészséges lábizmokban, és egészséges izmok stimulálása az izomteljesítmény javítására. A 510(k) azt jelenti, hogy az FDA egy már forgalomban lévő eszközzel lényegében egyenértékűnek találta – ez nem a hatás orvosi jóváhagyása. · <a href="https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K231368" target="_blank" rel="noopener">az FDA nyilvántartása</a></p></div>
+      <p class="src">Források: mdc MDR-tanúsítvány és a BEMER Int. AG EU megfelelőségi nyilatkozatai (2023) · FDA 510(k) adatbázis, K231368</p>
+    </div>
+  </div>
+</dialog>
+
+
+<!-- Esetek lap: a Kutatások lapról nyílik (négyszemközti bemutatóhoz – Tamás döntése, 2026-11-05) -->
+<dialog class="kut" id="eset" aria-labelledby="eset-title">
+  <div class="kut-in">
+    <div class="kut-wrap">
+      <div class="kut-head">
+        <h2 id="eset-title">Magyar orvosok <b>tapasztalatai</b></h2>
+        <button class="closebtn" type="button" data-close>Vissza ✕</button>
+      </div>
+      <p class="lede">Hazai orvosok a saját betegeiknél figyelték meg a BEMER-t, a szokásos kezelés mellett. Az eredményeiket a BEMER orvosi esetismertető füzete gyűjtötte össze – ez gyártói kiadvány, nem független szakfolyóirat, ezért mindegyiknél leírjuk a korlátot is.</p>
+      <p class="kut-sec">Mozgásszervi panaszok</p>
+      <div class="study"><h3>Derékfájás és térdkopás – Budai Irgalmasrendi Kórház</h3><p class="meta">Prof. Dr. Bender Tamás és mtsai · 100 beteg · randomizált, kettős vak, placebo-kontrollált</p><p>Három hét gyógytorna és fizioterápia mellé a betegek fele valódi BEMER-kezelést, fele látszatkezelést kapott. Derékfájásnál rövid távon csökkent a nyugalmi fájdalom és a fáradtságérzet; térdkopásnál hosszabb távon javult a fáradtság és a vitalitás.</p><p class="caveat">Korlát: nem minden mért értékben volt különbség, és a derékfájásnál a hatás később nem maradt meg – a szerzők szerint tartós használat kell. Kísérleti („pilot”) vizsgálat.</p></div>
+      <p class="kut-sec">Fülzúgás</p>
+      <div class="study"><h3>Fülzúgás – Szentes, Dr. Bugyi István Kórház</h3><p class="meta">Dr. Szilágyi Imre osztályvezető főorvos · 214 beteg · kettős vak, placebo-kontrollált</p><p>Mindkét csoport ugyanazt a gyógyszeres kezelést kapta, az egyik mellé 8 napig valódi BEMER-kezelést, a másik mellé látszatkezelést (kikapcsolt készülékkel). A valódi kezelést kapóknál 22%-nál megszűnt, 47%-nál javult a fülzúgás; a látszatkezelést kapóknál 9%-nál szűnt meg, 37%-nál javult.</p><p class="caveat">Korlát: a betegeket a felvételi sorszám szerint osztották két csoportba, nem sorsolással; régebbi készülékgeneráció (BEMER 3000).</p></div>
+      <p class="kut-sec">Érszűkület</p>
+      <div class="study"><h3>Járási fájdalom érszűkületben – Honvédkórház, Angiológia</h3><p class="meta">Bernát Sándor Iván Ph.D. · 30 beteg · futópadon mért járástávolság</p><p>Nyolc BEMER-kezelés (2 × 8 perc) után a fájdalom nélkül megtett távolság átlagosan 57%-kal, a legnagyobb megtett távolság 37%-kal nőtt. Az ezt követő gyógyszeres infúzióval együtt a javulás összesen kb. 82–84% volt.</p><p class="caveat">Korlát: kis létszám, nem sorsolásos; a kezelések sorrendje mindenkinél ugyanaz volt. Egy hét látszatidőszak mérése is benne van – az ottani kisebb javulást nem számították a BEMER javára.</p></div>
+      <p class="kut-sec">Alvás</p>
+      <div class="study"><h3>Alvászavar – Belváros-Lipótvárosi Egészségügyi Szolgálat</h3><p class="meta">Dr. Csécsei Éva rendelésvezető főorvos · 87 + 47 beteg · 3 hónap</p><p>Három hónap BEMER-kezelés (az alvóprogrammal együtt) után az alvászavar súlyosságát mérő pontszám kb. 35%-kal csökkent (20,4-ről 13,2-re); az alvásnaplót vezetőknél az alvászavar pontszáma 8-ról átlagosan 3-ra.</p><p class="caveat">Korlát: nincs kontrollcsoport, és az eredmény a betegek saját kérdőívén alapul. A szerző szerint az első lépés mindig az alvási szokások rendbetétele.</p></div>
+      <p class="src">Forrás: BEMER orvosi esetismertetések/tanulmányok, VI. kiadás, 2020 (14., 24–25., 29., 50–51. o.). A BEMER nem gyógyszer – a kezelések mellé ajánlott, nem helyettük.</p>
     </div>
   </div>
 </dialog>
@@ -564,6 +611,9 @@ function partnerAJelbol(jel){
   var count = document.getElementById('count');
   var prev = document.getElementById('prev'), next = document.getElementById('next');
   var kut = document.getElementById('kut');
+  function lapNyitva(){ return !!document.querySelector('dialog[open]'); }
+  function lapNyit(d){ document.querySelectorAll('dialog[open]').forEach(function(o){ if (o !== d) lapZar(o); }); if (d.showModal) d.showModal(); else d.setAttribute('open', ''); d.querySelector('.kut-in').scrollTop = 0; }
+  function lapZar(d){ if (d.close) d.close(); else d.removeAttribute('open'); }
 
   for (var k = 0; k < n; k++){ var s = document.createElement('span'); s.className = 'seg'; s.appendChild(document.createElement('i')); segs.appendChild(s); }
   var segEls = segs.children;
@@ -596,17 +646,23 @@ function partnerAJelbol(jel){
   prev.addEventListener('click', function(){ go(cur - 1); });
   next.addEventListener('click', function(){ go(cur + 1); });
   document.addEventListener('keydown', function(e){
-    if (kut.open) return;
+    if (lapNyitva()) return;
     if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' '){ e.preventDefault(); go(cur + 1); }
     else if (e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); go(cur - 1); }
   });
   paint();
 
-  /* Kutatások lap */
+  /* Mélyítő lapok: Kutatások (data-kut), Engedélyek (data-lap="eng"), Esetek (data-lap="eset") */
   document.querySelectorAll('[data-kut]').forEach(function(b){
-    b.addEventListener('click', function(){ if (kut.showModal) kut.showModal(); else kut.setAttribute('open', ''); kut.querySelector('.kut-in').scrollTop = 0; });
+    b.addEventListener('click', function(){ lapNyit(kut); });
   });
-  document.getElementById('kut-close').addEventListener('click', function(){ if (kut.close) kut.close(); else kut.removeAttribute('open'); });
+  document.querySelectorAll('[data-lap]').forEach(function(b){
+    b.addEventListener('click', function(){ var d = document.getElementById(b.getAttribute('data-lap')); if (d) lapNyit(d); });
+  });
+  document.getElementById('kut-close').addEventListener('click', function(){ lapZar(kut); });
+  document.querySelectorAll('[data-close]').forEach(function(b){
+    b.addEventListener('click', function(){ lapZar(b.closest('dialog')); });
+  });
 
   /* Vörösvértestek a hajszálerekben */
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

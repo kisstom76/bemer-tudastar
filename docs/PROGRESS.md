@@ -1,6 +1,6 @@
 # PROGRESS – BEMER Tudástár
 
-> **Hol tartunk (2026-11-05):** A terápiás ügyfélbemutató él (tudastar.bterapia.hu/terapia); a tudástárban a kártyája szerda (11-11) 19:00-ig a partnereknek lakatos, utána magától kinyílik – Tomi hétfőn átnézi, szerdán a partnermeetingen bemutatja. A heti partnerlevél ezentúl minden hétfőn magától előjön (11-16-tól). A kutyás bemutató (/dog) az ár-döntésre (05/6).
+> **Hol tartunk (2026-11-05):** A terápiás bemutató három javítása (IIa + EU MDR, „egyedülálló”, 6 hét) él; két új mélyítő lap is él – „Engedélyek” (MDR + FDA) és „Magyar orvosok tapasztalatai” (4 eset). A kártya szerda (11-11) 19:00-kor nyílik, Tomi hétfőn átnézi. A kutyás bemutató (/dog) az ár-döntésre (05/6).
 
 > Állapotnapló. A tartós szabályok a [`CLAUDE.md`](../CLAUDE.md)-ben vannak, ide a történet és a nyitott pontok kerülnek.
 
@@ -42,7 +42,9 @@
 4. Ellenőrzés 11-11 19:00 után: partnerként (nem admin) belépve kinyílt-e a kártya és megjelent-e a Friss anyagok sor – Tomi / én. (Partnerfiókkal nyitás előtt nem tudtam belépni; a lakatos ágat kódból ellenőriztem.)
 5. Hétfő 11-09: Tomi felkészülése + a heti partnerlevél elküldése (vault `02 Areas/BEMER/Feladatok.md`, 🔴) – Tomi
 6. ✅ Állandó heti partnerlevél (Tomi igen, 05/11): minden hétfőn a reggeli futás elkészíti a levelet + a szerdai emlékeztetőt (vault `Csapatmeeting.md` 1., `Partnerlevel_Sablon.md`), Tomi küldi, az emlékeztetőt Gmailben szerda 17:30-ra ütemezi; első automatikus hétfő 2026-11-16
-7. Utána: üzleti bemutató (partnerség) ugyanebben a formában – később
+7. ✅ Tomi esti visszajelzése (11-05, vault 9. pont): 2./5./8. dia javítva és élesítve (1ee6ada) – IIa + EU MDR, „egyedülálló” („nem ismerünk más…” formában), 6 hét bázisprogram. FDA: 510(k) K231368 (2023) az FDA hivatalos adatbázisából, szűk amerikai felhasználási körrel (vault `07_Evo_MDR_Tanusitvany_es_Engedelyek.md`). 90+ intézmény: csak szóban, „a BEMER tájékoztatása szerint” – térképes lap nem lesz (nincs lista)
+8. Mélyítő lapok (dialog, a lapozáson kívül; közös `lapNyit`/`lapZar`, `data-lap="<id>"` gomb, `data-close` bezárás): **Engedélyek** (`#eng`, a 2. diáról; telefonon a 2. dia `.src` sora rejtve) és **Esetek** (`#eset`, „Magyar orvosok tapasztalatai”, a Kutatások lapról – Tomi új döntése: négyszemközti bemutatóban mehet eset; 4 esetismertetés a BEMER 2020-as füzetéből korláttal). Vizuálisan ellenőrizve (1440×900, 1280×720, 375×812, 375×667), build rendben, előadói jegyzet + `terapiaJegyzet.ts` frissítve. ✅ Tomi igen (05/15) → élesítve 2026-11-05
+9. Utána: üzleti bemutató (partnerség) ugyanebben a formában – később
 
 ---
 

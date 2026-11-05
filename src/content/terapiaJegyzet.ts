@@ -178,7 +178,8 @@ export const terapiaEloadoiJegyzet: JegyzetSzakaszB[] = [
           "**Cél:** keret – mi ez, és ki vagy te. Itt jön a saját sztorid.",
           "**Mondd:** „Ez egy IIa osztályú orvostechnikai eszköz – európai (MDR) tanúsítvánnyal –, amit otthon használsz, gyógyszer nélkül, a többi kezelés mellett. Én azért kezdtem, mert…” (30 mp, a saját szavaiddal)",
           "**Kérdezd:** „Ismerős neked ilyesmi?”",
-          "**Ne:** „mindenre jó”, „csodaszer”. A BEMER a tudatos életmód csapatjátékosa, nem csodaszer."
+          "**Ha az engedélyről kérdez:** nyisd meg az „Engedélyek részletesen” lapot (gomb a dián): EU MDR-tanúsítvány, IIa osztály, és az amerikai FDA 510(k) bejegyzés. Az FDA-nál mondd el azt is, hogy az USA-ban szűk célra fogadták el (helyi vérkeringés egészséges lábizmokban, izomteljesítmény).",
+          "**Ne:** „mindenre jó”, „csodaszer”. A BEMER a tudatos életmód csapatjátékosa, nem csodaszer. Azt se, hogy „az FDA jóváhagyta a hatását” – a 510(k) forgalmazási engedély, nem a hatás jóváhagyása."
         ]
       }
     ]
@@ -249,7 +250,8 @@ export const terapiaEloadoiJegyzet: JegyzetSzakaszB[] = [
         "pontok": [
           "**Cél:** nem csak mi mondjuk – egyetemi klinika, kórház, élsport.",
           "**Mondd:** röviden, név szerint, ami a dián van. Ha sportoló: a norvég olimpiai központ és az OSEI-vizsgálat; ha idősebb vagy szívbeteg: Halle és a PTE.",
-          "**Ne:** „az orvosok is ajánlják”, „a kórházak ezt használják gyógyításra”, „80–90 kórház” (nincs rá lista). Orvost, kórházat ne nevezz partnernek."
+          "**Ha a hazai intézményekről kérdez:** „A BEMER tájékoztatása szerint itthon több mint 90 kórházban és szakrendelőben használják.” Név szerint csak a dián szereplőket mondd – lista nincs.",
+          "**Ne:** „az orvosok is ajánlják”, „a kórházak ezt használják gyógyításra”; a 90+ ne kerüljön a „BEMER tájékoztatása szerint” nélkül. Orvost, kórházat ne nevezz partnernek."
         ]
       }
     ]
@@ -320,8 +322,21 @@ export const terapiaEloadoiJegyzet: JegyzetSzakaszB[] = [
         "pontok": [
           "**„Kevés alany, a BEMER fizette.”** – „Igazad van, ezért írtuk oda a korlátokat is. A mikrokeringés mérése drága, ezért kicsik a vizsgálatok.”",
           "**„Fájdalomra nem jobb a placebónál.”** – „Így van, ezt mi is odaírtuk. A BEMER nem fájdalomcsillapító, a mikrokeringést támogatja – a kettő nem ugyanaz.”",
-          "**„Hány kórház használja?”** – csak a dián név szerint szereplőket mondd; „80–90 kórház” – nincs rá lista, ne mondd. A „Honvédkórház COVID-protokoll” nem létezik – tilos.",
+          "**„Hány kórház használja?”** – név szerint csak a dián szereplőket mondd; a 90+ csak így: „a BEMER tájékoztatása szerint itthon több mint 90 kórházban és szakrendelőben” (lista nincs). A „Honvédkórház COVID-protokoll” nem létezik – tilos.",
           "**Ne mondd:** a 30 napos Charité-számokat, a 60 fős cukorbeteg-vizsgálatot, a „80 készülékes vizsgálatot” – nincs azonosított publikációjuk. A drezdai sejtkísérletet (daganat) ügyfélnek ne hozd fel."
+        ]
+      }
+    ]
+  },
+  {
+    "cim": "Esetek lap – „Magyar orvosok tapasztalatai”",
+    "blokkok": [
+      {
+        "tipus": "lista",
+        "pontok": [
+          "**Hol:** a Kutatások lap tetején a gomb. Nem része a lapozásnak – csak akkor nyisd meg, ha az ügyfél panaszához illik (derékfájás/térdkopás, fülzúgás, érszűkület miatti járási fájdalom, alvászavar). Négyszemközti bemutatóra készült.",
+          "**Mondd:** „Magyar orvosok a saját betegeiknél figyelték meg, a szokásos kezelés mellett – ezt tapasztalták.” Olvasd fel a korlátot is.",
+          "**Ne:** „ez neked is így lesz”, „meggyógyítja”; a számokat ne kerekítsd felfelé. Gyártói kiadvány (BEMER orvosi esetismertetések, 2020), nem független folyóirat – ha kérdezik, mondd ki."
         ]
       }
     ]
@@ -333,7 +348,7 @@ export const terapiaEloadoiJegyzet: JegyzetSzakaszB[] = [
         "tipus": "lista",
         "pontok": [
           "**„Ez is csak egy mágnesterápia?”** – „Nem minden mágnesterápiás készülék ugyanaz – a jel formája számít. A BEMER-jelet kifejezetten a vazomóció mintájára fejlesztették.” (Más márkát név szerint ne hasonlíts.)",
-          "**„Milyen engedélye van?”** – IIa kockázati osztályú orvostechnikai eszköz, az európai orvostechnikai rendelet (MDR, 2017/745) szerint tanúsítva: a bejelentett szervezet a német mdc (azonosító: 0483), a tanúsítvány 2027. 10. 28-ig érvényes (forrás: a BEMER EU-s tanúsítványa és megfelelőségi nyilatkozata). Az amerikai FDA-engedélyről képzésen hallottunk, de a dokumentum még nincs meg nálunk – ha kérdezik: „utánanézek és küldöm”.",
+          "**„Milyen engedélye van?”** – IIa kockázati osztályú orvostechnikai eszköz, az európai orvostechnikai rendelet (MDR, 2017/745) szerint tanúsítva: a bejelentett szervezet a német mdc (azonosító: 0483), a tanúsítvány 2027. 10. 28-ig érvényes (forrás: a BEMER EU-s tanúsítványa és megfelelőségi nyilatkozata). Az USA-ban az FDA 510(k) eljárásában forgalmazható (K231368, 2023), szűk felhasználási körrel (helyi vérkeringés egészséges lábizmokban, izomteljesítmény) – mindez a dián az „Engedélyek részletesen” lapon.",
           "**„Miért ilyen drága?”** – előbb az érték: gyári gyártás, orvostechnikai eszköz, hosszú élettartam, az egész család használja; az ár szóban.",
           "**„A Marketplace-en olcsóbb.”** – „Nálam beüzemelés, utánkövetés, gondozás jár – nem egyedül maradsz vele.”"
         ]
