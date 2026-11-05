@@ -1,6 +1,6 @@
 # PROGRESS – BEMER Tudástár
 
-> **Hol tartunk (2026-11-05):** A terápiás ügyfélbemutató él (tudastar.bterapia.hu/terapia); a tudástárban a kártyája szerda (11-11) 19:00-ig a partnereknek lakatos, utána magától kinyílik – Tomi hétfőn átnézi, szerdán a partnermeetingen bemutatja. Nyitott: az állandó heti partnerlevél módja (05/11) Tomi igenjére vár; a kutyás bemutató (/dog) az ár-döntésre (05/6).
+> **Hol tartunk (2026-11-05):** A terápiás ügyfélbemutató él (tudastar.bterapia.hu/terapia); a tudástárban a kártyája szerda (11-11) 19:00-ig a partnereknek lakatos, utána magától kinyílik – Tomi hétfőn átnézi, szerdán a partnermeetingen bemutatja. A heti partnerlevél ezentúl minden hétfőn magától előjön (11-16-tól). A kutyás bemutató (/dog) az ár-döntésre (05/6).
 
 > Állapotnapló. A tartós szabályok a [`CLAUDE.md`](../CLAUDE.md)-ben vannak, ide a történet és a nyitott pontok kerülnek.
 
@@ -41,7 +41,7 @@
 3. ✅ Élesítve 2026-11-05 (3953650): /terapia 200, `X-Robots-Tag: noindex…`, robots-tiltás. Tudástár-kártya `src/components/TerapiaBemutato.tsx` (személyes link + előadói jegyzet táblázatokkal, `src/content/terapiaJegyzet.ts` – a vault-jegyzetből generálva, változáskor onnan frissítendő). **Lakat:** `TERAPIA_NYITAS` (`bemutatok.ts`, 2026-11-11 19:00 +01:00) előtt a partner csak a lakatos fejlécet kapja – link és jegyzet a HTML-be sem kerül; az admin végig látja („Admin-előnézet” jelzéssel). A `/tudastar` `force-dynamic`, így a nyitás gyorsítótár nélkül, pontosan történik. A „Friss anyagok” sor (`ujdonsagok.ts`, `megjelenik` mező) is ekkortól látszik
 4. Ellenőrzés 11-11 19:00 után: partnerként (nem admin) belépve kinyílt-e a kártya és megjelent-e a Friss anyagok sor – Tomi / én. (Partnerfiókkal nyitás előtt nem tudtam belépni; a lakatos ágat kódból ellenőriztem.)
 5. Hétfő 11-09: Tomi felkészülése + a heti partnerlevél elküldése (vault `02 Areas/BEMER/Feladatok.md`, 🔴) – Tomi
-6. Állandó heti partnerlevél (hétfőn levél + szerdai emlékeztető) – Tomi igenjére vár (vault Nyitott_Dontesek 05/11), utána vault-szabály – én
+6. ✅ Állandó heti partnerlevél (Tomi igen, 05/11): minden hétfőn a reggeli futás elkészíti a levelet + a szerdai emlékeztetőt (vault `Csapatmeeting.md` 1., `Partnerlevel_Sablon.md`), Tomi küldi, az emlékeztetőt Gmailben szerda 17:30-ra ütemezi; első automatikus hétfő 2026-11-16
 7. Utána: üzleti bemutató (partnerség) ugyanebben a formában – később
 
 ---
