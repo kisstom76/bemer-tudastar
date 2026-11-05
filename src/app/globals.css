@@ -405,3 +405,13 @@ footer.closing { border-top: 1px solid var(--border); margin-top: 3rem; padding-
 .friss-anyagok a { color: var(--text); }
 .friss-anyagok a:hover { color: var(--accent); text-decoration: underline; }
 #sajat-bemutato, [id^="anyag-"] { scroll-margin-top: 1.25rem; }
+
+/* Terápiás bemutató – lakatos kártya és táblázatos előadói jegyzet */
+.material-card.lakatos { opacity: 0.85; }
+.lakat-szoveg { margin: 0; font-weight: 600; }
+.admin-elonezet { margin: 0; padding: 0.5rem 0.7rem; border-left: 3px solid var(--accent, #EB5A23); background: rgba(235, 90, 35, 0.06); font-size: 0.85rem; }
+.eloadoi-jegyzet .ej-kiemelt { margin: 0.2rem 0 0.5rem; padding-left: 0.7rem; border-left: 3px solid rgba(235, 90, 35, 0.4); font-size: 0.9rem; line-height: 1.45; }
+.eloadoi-jegyzet .ej-bekezdes { margin: 0.4rem 0; line-height: 1.45; }
+.eloadoi-jegyzet .table-wrap { margin: 0.4rem 0 0.6rem; }
+.eloadoi-jegyzet table { font-size: 0.84rem; }
+.eloadoi-jegyzet td { line-height: 1.4; min-width: 7rem; }

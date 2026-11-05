@@ -4,13 +4,17 @@ const NOINDEX = "noindex, nofollow, noarchive, nosnippet";
 
 const nextConfig: NextConfig = {
   // Ügyfeleknek szóló, bejelentkezés nélkül nyitható bemutatók (statikus HTML a public/bemutato alatt).
-  // Rövid cím: /dog → public/bemutato/dog/index.html. Keresőbe nem kerülnek.
+  // Rövid címek: /dog → public/bemutato/dog/index.html, /terapia → public/bemutato/terapia/index.html. Keresőbe nem kerülnek.
   async rewrites() {
-    return [{ source: "/dog", destination: "/bemutato/dog/index.html" }];
+    return [
+      { source: "/dog", destination: "/bemutato/dog/index.html" },
+      { source: "/terapia", destination: "/bemutato/terapia/index.html" },
+    ];
   },
   async headers() {
     return [
       { source: "/dog", headers: [{ key: "X-Robots-Tag", value: NOINDEX }] },
+      { source: "/terapia", headers: [{ key: "X-Robots-Tag", value: NOINDEX }] },
       { source: "/bemutato/:path*", headers: [{ key: "X-Robots-Tag", value: NOINDEX }] },
     ];
   },

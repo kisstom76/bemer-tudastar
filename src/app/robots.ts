@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/tudastar", "/admin", "/dog", "/bemutato", "/auth", "/nincs-hozzaferes", "/lezarva"],
+      disallow: ["/tudastar", "/admin", "/dog", "/terapia", "/bemutato", "/auth", "/nincs-hozzaferes", "/lezarva"],
     },
   };
 }

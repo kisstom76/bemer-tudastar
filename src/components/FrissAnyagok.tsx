@@ -1,6 +1,7 @@
 import type { AnyagCsoport } from "@/content/anyagok";
 import type { FelvetelSorozat } from "@/content/felvetelek";
 import { FRISS_DARAB, type Ujdonsag } from "@/content/ujdonsagok";
+import { nyitva } from "@/content/bemutatok";
 
 // A „Friss anyagok” lista magától válogat a tételek `hozzaadva` mezőjéből – külön karbantartás nem kell.
 // Az egy napon, egy helyre felkerült tételek egy sorba kerülnek („Brossúrák és szórólapok: 9 új anyag”).
@@ -50,7 +51,7 @@ export function FrissAnyagok({
   );
 
   // Rendezés dátum szerint csökkenően; azonos napon a sorrend marad (különálló újdonságok elöl).
-  const lista = [...kulon, ...anyagok, ...felvetelek]
+  const lista = [...kulon.filter((u) => !u.megjelenik || nyitva(u.megjelenik)), ...anyagok, ...felvetelek]
     .map((u, i) => ({ u, i }))
     .sort((a, b) => b.u.datum.localeCompare(a.u.datum) || a.i - b.i)
     .slice(0, FRISS_DARAB)

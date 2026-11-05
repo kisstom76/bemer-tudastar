@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>BEMER terápia</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Rövid, lapozható bemutató a BEMER fizikai érterápiáról – a mikrokeringésről, a vazomócióról és a kutatásokról.">
+<meta property="og:title" content="BEMER – a legapróbb erek ritmusa">
+<meta property="og:description" content="Rövid, lapozható bemutató telefonra és számítógépre.">
+<meta property="og:image" content="https://tudastar.bterapia.hu/bemutato/terapia/h01.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#ECE3DC">
+<link rel="icon" href="/bemutato/terapia/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* A Dog-bemutató mintájára: két nézet, egy fájl.
+     - TELEFON (alap): fent a fotó/ábra, alatta a szöveg; hüvelykujjal lapozható.
+     - SZÁMÍTÓGÉP (≥900 px széles és ≥560 px magas): középre igazított „színpad” (legfeljebb 1680 px),
+       a betűméret a képernyőhöz nő. Fotós diák: kép balra, szöveg jobbra; szöveges diák: középen.
+     - „Kutatások” lap: külön, lenyitható réteg (dialog) – a 6. és 7. diáról nyílik, nem része a lapozásnak. */
+  :root{
+    --bg:#ECE3DC; --paper:#FFFFFF; --ink:#4B4A50; --ink-soft:#6F6D73; --muted:#8E898C;
+    --line:#D8CFCB; --accent:#EB5A23; --accent-ink:#C2441A; --dark:#3F3E43; --cell:#C9472B;
+    --font:'Barlow',"Helvetica Neue",Arial,sans-serif;
+    --gut:max(16px,env(safe-area-inset-left,0px));
+    --gutr:max(16px,env(safe-area-inset-right,0px));
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.45;overflow:hidden;-webkit-tap-highlight-color:transparent}
+  img{max-width:100%}
+
+  .app{height:100%;height:100dvh;display:flex;flex-direction:column}
+  .top{flex:0 0 auto;padding:10px var(--gutr) 6px var(--gut)}
+  .segs{display:flex;gap:4px;max-width:1680px;margin:0 auto}
+  .seg{flex:1;height:3px;border-radius:2px;background:var(--line);overflow:hidden}
+  .seg i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+  .seg.on i{width:100%}
+
+  .deck{flex:1 1 auto;min-height:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;overscroll-behavior-x:contain}
+  .deck::-webkit-scrollbar{display:none}
+  @media (prefers-reduced-motion:reduce){.deck{scroll-behavior:auto}}
+
+  .slide{flex:0 0 100%;width:100%;height:100%;scroll-snap-align:start;scroll-snap-stop:always;overflow-y:auto}
+  .stage{min-height:100%;display:flex;flex-direction:column}
+
+  /* ---------- TELEFON (alap) ---------- */
+  .photo{flex:0 0 auto;height:clamp(190px,38vh,440px);margin:0 var(--gutr) 0 var(--gut);border-radius:18px;overflow:hidden;background:var(--line)}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .body{flex:1 0 auto;display:flex;flex-direction:column;gap:14px;padding:20px var(--gutr) 24px var(--gut);padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+  .slide.center .body{justify-content:center}
+
+  .eyebrow{margin:0;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+  h1,h2{margin:0;font-weight:300;line-height:1.08;text-wrap:balance;color:var(--ink)}
+  h1{font-size:clamp(2rem,8.4vw,3.4rem)}
+  h2{font-size:clamp(1.7rem,7vw,2.9rem)}
+  h1 b,h2 b{font-weight:600;color:var(--accent)}
+  p{margin:0}
+  .lede{font-size:1.06rem;color:var(--ink-soft);max-width:40ch}
+  .lede strong{color:var(--ink);font-weight:600}
+  .src{font-size:.74rem;line-height:1.35;color:var(--muted);margin-top:auto;padding-top:6px}
+  .hint{display:flex;align-items:center;gap:8px;font-size:.9rem;font-weight:500;color:var(--accent-ink)}
+  .hint svg{animation:nudge 1.6s ease-in-out infinite}
+  .hint .kb{display:none}
+  @keyframes nudge{50%{transform:translateX(6px)}}
+  .logo{width:150px;height:auto;display:block;margin:0 0 2px -4px}
+
+  /* Kártyák, listák */
+  .facts{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none}
+  .facts li{display:flex;gap:12px;align-items:center;font-size:1rem;line-height:1.28}
+  .facts svg{flex:0 0 40px;width:40px;height:40px;padding:8px;border-radius:50%;background:var(--paper);stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .facts b{font-weight:600}
+  .note{background:var(--paper);border-radius:14px;padding:12px 14px;font-size:1rem;line-height:1.35}
+  .note b{color:var(--accent-ink);font-weight:600}
+  .linkbtn{appearance:none;border:1.5px solid var(--accent);background:transparent;color:var(--accent-ink);border-radius:999px;padding:10px 18px;font:600 .98rem var(--font);cursor:pointer;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;min-height:44px}
+  .linkbtn:hover{background:var(--accent);color:#fff}
+
+  /* 3. Mikrokeringés-ábra */
+  .vessel{position:relative;flex:0 0 auto;margin:0 var(--gutr) 0 var(--gut);border-radius:18px;background:#2F2E33;height:clamp(190px,38vh,440px);overflow:hidden}
+  .vessel svg{position:absolute;inset:0;width:100%;height:100%}
+  .vessel .wall{fill:none;stroke:#F2C9B8;stroke-linecap:round}
+  .vessel .lumen{fill:none;stroke:#5A2A22;stroke-linecap:round}
+  .vessel .rbc{fill:var(--cell)}
+  .vcap{position:absolute;left:0;right:0;bottom:0;margin:0;padding:22px 16px 12px;background:linear-gradient(transparent,rgba(30,29,33,.9));color:#F4EEEA;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;line-height:1.3}
+  .stat-row{display:flex;align-items:baseline;gap:14px}
+  .big{font-size:clamp(3.2rem,14vw,5rem);font-weight:300;line-height:.9;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:-.02em;white-space:nowrap}
+  .big-label{font-size:1rem;color:var(--ink);max-width:26ch;line-height:1.3}
+
+  /* 4. Videó */
+  .vid{display:block;position:relative;border-radius:16px;overflow:hidden;background:var(--dark);color:#fff;text-decoration:none;aspect-ratio:16/9;width:100%}
+  .vid img{width:100%;height:100%;object-fit:cover;display:block;opacity:.85}
+  .vid .play{position:absolute;left:50%;top:50%;width:68px;height:68px;transform:translate(-50%,-50%);border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.35);transition:transform .2s}
+  .vid:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+  .vid .play::after{content:"";margin-left:5px;border-top:13px solid transparent;border-bottom:13px solid transparent;border-left:21px solid #fff}
+  .vid .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;background:linear-gradient(transparent,rgba(30,29,33,.85));font-size:.92rem;font-weight:500;line-height:1.25}
+  .vid .cap small{display:block;font-weight:400;opacity:.8;font-size:.78rem}
+  .vid:focus-visible,.btn:focus-visible,.nav button:focus-visible,.linkbtn:focus-visible,.closebtn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+  /* 5. Szintek ábra */
+  .levels{display:flex;flex-direction:column;gap:10px;margin:0 var(--gutr) 0 var(--gut)}
+  .lvl{display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:center;background:var(--paper);border-radius:16px;padding:12px 14px}
+  .lvl svg{width:56px;height:40px}
+  .lvl b{display:block;font-weight:600;font-size:1rem;line-height:1.2}
+  .lvl span{display:block;font-size:.92rem;color:var(--ink-soft);line-height:1.3}
+  .lvl.hl{background:var(--dark);color:#F4EEEA}
+  .lvl.hl span{color:#D8CFCB}
+  .lvl.hl b{color:#fff}
+  .claim{border-left:4px solid var(--accent);padding-left:14px;font-size:1.05rem;line-height:1.38;color:var(--ink)}
+
+  /* 6. Mérések */
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .stat{background:var(--paper);border-radius:16px;padding:14px 14px 16px;display:flex;flex-direction:column;gap:6px}
+  .stat .big{font-size:clamp(2.6rem,11vw,4rem)}
+  .stat span{font-size:.95rem;line-height:1.28}
+
+  /* 7. Intézmények */
+  .inst{display:grid;grid-template-columns:1fr;gap:8px;margin:0;padding:0;list-style:none}
+  .inst li{background:var(--paper);border-radius:14px;padding:11px 14px;display:flex;flex-direction:column;gap:2px}
+  .inst b{font-weight:600;font-size:1rem;line-height:1.22}
+  .inst span{font-size:.88rem;color:var(--ink-soft);line-height:1.3}
+
+  /* 8. Jó tudni */
+  .qa{display:flex;flex-direction:column;gap:16px}
+  .qa div{display:flex;flex-direction:column;gap:4px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+  .qa div:last-child{border-bottom:0}
+  .qa b{font-size:1.25rem;font-weight:600;line-height:1.2}
+  .qa span{font-size:1.05rem;color:var(--ink-soft);line-height:1.4}
+  .s-jo .stage,.s-meres .stage,.s-mi .stage{justify-content:center}
+  .s-jo .body,.s-meres .body{flex:0 0 auto}
+
+  /* 10. Három út */
+  .ways{display:grid;grid-template-columns:1fr;gap:8px}
+  .way{background:var(--paper);border-radius:14px;padding:12px 14px;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:center}
+  .way svg{width:40px;height:40px;padding:8px;border-radius:50%;background:var(--bg);stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .way b{display:block;font-weight:600;font-size:1.05rem}
+  .way span{display:block;font-size:.92rem;color:var(--ink-soft);line-height:1.3}
+
+  /* 11. Zárás */
+  .slide.dark{background:var(--dark);color:#F4EEEA}
+  .slide.dark h2{color:#F4EEEA}
+  .slide.dark .lede{color:#D8CFCB}
+  .contact{display:flex;flex-direction:column;gap:12px;background:rgba(255,255,255,.07);border-radius:16px;padding:16px}
+  .contact .who{font-size:1.25rem;font-weight:500}
+  .contact .num{font-size:1.5rem;font-weight:300;letter-spacing:.02em;user-select:all;font-variant-numeric:tabular-nums}
+  .btns{display:flex;flex-wrap:wrap;gap:8px}
+  .btn{appearance:none;border:0;border-radius:999px;padding:12px 18px;font:600 1rem var(--font);text-decoration:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:46px}
+  .btn.pri{background:var(--accent);color:#fff}
+  .btn.sec{background:rgba(255,255,255,.12);color:#F4EEEA}
+  .safety{font-size:.76rem;line-height:1.38;color:#BEB6B2;margin-top:auto}
+
+  /* Alsó vezérlősáv */
+  .nav{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px var(--gutr) 12px var(--gut);padding-bottom:max(12px,env(safe-area-inset-bottom,0px))}
+  .nav button{appearance:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);width:52px;height:52px;border-radius:50%;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .nav button.next{background:var(--accent);border-color:var(--accent);color:#fff}
+  .nav button:disabled{opacity:.3;cursor:default}
+  .count{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.06em}
+
+  /* ---------- Kutatások lap ---------- */
+  dialog.kut{border:0;padding:0;margin:0;width:100%;max-width:100%;height:100%;max-height:100%;background:var(--bg);color:var(--ink)}
+  dialog.kut::backdrop{background:rgba(30,29,33,.55)}
+  .kut-in{height:100%;overflow-y:auto;padding:16px var(--gutr) 32px var(--gut)}
+  .kut-wrap{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  .kut-head{position:sticky;top:-16px;background:var(--bg);padding:16px 0 10px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:1}
+  .kut-head h2{font-size:clamp(1.6rem,6vw,2.4rem)}
+  .closebtn{appearance:none;border:0;background:var(--accent);color:#fff;border-radius:999px;padding:10px 18px;font:600 1rem var(--font);cursor:pointer;min-height:44px;flex:0 0 auto}
+  .study{background:var(--paper);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+  .study h3{margin:0;font-size:1.08rem;font-weight:600;line-height:1.25}
+  .study .meta{font-size:.85rem;color:var(--accent-ink);font-weight:600;letter-spacing:.02em}
+  .study p{font-size:.98rem;line-height:1.4}
+  .study .caveat{font-size:.88rem;color:var(--muted)}
+  .study a{color:var(--accent-ink)}
+  .kut-sec{margin:10px 0 0;font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+  .study.neg{background:transparent;border:1.5px solid var(--line)}
+
+  /* Alacsony telefonképernyő */
+  @media (max-height:680px) and (max-width:899px){
+    .photo,.vessel{height:28vh}
+    .body{gap:10px;padding-top:14px;padding-bottom:16px}.facts{gap:6px}.big{font-size:2.8rem}
+    h2{font-size:1.6rem}
+    .levels{gap:6px}.lvl{padding:8px 12px}
+    .stat{padding:10px 12px 12px}.stats{gap:8px}
+    .s-mi .lede{font-size:.95rem}
+    .s-mi .inst li{padding:6px 10px}
+    .s-mi .inst span{font-size:.78rem}
+    .s-proba .photo{height:20vh}
+  }
+  @media (max-width:360px){.stats{grid-template-columns:1fr}}
+  /* Telefon: a 7. (hat kártya) és a 10. (három út) dia férjen el görgetés nélkül */
+  @media (max-width:899px){
+    .s-mi .body{gap:10px}
+    .s-mi .body + .body{padding-top:2px}
+    .s-mi .inst{gap:6px}
+    .s-mi .inst li{padding:8px 12px}
+    .s-mi .inst b{font-size:.94rem}
+    .s-mi .inst span{font-size:.82rem;line-height:1.25}
+    .s-proba .photo{height:clamp(150px,24vh,300px)}
+    .s-proba .body{gap:10px}
+    .s-proba .ways{gap:6px}
+    .s-proba .way{padding:8px 12px}
+    .s-proba .way span{line-height:1.25}
+  }
+  @media (prefers-reduced-motion:reduce){.hint svg{animation:none}}
+
+  /* ---------- SZÁMÍTÓGÉP: középre igazított, kitöltő színpad ---------- */
+  @media (min-width:900px) and (min-height:560px){
+    html{font-size:clamp(16px,min(calc(.55vw + 9.5px),2.2vh),25px)}
+    body{font-size:1.1rem}
+    .stage{
+      display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);align-items:center;column-gap:clamp(32px,4vw,80px);
+      width:100%;max-width:1680px;height:100%;min-height:0;margin:0 auto;padding:clamp(12px,2vh,28px) clamp(24px,3vw,56px);
+    }
+    .photo,.vessel{height:100%;max-height:820px;margin:0;border-radius:22px;align-self:stretch}
+    .body{padding:0;gap:1.1rem;justify-content:center;max-width:38rem}
+    h1{font-size:clamp(2.6rem,3.6vw,4.6rem)}
+    h2{font-size:clamp(2.2rem,3vw,3.8rem)}
+    .lede{font-size:1.3rem;max-width:36ch}
+    .eyebrow{font-size:.9rem}
+    .src{font-size:.85rem;margin-top:.6rem}
+    .hint{font-size:1rem}
+    .hint .kb{display:inline;color:var(--muted);font-weight:400}
+    .logo{width:200px}
+    .big{font-size:clamp(4.5rem,6vw,7rem)}
+    .big-label{font-size:1.25rem}
+    .facts{gap:1rem}
+    .facts li{font-size:1.25rem}
+    .facts svg{flex-basis:52px;width:52px;height:52px;padding:11px}
+    .note{font-size:1.15rem}
+    .linkbtn{font-size:1.05rem;padding:12px 22px}
+
+    /* 3. ábra arányos dobozban */
+    .s-ker .vessel{height:auto;aspect-ratio:4/3;align-self:center;max-height:100%}
+    .s-ker .vcap{font-size:.9rem;padding:32px 22px 18px}
+
+    /* 4. videó: kitölti az ablakot */
+    .s-video .stage{grid-template-columns:1fr;justify-items:center;align-content:center;row-gap:clamp(14px,2.4vh,26px)}
+    .s-video .body{align-items:center;max-width:none}
+    .s-video .head{text-align:center;display:flex;flex-direction:column;gap:.5rem;align-items:center}
+    .s-video .head .lede{max-width:60ch}
+    .s-video .vid{width:min(100%,calc((100dvh - 22rem) * 16 / 9));min-width:min(100%,560px)}
+    .s-video .vid .play{width:96px;height:96px}
+    .s-video .vid .play::after{border-top-width:18px;border-bottom-width:18px;border-left-width:29px;margin-left:7px}
+    .s-video .vid .cap{font-size:1.3rem;padding:48px 24px 18px}
+    .s-video .vid .cap small{font-size:1rem}
+
+    /* 5. szintek balra, szöveg jobbra */
+    .levels{margin:0;gap:14px;align-self:center}
+    .lvl{grid-template-columns:84px 1fr;padding:18px 22px;gap:18px}
+    .lvl svg{width:84px;height:56px}
+    .lvl b{font-size:1.3rem}.lvl span{font-size:1.1rem}
+    .claim{font-size:1.25rem;padding-left:20px;border-left-width:5px}
+
+    /* 6. mérések: középen, négy szám egy sorban */
+    .s-meres .stage{grid-template-columns:1fr;justify-items:center;align-content:center;row-gap:clamp(18px,3vh,36px);max-width:1560px}
+    .s-meres .body{max-width:none;width:100%;align-items:center;text-align:center}
+    .s-meres .stats{grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.6vw,24px);width:100%;text-align:left}
+    .s-meres .stat{padding:clamp(18px,3vh,30px) 24px;gap:10px}
+    .s-meres .stat .big{font-size:clamp(3.4rem,4.6vw,5.4rem)}
+    .s-meres .stat span{font-size:1.2rem}
+    .s-meres .lede{max-width:60ch}
+    .s-meres .linkbtn{align-self:center}
+
+    /* 7. intézmények: két oszlop */
+    .s-mi .stage{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+    .s-mi .inst{grid-template-columns:1fr 1fr;gap:14px}
+    .s-mi .inst li{padding:18px 20px;gap:6px}
+    .s-mi .inst b{font-size:1.2rem}.s-mi .inst span{font-size:1.02rem}
+    .s-mi .body{max-width:none}
+    .s-mi .body.left{align-self:center;max-width:30rem}
+
+    /* 8. jó tudni: három kártya egymás mellett */
+    .s-jo .stage{grid-template-columns:1fr;align-content:center;justify-items:center;row-gap:clamp(20px,4vh,44px);max-width:1560px}
+    .s-jo .head{text-align:center;display:flex;flex-direction:column;gap:.5rem;align-items:center}
+    .s-jo .body{max-width:none;width:100%}
+    .s-jo .qa{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);width:100%}
+    .s-jo .qa div{background:var(--paper);border-radius:20px;padding:clamp(22px,3vh,36px) 28px;border:0;gap:12px}
+    .s-jo .qa b{font-size:1.6rem}
+    .s-jo .qa span{font-size:1.3rem}
+
+    .way{grid-template-columns:52px 1fr;padding:16px 20px;gap:16px}
+    .way svg{width:52px;height:52px;padding:11px}
+    .way b{font-size:1.25rem}.way span{font-size:1.1rem}
+
+    .contact .who{font-size:1.5rem}.contact .num{font-size:1.9rem}
+    .btn{font-size:1.1rem;padding:14px 22px}
+    .safety{font-size:.85rem}
+
+    .nav{justify-content:center;gap:28px}
+
+    .kut-in{padding:24px 32px 48px}
+    .kut-wrap > .lede{max-width:none}
+    .study{padding:20px 24px}
+    .study h3{font-size:1.25rem}.study p{font-size:1.08rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <div class="top"><div class="segs" id="segs"></div></div>
+
+  <main class="deck" id="deck" aria-label="BEMER terápia bemutató">
+
+    <!-- 1. Nyitó – az ügyfélről szól -->
+    <section class="slide" aria-label="1. dia"><div class="stage">
+      <div class="photo"><img src="/bemutato/terapia/h01.jpg" alt="Mosolygó nő ül az asztalnál, a hátán BEMER-párna" style="object-position:50% 25%"></div>
+      <div class="body">
+        <img class="logo" src="/bemutato/terapia/logo.svg" alt="BEMER">
+        <h1>Mi a legfontosabb neked <b>az egészségedben?</b></h1>
+        <p class="lede">Mielőtt bármit mutatnék: mit szeretnél újra könnyebben, jobban csinálni a hétköznapokban?</p>
+        <p class="hint">Lapozz tovább <svg width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 7h19M14 1l6 6-6 6"/></svg><span class="kb">(vagy a → billentyűvel)</span></p>
+      </div>
+    </div></section>
+
+    <!-- 2. A BEMER röviden -->
+    <section class="slide" aria-label="2. dia"><div class="stage">
+      <div class="photo"><img src="/bemutato/terapia/h02.jpg" alt="BEMER Evo vezérlőegység" style="object-position:50% 50%"></div>
+      <div class="body">
+        <p class="eyebrow">A BEMER röviden</p>
+        <h2>Fizikai érterápia <b>otthonra</b></h2>
+        <ul class="facts">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>1998 óta</b> fejlesztik – ma liechtensteini központtal</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Orvostechnikai eszköz</b>, a kezelések mellé – nem helyettük</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg><span>Otthon használod, <b>gyógyszer nélkül</b>, a megszokott kezeléseid mellett</span></li>
+        </ul>
+        <p class="note">A partnered elmondja, <b>neki mit jelent a BEMER</b> – kérdezd meg!</p>
+      </div>
+    </div></section>
+
+    <!-- 3. Mikrokeringés -->
+    <section class="slide s-ker" aria-label="3. dia"><div class="stage">
+      <div class="vessel">
+        <svg viewBox="0 0 360 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <path id="p1" d="M-10 110 C 60 110, 90 70, 150 70 S 250 40, 370 50"/>
+            <path id="p2" d="M-10 110 C 60 110, 100 130, 160 140 S 260 170, 370 160"/>
+            <path id="p3" d="M150 70 C 180 90, 170 120, 160 140"/>
+            <path id="p4" d="M230 55 C 250 90, 245 130, 255 165"/>
+          </defs>
+          <g>
+            <use href="#p1" class="wall" stroke-width="22"><animate attributeName="stroke-width" values="22;28;22" dur="2.6s" repeatCount="indefinite"/></use>
+            <use href="#p2" class="wall" stroke-width="20"><animate attributeName="stroke-width" values="20;26;20" dur="2.6s" begin=".5s" repeatCount="indefinite"/></use>
+            <use href="#p3" class="wall" stroke-width="12"><animate attributeName="stroke-width" values="12;16;12" dur="2.6s" begin="1s" repeatCount="indefinite"/></use>
+            <use href="#p4" class="wall" stroke-width="12"><animate attributeName="stroke-width" values="12;16;12" dur="2.6s" begin="1.4s" repeatCount="indefinite"/></use>
+            <use href="#p1" class="lumen" stroke-width="16"><animate attributeName="stroke-width" values="16;22;16" dur="2.6s" repeatCount="indefinite"/></use>
+            <use href="#p2" class="lumen" stroke-width="14"><animate attributeName="stroke-width" values="14;20;14" dur="2.6s" begin=".5s" repeatCount="indefinite"/></use>
+            <use href="#p3" class="lumen" stroke-width="7"><animate attributeName="stroke-width" values="7;11;7" dur="2.6s" begin="1s" repeatCount="indefinite"/></use>
+            <use href="#p4" class="lumen" stroke-width="7"><animate attributeName="stroke-width" values="7;11;7" dur="2.6s" begin="1.4s" repeatCount="indefinite"/></use>
+          </g>
+          <g class="cells"></g>
+        </svg>
+        <p class="vcap">Mikrokeringés · a hajszálerek hálózata</p>
+      </div>
+      <div class="body">
+        <h2>A keringés <b>kb. 74%-a</b> a legapróbb erekben zajlik</h2>
+        <p class="lede">Ezek az apró erek viszik a sejtekhez az oxigént és a tápanyagot, és ezek szállítják el a salakanyagot.</p>
+        <p class="lede"><strong>Olyan, mint egy kert locsolórendszere:</strong> hiába jó a fővezeték, ha a kis csövekbe nem jut elég víz.</p>
+        <p class="src">Prof. Rainer Klopp (Mikrocirkulációs Intézet, Berlin) nyomán – BEMER-képzési anyag</p>
+      </div>
+    </div></section>
+
+    <!-- 4. Vazomóció – videó -->
+    <section class="slide s-video" aria-label="4. dia"><div class="stage">
+      <div class="body" style="max-width:none">
+        <div class="head">
+          <p class="eyebrow">Vazomóció</p>
+          <h2>Az erek <b>maguk is pumpálnak</b></h2>
+          <p class="lede">A legkisebb artériák saját ritmusban szűkülnek és tágulnak – percenként néhányszor. Így jut a vér oda, ahol éppen szükség van rá.</p>
+        </div>
+        <a class="vid" href="https://www.youtube.com/watch?v=iKxhmAvOCgs" target="_blank" rel="noopener">
+          <img src="/bemutato/terapia/h04.jpg" alt="">
+          <span class="play" aria-hidden="true"></span>
+          <span class="cap">The BEMER Effect – a mikrokeringés mikroszkóp alatt<small>Hivatalos BEMER-felvétel · 2:37 · megnyílik a YouTube-on</small></span>
+        </a>
+      </div>
+    </div></section>
+
+    <!-- 5. Miért más -->
+    <section class="slide" aria-label="5. dia"><div class="stage">
+      <div class="levels" aria-label="A keringés három szintje">
+        <div class="lvl">
+          <svg viewBox="0 0 84 56" aria-hidden="true"><path d="M4 28h76" stroke="#F2C9B8" stroke-width="26" stroke-linecap="round"/><path d="M4 28h76" stroke="#C9472B" stroke-width="18" stroke-linecap="round"/></svg>
+          <div><b>Nagy erek</b><span>A szív pumpálja bennük a vért.</span></div>
+        </div>
+        <div class="lvl">
+          <svg viewBox="0 0 84 56" aria-hidden="true"><path d="M4 28h76" stroke="#F2C9B8" stroke-width="14" stroke-linecap="round"/><path d="M4 28h76" stroke="#C9472B" stroke-width="8" stroke-linecap="round"/></svg>
+          <div><b>Kisebb artériák</b><span>Az idegrendszer és a hormonok szabályozzák – itt a gyógyszerek is hatni tudnak.</span></div>
+        </div>
+        <div class="lvl hl">
+          <svg viewBox="0 0 84 56" aria-hidden="true"><path d="M4 28 C 18 18, 30 38, 44 28 S 70 18, 80 28" fill="none" stroke="#F2C9B8" stroke-width="7" stroke-linecap="round"/><path d="M4 28 C 18 18, 30 38, 44 28 S 70 18, 80 28" fill="none" stroke="#EB5A23" stroke-width="3" stroke-linecap="round"/></svg>
+          <div><b>A legkisebb artériák</b><span>Saját ritmusuk van (vazomóció). Idegi, hormonális jel és gyógyszer alig ér el ide – fizikai inger igen.</span></div>
+        </div>
+      </div>
+      <div class="body">
+        <p class="eyebrow">Miért más a BEMER?</p>
+        <h2>Ott hat, ahová a gyógyszer <b>nem ér el</b></h2>
+        <p class="lede">A BEMER-jel fizikai inger, és a szervezet természetes vazomóciójának mintájára fejlesztették.</p>
+        <p class="claim">„Lemásoltuk a természetet” – így írta le a BEMER-jel születését a fejlesztője, Prof. Rainer Klopp.</p>
+        <p class="src">BEMER Kompendium (gyártói anyag) · Prof. Rainer Klopp előadása</p>
+      </div>
+    </div></section>
+
+    <!-- 6. Mit mértek -->
+    <section class="slide center s-meres" aria-label="6. dia"><div class="stage">
+      <div class="body">
+        <p class="eyebrow">Mit mértek?</p>
+        <h2>Placebóval összevetve: <b>jobb mikrokeringés</b></h2>
+      </div>
+      <div class="body">
+        <div class="stats">
+          <div class="stat"><span class="big">+27%</span><span>több hajszálérben áramlott a vér</span></div>
+          <div class="stat"><span class="big">+28%</span><span>jobban hasznosult az oxigén a szövetekben</span></div>
+          <div class="stat"><span class="big">1 nap</span><span>múlva, a kezelés abbahagyása után is kimutatható volt</span></div>
+          <div class="stat"><span class="big">12 óra</span><span>után is mérhető egyetlen 8 perces kezelés hatása (gyártói mérés)</span></div>
+        </div>
+        <p class="src">Klopp, Niemer, Schmidt 2013, J Complement Integr Med – randomizált, kettős vak, placebo-kontrollált, 12 fő; a vezető szerző a BEMER-jel fejlesztője · 12 óra: BEMER Kompendium, 11. o. (Klopp, 2010)</p>
+        <button class="linkbtn" type="button" data-kut>Összes kutatás megnyitása →</button>
+      </div>
+    </div></section>
+
+    <!-- 7. Kik vizsgálták, kik használják -->
+    <section class="slide s-mi" aria-label="7. dia"><div class="stage">
+      <div class="body left">
+        <p class="eyebrow">Kik vizsgálták?</p>
+        <h2>Egyetemi klinikán, kórházban és <b>az élsportban</b> is</h2>
+        <p class="lede">Nem csak mi mondjuk. A vizsgálatok részleteit – a korlátaikkal együtt – megnézheted.</p>
+        <button class="linkbtn" type="button" data-kut>Kutatások részletesen →</button>
+      </div>
+      <div class="body">
+        <ul class="inst">
+          <li><b>Halle Egyetemi Kórház</b><span>Intenzív osztály, 10 súlyos állapotú beteg – biztonságosnak bizonyult (2023)</span></li>
+          <li><b>PTE Szívklinika + Harkányi Gyógyfürdőkórház</b><span>48 koszorúér-beteg kardiológiai rehabilitációja (2022)</span></li>
+          <li><b>Országos Sportegészségügyi Intézet</b><span>Kettős vak vizsgálat teniszezőkkel (2006)</span></li>
+          <li><b>Norvég Olimpiai Sportközpont + NTNU</b><span>Női focicsapat alvása, 273 éjszakán át mérve (2023)</span></li>
+          <li><b>Balatonfüredi Állami Szívkórház</b><span>Kardiológiai rehabilitáció – kb. 4000 kezelés 2019 óta (kongresszusi beszámoló, 2021)</span></li>
+          <li><b>Honvédkórház (Észak-Pesti Centrumkórház)</b><span>Érsebészeti esetbemutatás, egy beteg (2023)</span></li>
+        </ul>
+      </div>
+    </div></section>
+
+    <!-- 8. Amit fontos tudni -->
+    <section class="slide center s-jo" aria-label="8. dia"><div class="stage">
+      <div class="body head">
+        <p class="eyebrow">Őszintén</p>
+        <h2>Amit <b>fontos tudni</b></h2>
+      </div>
+      <div class="body" style="padding-top:0">
+        <div class="qa">
+          <div><b>Gyógyszer?</b><span>Nem. Nem helyettesíti az orvost és a kezelést – a szervezet saját működését támogatja, mellettük.</span></div>
+          <div><b>Mikor érzek valamit?</b><span>Mindenkinél más. Érdemes több hetet adni neki – ezért jó előbb kipróbálni.</span></div>
+          <div><b>Kinek nem való?</b><span>Aktív beültetett eszközzel (pl. pacemaker, gyógyszerpumpa) nem használható, és szerv- vagy őssejt-átültetés utáni immunszupprimáló kezelés mellett sem. Betegség esetén előbb kérdezd meg a kezelőorvosodat.</span></div>
+        </div>
+      </div>
+    </div></section>
+
+    <!-- 9. A napodba illesztve -->
+    <section class="slide" aria-label="9. dia"><div class="stage">
+      <div class="photo"><img src="/bemutato/terapia/h09.jpg" alt="BEMER Evo vezérlőegység az ágy mellett, a kijelzőn az alvóprogram" style="object-position:78% 60%"></div>
+      <div class="body">
+        <p class="eyebrow">A mindennapokban</p>
+        <h2>Naponta <b>2 × 8 perc</b></h2>
+        <ul class="facts">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><span><b>Reggel 8 perc</b> – fekve, a matracon</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span><b>Este 8 perc</b> – és ha kéred, <b>alvóprogram</b> éjszakára</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14.5 20c0-2.5 1.2-4.6 4-4.6 2 0 3.5 1.6 3.5 4.6"/></svg><span>Az <b>egész család</b> használhatja</span></li>
+        </ul>
+        <p class="lede">Közben pihensz, olvasol, zenét hallgatsz – nem kell csinálnod semmit.</p>
+      </div>
+    </div></section>
+
+    <!-- 10. Kipróbálás -->
+    <section class="slide s-proba" aria-label="10. dia"><div class="stage">
+      <div class="photo"><img src="/bemutato/terapia/h10.jpg" alt="Mosolygó idősebb nő fekszik a BEMER-matracon" style="object-position:50% 28%"></div>
+      <div class="body">
+        <p class="eyebrow">Kipróbálás</p>
+        <h2>Próbáld ki <b>a saját testeden</b></h2>
+        <div class="ways">
+          <div class="way"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><div><b>Kezelés nálunk</b><span>Néhány alkalom, hogy megismerd, milyen érzés.</span></div></div>
+          <div class="way"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><div><b>Bérlés</b><span>Néhány hétig otthon, a saját napirendedben.</span></div></div>
+          <div class="way"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/><path d="M9 12l2 2 4-4"/></svg><div><b>Tesztelés</b><span>8 hét egy vadonatúj készülékkel; közben hetente beszélünk arról, mit tapasztalsz.</span></div></div>
+        </div>
+        <p class="note">Az aktuális árat és a feltételeket <b>a partnered mondja el</b>.</p>
+      </div>
+    </div></section>
+
+    <!-- 11. Zárás -->
+    <section class="slide dark" aria-label="11. dia"><div class="stage">
+      <div class="photo"><img src="/bemutato/terapia/h11.jpg" alt="Mosolygó nő, a kezében BEMER-készülék" style="object-position:40% 30%"></div>
+      <div class="body">
+        <h2>Beszéljük meg <b>a következő lépést</b></h2>
+        <div class="contact" id="contact">
+          <p class="lede" id="generic">Kérj bemutatót vagy kipróbálást attól a BEMER-partnertől, akitől ezt a linket kaptad.</p>
+        </div>
+        <p class="safety">A BEMER nem gyógyszer, és nem helyettesíti az orvosi ellátást. Gyógyhatást nem ígérünk. Használat előtt olvasd el a használati útmutatót; betegség esetén kérdezd meg a kezelőorvosodat.</p>
+      </div>
+    </div></section>
+
+  </main>
+
+  <nav class="nav" aria-label="Lapozás">
+    <button class="prev" id="prev" aria-label="Előző dia">‹</button>
+    <span class="count" id="count">1 / 11</span>
+    <button class="next" id="next" aria-label="Következő dia">›</button>
+  </nav>
+</div>
+
+<!-- Kutatások lap: a 6. és 7. diáról nyílik -->
+<dialog class="kut" id="kut" aria-labelledby="kut-title">
+  <div class="kut-in">
+    <div class="kut-wrap">
+      <div class="kut-head">
+        <h2 id="kut-title">Kutatások <b>részletesen</b></h2>
+        <button class="closebtn" type="button" id="kut-close">Vissza ✕</button>
+      </div>
+      <p class="lede">Az alábbi vizsgálatok szakfolyóiratban jelentek meg. Mindegyiknél leírjuk a korlátait is – és azt is, ahol a BEMER nem volt jobb a látszatkezelésnél.</p>
+      <p class="kut-sec">A mikrokeringés mérése</p>
+      <div class="study"><h3>Klopp, Niemer, Schmidt 2013</h3><p class="meta">J Complement Integr Med · Mikrocirkulációs Intézet, Berlin</p><p>Randomizált, kettős vak, placebo-kontrollált vizsgálat 12 férfivel. A mikrokeringés négy mutatója mérhetően javult (pl. +27% áramló hajszálér, +28% oxigénkihasználás), és a hatás a kezelés abbahagyása után egy nappal is kimutatható volt. A placebónál nem volt változás.</p><p class="caveat">Korlát: kis létszám, 3 napos szakaszok; a vezető szerző a BEMER-jel fejlesztője. · <a href="https://doi.org/10.1515/jcim-2013-0028" target="_blank" rel="noopener">a közlemény</a></p></div>
+      <p class="kut-sec">Kórházban</p>
+      <div class="study"><h3>Werdan és mtsai 2023 – Halle Egyetemi Kórház</h3><p class="meta">Clinical Research in Cardiology · intenzív osztály</p><p>Többszervi elégtelenségben szenvedő betegeknél alkalmazták a szokásos ellátás mellett. A legfontosabb megállapítás: biztonságos volt, a terápiával összefüggő nemkívánatos esemény nem lépett fel. Emellett a mikrokeringés és a keringési mutatók javulását figyelték meg.</p><p class="caveat">Korlát: 10 betegen végzett próbavizsgálat, kontrollcsoport nélkül; a szerzők szerint a bizonyításhoz kb. 300 fős randomizált vizsgálat kellene. Részben BEMER-finanszírozás. · <a href="https://doi.org/10.1007/s00392-023-02293-2" target="_blank" rel="noopener">a közlemény</a></p></div>
+      <div class="study"><h3>Kreska, Hejjel és mtsai 2022 – PTE + Harkány</h3><p class="meta">in vivo · kardiológiai rehabilitáció</p><p>48 koszorúér-beteg rehabilitációja során EKG-val mérték, mit csinál a szervezet a kezelés alatt. A hagyományos mérőszámok nem mozdultak, de egy érzékenyebb mutató – a szívritmus-aszimmetria – a valódi kezelést kapóknál változott, a látszatkezelést kapóknál nem.</p><p class="caveat">Korlát: nem randomizált, nem kettős vak; élettani jelváltozás, nem gyógyulás. · <a href="https://doi.org/10.21873/invivo.12845" target="_blank" rel="noopener">a közlemény</a></p></div>
+      <div class="study"><h3>Hevér 2023 – Honvédkórház</h3><p class="meta">Biomed J Sci & Tech Res · érsebészeti esetbemutatás</p><p>Egy beteg esete: a kórházi kezelést követően otthon BEMER-terápia és rendszeres, szakszerű sebkezelés mellett gyógyult egy nagy kiterjedésű seb.</p><p class="caveat">Korlát: egyetlen eset – nem bizonyíték, csak megfigyelés. · <a href="https://doi.org/10.26717/BJSTR.2023.53.008340" target="_blank" rel="noopener">a közlemény</a></p></div>
+      <p class="kut-sec">Sportban</p>
+      <div class="study"><h3>Malomsoki, Babindák 2006 – Országos Sportegészségügyi Intézet</h3><p class="meta">Sportorvosi Szemle · teniszezők</p><p>Randomizált, kettős vak, placebo-kontrollált vizsgálat 12 teniszezővel. Három hét edzőtábor alatt a BEMER-kezelést kapók futóteljesítménye 15%-kal, a placebo csoporté 5,4%-kal javult.</p><p class="caveat">Korlát: kis létszám, régi készülékgeneráció. · Sportorvosi Szemle XLVII. évf. 2–3. sz., 117–128. o.</p></div>
+      <div class="study"><h3>Moen és mtsai 2023 – NTNU, Norvég Olimpiai Sportközpont</h3><p class="meta">Frontiers in Psychology · női labdarúgók alvása</p><p>Egy élvonalbeli női focicsapat 21 játékosának alvását 273 éjszakán át mérték. A BEMER bevezetése után a teljes alvásidő, a mélyalvás és a REM-alvás mennyisége nőtt – leginkább azoknál, akik sokat használták.</p><p class="caveat">Korlát: kontrollcsoport nélkül; néhány alvásmutató (elalvási idő) nem javult. · <a href="https://doi.org/10.3389/fpsyg.2023.1230281" target="_blank" rel="noopener">a közlemény</a></p></div>
+      <p class="kut-sec">Ahol nem volt különbség</p>
+      <div class="study neg"><h3>Karcı és mtsai 2026 – összefoglaló elemzés</h3><p class="meta">Bioelectromagnetics · mozgásszervi fájdalom</p><p>Hét randomizált vizsgálat összesítése: a fájdalom csökkentésében a BEMER nem múlta felül a látszatkezelést.</p><p class="caveat">Amit fontos tudni: a BEMER nem fájdalomcsillapítónak készült, hanem a mikrokeringés támogatására – a fájdalom és a mikrokeringés mérése nem ugyanaz. · <a href="https://doi.org/10.1002/bem.70057" target="_blank" rel="noopener">a közlemény</a></p></div>
+      <div class="study neg"><h3>Multanen és mtsai 2018 – Jyväskylä</h3><p class="meta">Bioelectromagnetics · fibromialgia</p><p>Jó minőségű finn vizsgálat 108 nővel: 12 hét matracos kezelés után a fájdalomban nem volt különbség a látszatkezeléshez képest.</p><p class="caveat">A mikrokeringés műszeres mérésében más vizsgálatok kimutatható változást találtak. · <a href="https://doi.org/10.1002/bem.22127" target="_blank" rel="noopener">a közlemény</a></p></div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* Az utolsó dia elérhetősége a link végéből jön (ugyanúgy, mint a Dog-bemutatónál):
+   #p.<hex>  – a tudástár minden partnernek ilyet készít: „Név|telefon” UTF-8 bájtjai hexában;
+   #tomi     – rövid jel az alábbi listából. Jel nélkül az általános szöveg látszik. */
+var PARTNEREK = {
+  tomi: { nev: 'Kiss Tamás', tel: '+36 30 681 5233' }
+};
+function partnerAJelbol(jel){
+  if (jel.indexOf('p.') === 0){
+    var hex = jel.slice(2);
+    if (!/^([0-9a-f]{2}){3,120}$/.test(hex)) return null;
+    try {
+      var bytes = new Uint8Array(hex.match(/../g).map(function(h){ return parseInt(h, 16); }));
+      var parts = new TextDecoder('utf-8', { fatal: true }).decode(bytes).split('|');
+      if (parts.length !== 2 || !parts[0].trim() || !/^[+0-9 ()\/-]{6,30}$/.test(parts[1])) return null;
+      return { nev: parts[0].trim().slice(0, 60), tel: parts[1].trim() };
+    } catch (e) { return null; }
+  }
+  return PARTNEREK[jel] || null;
+}
+
+(function(){
+  var deck = document.getElementById('deck');
+  var slides = deck.querySelectorAll('.slide');
+  var n = slides.length, cur = 0;
+  var segs = document.getElementById('segs');
+  var count = document.getElementById('count');
+  var prev = document.getElementById('prev'), next = document.getElementById('next');
+  var kut = document.getElementById('kut');
+
+  for (var k = 0; k < n; k++){ var s = document.createElement('span'); s.className = 'seg'; s.appendChild(document.createElement('i')); segs.appendChild(s); }
+  var segEls = segs.children;
+
+  function paint(){
+    for (var k = 0; k < n; k++) segEls[k].classList.toggle('on', k <= cur);
+    count.textContent = (cur + 1) + ' / ' + n;
+    prev.disabled = cur === 0; next.disabled = cur === n - 1;
+  }
+  function go(i){
+    i = Math.max(0, Math.min(n - 1, i));
+    cur = i; paint();
+    var target = i * deck.clientWidth;
+    deck.scrollTo({ left: target });
+    setTimeout(function(){
+      if (cur === i && Math.abs(deck.scrollLeft - target) > 2){
+        deck.style.scrollBehavior = 'auto'; deck.scrollLeft = target; deck.style.scrollBehavior = '';
+      }
+    }, 700);
+  }
+  var t;
+  deck.addEventListener('scroll', function(){
+    clearTimeout(t);
+    t = setTimeout(function(){
+      var i = Math.round(deck.scrollLeft / deck.clientWidth);
+      if (i !== cur){ cur = i; paint(); }
+    }, 60);
+  }, { passive: true });
+  window.addEventListener('resize', function(){ deck.style.scrollBehavior = 'auto'; deck.scrollLeft = cur * deck.clientWidth; deck.style.scrollBehavior = ''; });
+  prev.addEventListener('click', function(){ go(cur - 1); });
+  next.addEventListener('click', function(){ go(cur + 1); });
+  document.addEventListener('keydown', function(e){
+    if (kut.open) return;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' '){ e.preventDefault(); go(cur + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp'){ e.preventDefault(); go(cur - 1); }
+  });
+  paint();
+
+  /* Kutatások lap */
+  document.querySelectorAll('[data-kut]').forEach(function(b){
+    b.addEventListener('click', function(){ if (kut.showModal) kut.showModal(); else kut.setAttribute('open', ''); kut.querySelector('.kut-in').scrollTop = 0; });
+  });
+  document.getElementById('kut-close').addEventListener('click', function(){ if (kut.close) kut.close(); else kut.removeAttribute('open'); });
+
+  /* Vörösvértestek a hajszálerekben */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cells = document.querySelector('.vessel .cells');
+  var NS = 'http://www.w3.org/2000/svg';
+  [['p1',7,5.2],['p2',7,5.8],['p3',3,3.4],['p4',3,3.8]].forEach(function(cfg){
+    for (var j = 0; j < cfg[1]; j++){
+      var c = document.createElementNS(NS, 'ellipse');
+      c.setAttribute('class', 'rbc'); c.setAttribute('rx', cfg[0] === 'p3' || cfg[0] === 'p4' ? 2.6 : 4.2); c.setAttribute('ry', cfg[0] === 'p3' || cfg[0] === 'p4' ? 2 : 3);
+      if (reduce){ c.setAttribute('cx', -20); cells.appendChild(c); continue; }
+      var m = document.createElementNS(NS, 'animateMotion');
+      m.setAttribute('dur', cfg[2] + 's'); m.setAttribute('repeatCount', 'indefinite'); m.setAttribute('rotate', 'auto');
+      m.setAttribute('begin', (-cfg[2] * j / cfg[1]).toFixed(2) + 's');
+      var mp = document.createElementNS(NS, 'mpath'); mp.setAttribute('href', '#' + cfg[0]);
+      m.appendChild(mp); c.appendChild(m); cells.appendChild(c);
+    }
+  });
+  if (reduce) document.querySelectorAll('.vessel animate').forEach(function(a){ a.remove(); });
+
+  /* Partner-elérhetőség a link jele alapján */
+  var p = partnerAJelbol((location.hash || '').replace('#', '').toLowerCase());
+  if (p){
+    var box = document.getElementById('contact');
+    var digits = p.tel.replace(/[^\d+]/g, '');
+    box.innerHTML =
+      '<p class="lede">Kérdezz bátran, szívesen megmutatom:</p>' +
+      '<span class="who"></span><span class="num"></span>' +
+      '<div class="btns"><a class="btn pri" href="tel:' + digits + '">Hívás</a>' +
+      '<a class="btn sec" href="sms:' + digits + '">SMS</a>' +
+      '<button class="btn sec" type="button" id="copy">Szám másolása</button></div>';
+    box.querySelector('.who').textContent = p.nev;
+    box.querySelector('.num').textContent = p.tel;
+    var cp = document.getElementById('copy');
+    cp.addEventListener('click', function(){
+      var done = function(){ cp.textContent = 'Kimásolva'; };
+      var fallback = function(){ var r = document.createRange(); r.selectNodeContents(box.querySelector('.num')); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); cp.textContent = 'Kijelölve – másold ki'; };
+      try { navigator.clipboard.writeText(p.tel).then(done, fallback); } catch (e) { fallback(); }
+    });
+  }
+})();
+</script>
+</body>
+</html>

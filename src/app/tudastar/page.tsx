@@ -10,8 +10,13 @@ import { EsemenyTabla } from "@/components/EsemenyTabla";
 import { MostAktualis } from "@/components/MostAktualis";
 import { Help } from "@/components/Help";
 import { SajatBemutato } from "@/components/SajatBemutato";
+import { TerapiaBemutato } from "@/components/TerapiaBemutato";
 import { FrissAnyagok } from "@/components/FrissAnyagok";
 import { kulonUjdonsagok } from "@/content/ujdonsagok";
+
+// Mindig kérésre renderelődik (a bejelentkezés miatt amúgy is), de kimondjuk: az időzített nyitások
+// (pl. a terápiás bemutató 2026-11-11 19:00-kor) csak így jelennek meg gyorsítótár nélkül, pontosan.
+export const dynamic = "force-dynamic";
 
 function maBudapesten(): string {
   return new Intl.DateTimeFormat("sv-SE", { timeZone: "Europe/Budapest" }).format(new Date());
@@ -494,6 +499,7 @@ export default function TudastarPage() {
           . Ha egy link nem nyílik meg, szólj, és hozzáadunk a megosztáshoz.
         </p>
         <SajatBemutato />
+        <TerapiaBemutato />
         {anyagCsoportok.map((cs) => (
           <div key={cs.id} id={`anyag-${cs.id}`} className="material-card">
             <div>
