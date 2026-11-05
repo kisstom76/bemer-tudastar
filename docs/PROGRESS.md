@@ -1,6 +1,6 @@
 # PROGRESS – BEMER Tudástár
 
-> **Hol tartunk (2026-11-05):** Az oldal él (tudastar.bterapia.hu). 11-05-én az események listája újra egyezik a vault eseménynaptárával (bekerült az AI oktatás 12-04 és a Beck OD World of BEMER évnyitó 01-23, a Karácsony 12-05-re javítva). Következő tudástár-lépés: az anyagok összelinkelése az eseményekkel és promóciókkal.
+> **Hol tartunk (2026-11-05):** Az oldal él (tudastar.bterapia.hu). 11-05-én az események listája újra egyezik a vault eseménynaptárával (bekerült az AI oktatás 12-04 és a Beck OD World of BEMER évnyitó 01-23, a Karácsony 12-05-re javítva). Szintén 11-05: a kutyás bemutató saját címre költözött (tudastar.bterapia.hu/dog) – Claude-fiók nélkül is megnyílik, gépen középre rendezve, telefonon fotó felül; Tomi átnézésére és az ár-döntésre (05/6) vár. Következő tudástár-lépés: az anyagok összelinkelése az eseményekkel és promóciókkal.
 
 > Állapotnapló. A tartós szabályok a [`CLAUDE.md`](../CLAUDE.md)-ben vannak, ide a történet és a nyitott pontok kerülnek.
 
