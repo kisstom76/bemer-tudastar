@@ -1,6 +1,6 @@
 # PROGRESS – BEMER Tudástár
 
-> **Hol tartunk (2026-11-05):** Az oldal él (tudastar.bterapia.hu). 11-05-én az események listája újra egyezik a vault eseménynaptárával (bekerült az AI oktatás 12-04 és a Beck OD World of BEMER évnyitó 01-23, a Karácsony 12-05-re javítva). Szintén 11-05: a kutyás bemutató saját címre költözött (tudastar.bterapia.hu/dog) – Claude-fiók nélkül is megnyílik, gépen középre rendezve, telefonon fotó felül; Tomi átnézésére és az ár-döntésre (05/6) vár. Következő tudástár-lépés: az anyagok összelinkelése az eseményekkel és promóciókkal.
+> **Hol tartunk (2026-11-05):** A terápiás ügyfélbemutató él (tudastar.bterapia.hu/terapia); a tudástárban a kártyája szerda (11-11) 19:00-ig a partnereknek lakatos, utána magától kinyílik – Tomi hétfőn átnézi, szerdán a partnermeetingen bemutatja. Nyitott: az állandó heti partnerlevél módja (05/11) Tomi igenjére vár; a kutyás bemutató (/dog) az ár-döntésre (05/6).
 
 > Állapotnapló. A tartós szabályok a [`CLAUDE.md`](../CLAUDE.md)-ben vannak, ide a történet és a nyitott pontok kerülnek.
 
@@ -33,6 +33,16 @@
 4. Döntés: lapon belül lejátszható videó vagy marad a YouTube-link – Tomi (Nyitott döntések 2/4)
 5. ✅ Előadói jegyzet (vault `01 Projects/BEMER_Tudastar/Dog_Partnerprezentacio_Eloadoi_jegyzet.md`, Tomi jóváhagyta 11-02): a tudástárban a bemutató-kártya alatt lenyitható (`src/content/dogJegyzet.ts` – a vault-jegyzetből generálva, változáskor onnan frissítendő)
 6. Élesítés ellenőrzése: a 83061cf push után belépve megnézni a saját link-kártyát – Tomi / én
+
+
+**D) BEMER terápiás ügyfélbemutató** – vault `01 Projects/BEMER_Tudastar/Human_Bemutato_Anyaggyujtes.md` 8. pont; kód `public/bemutato/terapia/` (rövid cím `/terapia`, noindex), előadói jegyzet: vault `Terapias_Bemutato_Eloadoi_jegyzet.md`
+1. ✅ Kész (2026-11-05): végső vizuális ellenőrzés (1440×900, 1280×720, 375×812, 375×667), csak CSS-javítások
+2. ✅ Tomi átnézte („Ez így tökéletes”), élesítés igen, tegezés marad (05/9 lezárva)
+3. ✅ Élesítve 2026-11-05 (3953650): /terapia 200, `X-Robots-Tag: noindex…`, robots-tiltás. Tudástár-kártya `src/components/TerapiaBemutato.tsx` (személyes link + előadói jegyzet táblázatokkal, `src/content/terapiaJegyzet.ts` – a vault-jegyzetből generálva, változáskor onnan frissítendő). **Lakat:** `TERAPIA_NYITAS` (`bemutatok.ts`, 2026-11-11 19:00 +01:00) előtt a partner csak a lakatos fejlécet kapja – link és jegyzet a HTML-be sem kerül; az admin végig látja („Admin-előnézet” jelzéssel). A `/tudastar` `force-dynamic`, így a nyitás gyorsítótár nélkül, pontosan történik. A „Friss anyagok” sor (`ujdonsagok.ts`, `megjelenik` mező) is ekkortól látszik
+4. Ellenőrzés 11-11 19:00 után: partnerként (nem admin) belépve kinyílt-e a kártya és megjelent-e a Friss anyagok sor – Tomi / én. (Partnerfiókkal nyitás előtt nem tudtam belépni; a lakatos ágat kódból ellenőriztem.)
+5. Hétfő 11-09: Tomi felkészülése + a heti partnerlevél elküldése (vault `02 Areas/BEMER/Feladatok.md`, 🔴) – Tomi
+6. Állandó heti partnerlevél (hétfőn levél + szerdai emlékeztető) – Tomi igenjére vár (vault Nyitott_Dontesek 05/11), utána vault-szabály – én
+7. Utána: üzleti bemutató (partnerség) ugyanebben a formában – később
 
 ---
 
