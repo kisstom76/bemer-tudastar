@@ -140,7 +140,7 @@ export const terapiaEloadoiJegyzet: JegyzetSzakaszB[] = [
           [
             "6–9. dia",
             "A kérdését, aggályát („mikor érzek valamit?”, „nincs rá időm”)",
-            "„Kérdezted, mikor érzel valamit – ezért jó, ha több hetet adsz neki.”"
+            "„Kérdezted, mikor érzel valamit – ezért jó, ha 6 hetet adsz neki, ennyi a bázisprogram.”"
           ],
           [
             "9–10. dia",
@@ -176,7 +176,7 @@ export const terapiaEloadoiJegyzet: JegyzetSzakaszB[] = [
         "tipus": "lista",
         "pontok": [
           "**Cél:** keret – mi ez, és ki vagy te. Itt jön a saját sztorid.",
-          "**Mondd:** „Ez egy orvostechnikai eszköz, amit otthon használsz, gyógyszer nélkül, a többi kezelés mellett. Én azért kezdtem, mert…” (30 mp, a saját szavaiddal)",
+          "**Mondd:** „Ez egy IIa osztályú orvostechnikai eszköz – európai (MDR) tanúsítvánnyal –, amit otthon használsz, gyógyszer nélkül, a többi kezelés mellett. Én azért kezdtem, mert…” (30 mp, a saját szavaiddal)",
           "**Kérdezd:** „Ismerős neked ilyesmi?”",
           "**Ne:** „mindenre jó”, „csodaszer”. A BEMER a tudatos életmód csapatjátékosa, nem csodaszer."
         ]
@@ -219,7 +219,8 @@ export const terapiaEloadoiJegyzet: JegyzetSzakaszB[] = [
         "pontok": [
           "**Cél:** ez a beszélgetés kulcsa – miért nem „még egy keringésjavító”.",
           "**Mondd:** „A nagy ereket a szív hajtja, a kisebb artériákat az idegrendszer és a hormonok szabályozzák – ott a gyógyszer is tud hatni. A legkisebb artériák saját ritmusban dolgoznak, ide gyógyszer alig ér el, fizikai inger viszont igen. A BEMER-jel a természetes vazomóció mintájára készült.”",
-          "**A saját véleményed** itt elmondhatod, saját szavaidként: „Szerintem a vazomóció nélkül nem lehet igazán hatékonyan keringést javítani.” – a dián nincs ilyen állítás, csak Klopp idézete („lemásoltuk a természetet”). Ha mégis az „egyedi” felé mennél, csak így, a saját tudásodként: „Nem ismerek másik otthon használható, gyógyszermentes eszközt, amit kifejezetten a vazomóció serkentésére fejlesztettek, és amiről ilyen mérések készültek.” (🟣 – a vault szerint ez nem értékesítési érv, csak válasz, ha rákérdeznek.)",
+          "**Miért egyedülálló – így magyarázd:** „Klopp professzor úgy mondta: lemásoltuk a természetet. Ma, 2026 végén sem tudunk más terápiás eszközről, amely hatékonyan és tartósan képes lenne befolyásolni a vazomóciót – márpedig enélkül nincs jó és tartós mikrokeringés-javítás. Ezért mondjuk, hogy egyedülálló.” A dián is így áll: „Nem ismerünk más terápiás eszközt, amelyet kifejezetten a vazomóció tartós támogatására fejlesztettek – ezért mondjuk, hogy egyedülálló.”",
+          "**Mindig „nem ismerünk” formában** – ez a tudásunkról szól, és vállalható. Ne mondd: „egyedül a BEMER képes”, „nincs más, ami működik”, „a világon az egyetlen” – az ilyen kizárólagos állítást bizonyítani kellene, és a fogyasztóvédelem ezt számon kéri.",
           "**Ne:** „egyedül a BEMER”, „semmi más nem működik”, gyógyszert leértékelni. „Nem vagyunk gyógyszerellenesek” – a BEMER a kezelés mellett van, nem helyette."
         ]
       }
@@ -260,7 +261,7 @@ export const terapiaEloadoiJegyzet: JegyzetSzakaszB[] = [
         "tipus": "lista",
         "pontok": [
           "**Cél:** bizalom. Ha te mondod ki elsőként a korlátokat, hihetőbb minden más.",
-          "**Mondd:** „Fontos: ez nem gyógyszer, és nem helyettesíti az orvost. A szervezet saját működését támogatja.” · „Mindenkinél más, mikor érez változást – érdemes több hetet adni neki, ezért javaslom a kipróbálást.”",
+          "**Mondd:** „Fontos: ez nem gyógyszer, és nem helyettesíti az orvost. A szervezet saját működését támogatja.” · „Mindenkinél más, mikor érez változást. Ha egy terápiás időszakot végigcsinálnál, érdemes 6 hétre elköteleződni – ennyi a bázisprogram. Ezért javaslom előbb a kipróbálást.”",
           "**Ellenjavallat (Evo gépkönyv):** aktív implantátum (pacemaker, gyógyszerpumpa) – soha; szerv-, csontvelő- vagy őssejt-átültetés immunszuppresszív kezeléssel. 14 év alatt felügyelettel. Implantátumnál: kezelőorvos + használati útmutató – saját véleményt ne mondj.",
           "**Ne:** „neked biztos jó lesz”, időre ígért hatás."
         ]
@@ -332,7 +333,7 @@ export const terapiaEloadoiJegyzet: JegyzetSzakaszB[] = [
         "tipus": "lista",
         "pontok": [
           "**„Ez is csak egy mágnesterápia?”** – „Nem minden mágnesterápiás készülék ugyanaz – a jel formája számít. A BEMER-jelet kifejezetten a vazomóció mintájára fejlesztették.” (Más márkát név szerint ne hasonlíts.)",
-          "**„Milyen engedélye van?”** – orvostechnikai eszköz; a „IIa osztály, MDR, FDA” képzésen hallott adat (🟠), gépkönyvi forrás a vaultban nincs – ha kérdezik, „utánanézek és küldöm”.",
+          "**„Milyen engedélye van?”** – IIa kockázati osztályú orvostechnikai eszköz, az európai orvostechnikai rendelet (MDR, 2017/745) szerint tanúsítva: a bejelentett szervezet a német mdc (azonosító: 0483), a tanúsítvány 2027. 10. 28-ig érvényes (forrás: a BEMER EU-s tanúsítványa és megfelelőségi nyilatkozata). Az amerikai FDA-engedélyről képzésen hallottunk, de a dokumentum még nincs meg nálunk – ha kérdezik: „utánanézek és küldöm”.",
           "**„Miért ilyen drága?”** – előbb az érték: gyári gyártás, orvostechnikai eszköz, hosszú élettartam, az egész család használja; az ár szóban.",
           "**„A Marketplace-en olcsóbb.”** – „Nálam beüzemelés, utánkövetés, gondozás jár – nem egyedül maradsz vele.”"
         ]
