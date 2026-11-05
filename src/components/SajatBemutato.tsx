@@ -27,7 +27,7 @@ export async function SajatBemutato() {
       <div>
         <div className="m-title">🐶 BEMER Dog Line bemutató – a te elérhetőségeddel</div>
         <div className="m-meta">
-          Telefonon lapozható, 10 diás bemutató ügyfeleknek. Az utolsó dián annak a partnernek a neve és
+          Telefonon és számítógépen is lapozható, 10 diás bemutató ügyfeleknek – megnyitásához nem kell semmilyen fiók vagy bejelentkezés. Az utolsó dián annak a partnernek a neve és
           száma látszik, akinek a linkjét megnyitják – ez a link a tiéd, ezt küldd tovább.
         </div>
       </div>
