@@ -26,8 +26,8 @@
 
 **C) BEMER Dog partnerprezentáció** – a tudástár része: vault `01 Projects/BEMER_Tudastar/Dog_Partnerprezentacio.md` + 🟡 tétel a tudástár `Feladatok.md`-jében; élő link (2026-11-05 óta saját tárhely, `public/bemutato/dog/`, rövid cím `/dog`, noindex): https://tudastar.bterapia.hu/dog
 1. ✅ Átnézés széles monitoron és telefonon (4. kör) – Tomi jóváhagyta (11-05)
-2. ✅ Megosztás már nem kell: a saját címen bárkinek megnyílik, Claude-fiók nélkül (11-05). Molnár Pétert tájékoztatni – Tomi
-2a. Döntés: ár a 8. diára (Nyitott döntések 05/6; eddig BEMER-szabály miatt ár nélkül) – Tomi
+2. ✅ Megosztás már nem kell: a saját címen bárkinek megnyílik, Claude-fiók nélkül (11-05); Molnár Péter értesítve (Tomi, 11-05)
+2a. ✅ Ár a 8. diára: Tomi döntése – maradjon ár nélkül (05/6 lezárva, 11-05)
 2b. ✅ A két nézet szabálya a vault `03 Resources/BEMER_Dizajn.md`-ben (a `bemer-arculat` skill törzse), 11-05
 3. Személyes link a tudástárban (`SajatBemutato` kártya a Letölthető anyagoknál, admin telefonszám-oszlop, `003_telefon.sql`): kód kész, build rendben – a `003_telefon.sql` lefutott (Tomi, 11-02); commit + push megtörtént (83061cf, 11-02); utána a partnerek száma az admin oldalon (vagy ők maguk)
 4. Döntés: lapon belül lejátszható videó vagy marad a YouTube-link – Tomi (Nyitott döntések 2/4)
