@@ -1,6 +1,6 @@
 # PROGRESS – BEMER Tudástár
 
-> **Hol tartunk (2026-11-03):** Az oldal él (tudastar.bterapia.hu). 11-02-án felkerült a BEMER Dog bemutató (saját link + előadói jegyzet), az ügyfélnek küldhető linkek, és a tudástár tetején a „🆕 Friss anyagok” lista (a 8 legutóbbi újdonság, kattintásra odaugrik). Következő tudástár-lépés: az anyagok összelinkelése az eseményekkel és promóciókkal.
+> **Hol tartunk (2026-11-05):** Az oldal él (tudastar.bterapia.hu). 11-05-én az események listája újra egyezik a vault eseménynaptárával (bekerült az AI oktatás 12-04 és a Beck OD World of BEMER évnyitó 01-23, a Karácsony 12-05-re javítva). Következő tudástár-lépés: az anyagok összelinkelése az eseményekkel és promóciókkal.
 
 > Állapotnapló. A tartós szabályok a [`CLAUDE.md`](../CLAUDE.md)-ben vannak, ide a történet és a nyitott pontok kerülnek.
 
@@ -16,6 +16,8 @@
 5. ✅ Kész (2026-11-02): a 4×5 képcsomag, az `anyagok.ts`, a vault-jegyzetek és a 27 parancsikon (Apps Script) elkészült. Kisebb maradék: a Dog „Első prezi” 7 PNG-je a prezentációs mappa mellé (régi `BEMER DOG/Első prezi`) – én, a Dog-prezentáció session után
 6. ✅ Kész: a médiakönyvtár-jegyzet felvéve a vault `Nyilvantartasok.md` regiszterébe (Tomi jóváhagyta)
 7. ✅ Kész (2026-11-02): „🆕 Friss anyagok” lista a „Most aktuális” doboz alatt (`src/components/FrissAnyagok.tsx`) – magától válogat az `anyagok.ts` / `felvetelek.ts` tételeinek `hozzaadva` mezőjéből, plusz a `src/content/ujdonsagok.ts` különálló újdonságaiból; a 8 legfrissebb látszik. **Szabály: új anyagnál/felvételnél mindig töltsd ki a `hozzaadva: "ÉÉÉÉ-HH-NN"` mezőt**, új kártyánál/funkciónál egy sor az `ujdonsagok.ts`-be. Apró maradék: a Letölthető anyagok alján elavult „Hamarosan: brossúrák…” sáv – én
+
+8. ✅ Kész (2026-11-05): események szinkron – az `esemenyek.ts` 10-14 óta nem frissült (a „rögzítő session azonnal átviszi” szabálynak nem volt végrehajtója). Ki: 10-15 infóest, 10-16–17 GL-képzés (lejártak). Be: AI oktatás (12-04), World of BEMER évnyitó – Beck OD (2027-01-23). Változott: Karácsony 12-12 → 12-05 (Budavári Palota, 45 000 Ft-os jegy), 11-18 új Zoom-link, OET-képzés a hivatalos kiírás szerint (≥80% EVO), WoB 04-24 jegyár. Commit 9b14ef3, élesítve. Új szabály a végrehajtásra: vault `BEMER.md` Meeting-kezelés (partner-/vezetői meeting után ellenőrizni, érinti-e a tudástárat)
 
 **B) Régi tartalmi hiányok (2026-10-01-i lista – át kell nézni, aktuális-e még)**
 - Dr. Horváth Ilona elérhetősége, fotó a bemutatkozáshoz – Tomi
